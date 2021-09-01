@@ -1,0 +1,66 @@
+.leftbody {
+  width: 40%;
+  background-color: #FDF1F0;
+  height: 100vh;
+}
+.header_left {
+    background-color: #FDF1F0;
+    width: 40%;
+    /* padding-left: 10px; */
+}
+.header_main {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  justify-content: space-between;
+}
+.left_text {
+  border-bottom: 1px solid #d6d6d6;
+  padding: 25px 20px 20px;
+  line-height: 36px;
+  margin: auto 20px;
+  text-align: center;
+  width: 50%;
+  font-family: 'Zoho Puvi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-weight: 400;
+}
+.right_headText {
+    font-size: 24px;
+    margin-top: 15%;
+    font-family: 'Zoho Puvi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+.rightbody{
+    
+    margin: 0 auto 15px;
+    /* font-weight: 500; */
+}
+.form-control {
+    margin-left: -18%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 135%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    outline: 0;
+    border-radius: 0;
+    padding: 10px 12px 10px 35px;
+    border: 1px solid gray;
+}
+.form-control:focus {
+    border: 1px solid blue;
+}
+.signup-btn {
+    font-size: 18px;
+    margin-left: -18%;
+    width: 135%;
+    padding: 12px 0;
+    background-color: #f36170;
+    border-color: none;
+    color: white;
+}
+.signup-btn:hover {
+    background-color: #F04B56;
+}
+.submit_button {
+    margin-top: 1rem;
+}

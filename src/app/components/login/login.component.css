@@ -1,0 +1,18 @@
+.login_main {
+    background-image: url("https://css.zohostatic.com/iam/M_4327508/v2/components/images/bg.svg");
+    background-size: cover;
+    background-size: 100%;
+    height: 100vh; 
+}
+.form-control {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    outline: 0;
+    border-radius: 3px;
+    padding: 10px 12px 10px 35px;
+    border: 1px solid gray;
+}
