@@ -1,0 +1,113 @@
+<div class="col-mt-3">
+    <div>
+    <label for="formGroupExampleInput">Expense Date*</label>
+    <input type="date" class="form-control" placeholder="eg: 31/01/2021">
+  </div>
+  </div>
+
+<div class = "col">
+  <select class="form-control">
+  <label for="formGroupExampleInput">Merchant</label>
+    <option>Default select</option>
+  </select>
+</div>
+
+  <!-- <div class="dropdown">
+      <a class = "btn-secondary dropdown-toggle "data-toggle = "dropdown" role="button"> 
+    <button onclick="myFunction()" class="dropbtn">Category*</button>
+    <div id="myDropdown" class="dropdown-content">
+      <input type="text" placeholder="Select" id="myInput" onkeyup="filterFunction()">
+      <a class = "dropdown-menu" href="#airtravelexpense">Air Travel Expense</a>
+      <a href="#automobileexpense">Automobile Expense</a>
+      <a href="#fuel/mileageexpense">Fuel/Mileage Expense</a>
+      <a href="#itandinternetexpense">IT and Internet Expense</a>
+      <a href="#jobcosting">Job Costing
+      <a href="#mealsandentertainment">Meals and Entertainment</a>
+      <a href="#officeandsupplies">Office and Supplies</a>
+      <a href="#otherexpenses">Other Expenses</a>
+      <a href="#parking">Parking</a>
+      <a href="#subcontractor">Subcontractor</a>
+      <a href="#telephoneexpense">Telephone Expense</a> -->
+
+        <div class="form-group">
+        <label for="exampleFormControlSelect1">Category*</label>
+        <select class="form-control" id="exampleFormControlSelect1" >
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+              <label for="input1">Search</label>
+            <option>Select</option>
+          <option>Air Travel Expense</option>
+          <option>Automobile Expense</option>
+          <option>Fuel/Mileage Expense</option>
+          <option>IT and Internet Expense</option>
+          <option>Job Costing</option>
+          <option>Meals and Entertainment</option>
+          <option>Office and Supplies</option>
+          <option>Other Expenses</option>
+          <option>Parking</option>
+          <option>Subcontractor</option>
+          <option>Telephone Expense</option>
+        </select>
+      </div>  
+
+        <!-- <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <input class="form-control" id="myInput" type="text" placeholder="Search..">
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">jQuery</a></li>
+          <li><a href="#">Bootstrap</a></li>
+          <li><a href="#">Angular</a></li>
+        </ul>
+      </div> 
+
+      <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".dropdown-menu li").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        </script> 
+     -->
+
+
+
+
+<div class = "col">
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Claim Reimbusement
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "col">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Description</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+  </div>
+</div>
+
+<div class = "col">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Reference#</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Add to Reports</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+        <option>Select</option>
+        </select>
+  </div>
