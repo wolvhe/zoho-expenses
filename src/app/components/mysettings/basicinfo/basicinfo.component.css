@@ -1,0 +1,17 @@
+.card {
+    width: 70%;
+    border: 1px solid lightgray;
+    margin-left: 20px;
+}
+.card-header {
+    background: #F7F7FB;
+}
+.details {
+    color: #696d9a;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.detailsright {
+    padding-left: 50px;
+}

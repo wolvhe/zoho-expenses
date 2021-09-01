@@ -13,6 +13,9 @@ import { MysettingsComponent } from './components/mysettings/mysettings.componen
 import { CardsComponent } from './components/cards/cards.component';
 import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
+import { BasicinfoComponent } from './components/mysettings/basicinfo/basicinfo.component';
+import { PreferencesComponent } from './components/mysettings/preferences/preferences.component';
+import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-docs.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { TripsFormComponent } from './components/trips/trips-form/trips-form.com
     MysettingsComponent,
     CardsComponent,
     HomeComponent,
-    TripsFormComponent
+    TripsFormComponent,
+    BasicinfoComponent,
+    PreferencesComponent,
+    TravelDocsComponent
   ],
   imports: [
     BrowserModule,
