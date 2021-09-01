@@ -12,6 +12,9 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { MysettingsComponent } from './components/mysettings/mysettings.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { HomeComponent } from './home/home.component';
+import { BasicinfoComponent } from './components/mysettings/basicinfo/basicinfo.component';
+import { PreferencesComponent } from './components/mysettings/preferences/preferences.component';
+import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-docs.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { HomeComponent } from './home/home.component';
     ReportsComponent,
     MysettingsComponent,
     CardsComponent,
-    HomeComponent
+    HomeComponent,
+    BasicinfoComponent,
+    PreferencesComponent,
+    TravelDocsComponent
   ],
   imports: [
     BrowserModule,
