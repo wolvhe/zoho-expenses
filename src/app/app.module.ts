@@ -11,6 +11,7 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { MysettingsComponent } from './components/mysettings/mysettings.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CardsComponent } from './components/cards/cards.component';
     ExpensesComponent,
     ReportsComponent,
     MysettingsComponent,
-    CardsComponent
+    CardsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
