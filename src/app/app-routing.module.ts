@@ -6,13 +6,15 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { HomeComponent } from './home/home.component';
+import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'trips', component: TripsComponent}
+  {path: 'trips', component: TripsComponent},
+  {path: 'trips/new', component: TripsFormComponent}
 ];
 
 @NgModule({
