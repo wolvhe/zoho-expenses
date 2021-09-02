@@ -1,4 +1,6 @@
-import { FromCardsComponent } from './components/from-cards/from-cards.component';
+import { TabComponent } from './components/expenses/tab/tab.component';
+import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
+import { FromCardsComponent } from './components/expenses/from-cards/from-cards.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,9 +13,8 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { MysettingsComponent } from './components/mysettings/mysettings.component';
 import { CardsComponent } from './components/cards/cards.component';
-import { AddExpenseComponent } from './components/addExpense/addExpense.component';
-import { BulkAddExpenseComponent } from './components/bulk-add-expense/bulk-add-expense.component';
-import { TabComponent } from './components/tab/tab.component';
+import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+
 
 
 @NgModule({

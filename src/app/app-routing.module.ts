@@ -1,13 +1,14 @@
-import { TabComponent } from './components/tab/tab.component';
-import { FromCardsComponent } from './components/from-cards/from-cards.component';
+import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
+import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+import { FromCardsComponent } from './components/expenses/from-cards/from-cards.component';
+import { TabComponent } from './components/expenses/tab/tab.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { AddExpenseComponent } from './components/addExpense/addExpense.component';
-import { BulkAddExpenseComponent } from './components/bulk-add-expense/bulk-add-expense.component';
+
 const routes: Routes = [
   {path: '', component: AppComponent},
   {path: 'dashboard', component: DashboardComponent},
