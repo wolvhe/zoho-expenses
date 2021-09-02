@@ -1,8 +1,29 @@
+<div class = "container">
+  <div class= "row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+      <div class="collapse navbar-collapse" id="#">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/addexpense">Add Expense</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/bulkaddexpense">Bulk Add Expense</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/fromcards">Add Cards</a>
+          </li>
+    
+        </ul>
+        </div>
+    </nav>
+  
+  </div>
 
-<div class = "card">
+
 <div class= "row card-body" >
   <div class="col-lg-8" style="left: 50; top: 50;" >
-
+    
     <div class = "img" >
       <div class="App" >
         <div class="container" style="margin-left: 35%;">
@@ -10,11 +31,8 @@
           <label htmlFor="input">
             <div class="label" >
               <div class="h1">
-                <h1 id="h1">Add File</h1>
               </div>
-              <button class="button">
-                Send File
-              </button>
+
             </div>
           </label>
         </div>
@@ -32,43 +50,48 @@
     <div class="card mb-3" style="width:20rem;">
       <div class="col-mt-3">
           <div>
-          <label for="formGroupExampleInput">Expense Date*</label>
+          <label for="formGroupExampleInput" class="text-danger">Expense Date*</label>
           <input type="date" class="form-control" placeholder="eg: 31/01/2021">
         </div>
         <div>
-          <select class="form-control">
-          <label for="formGroupExampleInput">Merchant</label>
-            <option>Default select</option>
+          <br>
+
+
+            <div class = "formgroup">
+            <label for="formGroupExampleInput">Merchant</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Select or type to add">
+        </div>
+          <br>
+        </div>
+        </div>
+
+        <div class = "formgroup">
+          <label for="formGroupExampleInput " class="text-danger">Amount*</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="0.00">
+          <br>
+      </div>
+
+        
+        
+
+        <div class = "form-group">
+          <label class="text-danger">Category</label>
+          <select class = "form-control">
+            <option  href="#">Select</option>
+            <option  href="#">Add Travel Expenses</option>
+              <option href="#">Automobile Expense</option>
+              <option href="#">Fuel/Mileage Expense</option>
+              <option href="#">IT and Internet Expense</option>
+              <option href="#">Job Costing</option>
+              <option href="#">Meals and Entertainment</option>
+              <option href="#">Office and Supplies</option>
+              <option href="#">Other Expenses</option>
+              <option href="#">Parking</option>
+              <option href="#">Subcontractor</option>
+              <option href="#">Telephone Expense</option>
           </select>
         </div>
         </div>
-      
-      
-      
-             
-      
-           <div class="dropdown">
-            <select class="text-primary form-control" type="select" id="#" data-toggle="dropdown" ariahaspopup="true" aria-expanded="false">
-              Category
-            </select>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <input type="text" class="form-control" id="exampleDropdownFormPassword1" placeholder="Search">
-              <a class="dropdown-item" href="#">Add Travel Expenses</a>
-              <a class="dropdown-item" href="#">Automobile Expense</a>
-              <a class="dropdown-item" href="#">Fuel/Mileage Expense</a>
-              <a class="dropdown-item" href="#">IT and Internet Expense</a>
-              <a class="dropdown-item" href="#">Job Costing</a>
-              <a class="dropdown-item" href="#">Meals and Entertainment</a>
-              <a class="dropdown-item" href="#">Office and Supplies</a>
-              <a class="dropdown-item" href="#">Other Expenses</a>
-              <a class="dropdown-item" href="#">Parking</a>
-              <a class="dropdown-item" href="#">Subcontractor</a>
-              <a class="dropdown-item" href="#">Telephone Expense</a>
-        </div>
-      
-      
-      
-      </div>
       
       <div class = "col">
         <div class="form-group row">
@@ -82,15 +105,26 @@
           </div>
         </div>
       </div>
-      
-      <div class = "col">
-        <div class="form-group">
-          <label for="formGroupExampleInput">Description</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-        </div>
+
+      <div class = "form-group">
+        <label>Paid Through</label>
+        <select class = "form-control">
+          <!-- <h6 class= "dropdown-header" >Cash</h6> -->
+          <option  href="#">Petty Cash</option>
+          <option  href="#">Undeposited Funds</option>
+          <option  href="#">TDS Payable</option>
+          </select>
       </div>
       
-      <div class = "col">
+      <div class = "col-sm-20">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Description</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        
+      </div>
+      
+      <div class = "col-sm-20">
         <div class="form-group">
           <label for="formGroupExampleInput">Reference#</label>
           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
@@ -103,20 +137,28 @@
               <option>Select</option>
               </select>
         </div> -->
-        <div class="dropdown">
-          <select class="text-primary form-control" type="select" id="#" data-toggle="dropdown" ariahaspopup="true" aria-expanded="false">
-            Category
-          </select>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <input type="text" class="form-control" id="exampleDropdownFormPassword1" placeholder="Search">
-            <a class="dropdown-item" href="#"></a>
-      </div>
 
+        <div class = "form-group">
+          <label>Add to Report</label>
+          <select class = "form-control">
+            <option  href="#">Select</option>
+            </select>
+        </div>
+        
+       
+  </div>
+  <footer>
+    <div class="mw-50 d-none font-small d-lg-inline-block">
+
+        Why add expenses manually when you can get those receipts autoscanned.
+
+          <a tabindex="-1" target="_blank" rel="noopener noreferrer" href="https://zoho.com/expense/help/v2/expenses/autoscan-receipts/">Learn More!</a>
 
   </div>
-
-
-
+    <button class="btn btn-primary" type="submit">Save and Close</button>
+    <button type="button" class="btn btn-outline-primary">Save and New</button>
+    <button type="button" class="btn btn-outline-light">Cancel</button>
+  </footer>
 
 </div>
 
