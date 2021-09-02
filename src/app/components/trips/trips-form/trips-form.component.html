@@ -17,17 +17,14 @@
 <form action="" class="container mt-3">
     
     
-    <div class="my-2">
+    <div class="">
         <label>Travel Type</label><br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" >Domestic </label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" >International</label>
-        </div>
-        
+        <label class="radio-inline">
+            <input type="radio" name="optradio" checked>&nbsp; Domestic &nbsp; &nbsp;
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio">&nbsp; International &nbsp;&nbsp;
+          </label>
     </div>
     
     <div class="form-group my-2 pt-3">
@@ -52,18 +49,15 @@
             </div>
             <div class="col-lg-10 trip_trans py-3">
                 <div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" >One-Way</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <label class="form-check-label" >Round Trip</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
-                        <label class="form-check-label" >Multi-City</label>
-                      </div>
+                    <label class="radio-inline">
+                        <input type="radio" name="optradio" > &nbsp; One-Way &nbsp; &nbsp;
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio">&nbsp; Round-Trip &nbsp;&nbsp;
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio">&nbsp; Multi-Way &nbsp;&nbsp;
+                      </label>
                 </div>
                 
                 <hr >
@@ -324,7 +318,7 @@
             <button type="button" class="btn btn-success">Save and Continue</button>&nbsp;
             <button type="button" class="btn btn-warning">Save as Draft</button> &nbsp;
             <button type="button" class="btn btn-danger">Cancel</button>
-            powered by codingmart
+        
         </footer>
 
 
