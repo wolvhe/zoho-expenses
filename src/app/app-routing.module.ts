@@ -1,3 +1,7 @@
+import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
+import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+import { FromCardsComponent } from './components/expenses/from-cards/from-cards.component';
+import { TabComponent } from './components/expenses/tab/tab.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -18,6 +22,11 @@ const routes: Routes = [
   {path: 'trips/new', component: TripsFormComponent},
   {path: 'mysettings', component: MysettingsComponent},
   
+  {path: 'addexpense', component: AddExpenseComponent},
+  {path: 'bulkaddexpense', component:BulkAddExpenseComponent},
+  {path: 'fromcards', component: FromCardsComponent},
+  {path: 'tab', component: TabComponent}
+
 ];
 
 @NgModule({
@@ -25,3 +34,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
