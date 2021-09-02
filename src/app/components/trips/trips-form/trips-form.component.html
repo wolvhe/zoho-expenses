@@ -22,15 +22,13 @@
     
     <div class="my-2">
         <label>Travel Type</label><br>
-        <div class="form-check-inline">
-            <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">Domestic
-            </label>
-        </div>
-        <div class="form-check-inline">
-            <label class="form-check-label"><br>
-            <input type="checkbox" class="form-check-input" value="">International
-            </label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" >Domestic </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" >International</label>
         </div>
         
     </div>
@@ -43,7 +41,7 @@
 
     <div class="form-group my-2">
         <label >Business Purpose</label><br>
-        <input  type="text-area" class="form-control form-control-lg" >
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
       
     <div class="mt-5 ">
@@ -51,29 +49,24 @@
     
         <!--Flights-->
         <div class="row container">
-            <div class="col-lg-2 mt-3 " style="text-align: center;">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
                 <i class="fas fa-plane-departure" style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
                 <p class="mt-3">Flight</p>
             </div>
             <div class="col-lg-10 trip_trans py-3">
                 <div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">One Way
-                        </label>
-                    </div>
-                    
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Round Trip
-                        </label>
-                    </div>
-    
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Multi-City
-                        </label>
-                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" >One-Way</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" >Round Trip</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+                        <label class="form-check-label" >Multi-City</label>
+                      </div>
                 </div>
                 
                 <hr >
@@ -101,7 +94,7 @@
                     
                     <div class="form-group my-2 pt-3 col">
                         <label >Description*</label>
-                        <input  type="textarea" class="form-control" required>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
 
                     <div class="form-group my-2 pt-3 col">
@@ -127,7 +120,7 @@
 
         <!--HOTELS-->
         <div class="row container my-5">
-            <div class="col-lg-2 mt-3 " style="text-align: center;">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
                 <i class="fas fa-hotel" style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
                 <p class="mt-3">Hotel</p>
             </div>
@@ -153,15 +146,195 @@
 
                     <div class="form-group my-2 pt-3 col-lg-3">
                         <label >Description</label>
-                        <input  type="textarea" class="form-control" >
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                 </div>
 
             </div>
 
+        </div>
 
+        <!--CAR RENTALS-->
+        <div class="row container my-5">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
+                <i class="fas fa-car-side" style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
+                <p class="mt-3">Car Rentals</p>
+            </div>
+            <div class="col-lg-10 trip_trans py-3">
+                
+                <div class="row px-1 ">
+                
+
+                    <div class="form-group my-2 pt-3 ml-1 col">
+                        <label >Pick Up</label>
+                        <div class="row">
+                            <div class="col">
+                                <input  type="date" class="form-control" >
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="time" class="form-control">
+                            </div>
+                            
+                            <div>
+                                <input type="text" class="form-control" placeholder="Enter pickup city">        
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="form-group my-2 pt-3 ml-1 col">
+                        <label >Drop Off</label>
+                        <div class="row">
+                            <div class="col">
+                                <input  type="date" class="form-control" >
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="time" class="form-control">
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Enter drop city">        
+                            </div>
+                        </div>
+                        
+                        
+                    </div>      
+                     
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group mb-3 my-2 pt-3 ml-1">
+                                <div class="input-group-prepend">
+                                  <label class="input-group-text" for="inputGroupSelect01">Car Type</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    
+                                  <option value="1">small</option>
+                                  <option value="2">medium</option>
+                                  <option value="3">large</option>
+                                </select>
+                              </div>
+                        </div>
+                        
+                        
+                        <div class="col">
+                            <div class="form-group my-2 pt-3 ml-1">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <label >Description</label>
+                                    </div>
+                                    <div class="col">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    
+                </div>
+
+            </div>
 
         </div>
+
+        <!--Bus-->
+        <div class="row container my-5">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
+                <i class="fas fa-bus" style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
+                <p class="mt-3">Bus</p>
+            </div>
+            <div class="col-lg-10 trip_trans py-3">
+                
+                <div class="row px-2 ">
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Departure From*</label>
+                        <input  type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Arrive At*</label>
+                        <input  type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Departure Date</label>
+                        <input  type="date" class="form-control" required>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    
+
+              
+    
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!--Train-->
+        <div class="row container my-5">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
+                <i class="fas fa-train" style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
+                <p class="mt-3">Train</p>
+            </div>
+            <div class="col-lg-10 trip_trans py-3">
+                
+                <div class="row px-2 ">
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Departure From*</label>
+                        <input  type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Arrive At*</label>
+                        <input  type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Departure Date</label>
+                        <input  type="date" class="form-control" required>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    
+
+              
+    
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--Footer-->
+        <footer class="px-3 my-5">
+            <button type="button" class="btn btn-success">Save and Continue</button>&nbsp;
+            <button type="button" class="btn btn-warning">Save as Draft</button> &nbsp;
+            <button type="button" class="btn btn-danger">Cancel</button>
+
+        </footer>
+
+
+
+        
+
+
 
 
     </div>
