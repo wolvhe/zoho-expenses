@@ -42,3 +42,12 @@
   image-upload > input {
 display:none;
   }
+
+  input[type=checkbox]{
+    content : '';
+    color : #fff;
+    margin-top: -8px;
+    width : 25px;
+    height : 25px;
+    background-size : contain;
+  }
