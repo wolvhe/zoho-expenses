@@ -19,6 +19,7 @@ import { BasicinfoComponent } from './components/mysettings/basicinfo/basicinfo.
 import { PreferencesComponent } from './components/mysettings/preferences/preferences.component';
 import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-docs.component';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -45,7 +46,8 @@ import { AddExpenseComponent } from './components/expenses/addExpense/addExpense
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
