@@ -1,19 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-default navbar-expand-md navbar-light fixed-top">
+  <div class="topnav navbar navbar-expand-lg">
+      <a href="">Unreported Expenses</a>
+      <a href="">All Expenses</a>
+      
 
-    <div class="collapse navbar-collapse" id="#">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/addexpense">Add Expense</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/bulkaddexpense">Bulk Add Expense</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/fromcards">Add Cards</a>
-        </li>
-  
-      </ul>
+      
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">|
+
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">All</a>
+                      <a class="dropdown-item" href="#">Expired</a>
+                      <a class="dropdown-item" href="#">Uncategorized</a>
+                      <div class="dropdown-divider"><hr></div>
+                      <a class="dropdown-item" href="#">+ New Custom view</a>
+                  </div>
+              
+
+          </ul>
       </div>
-  </nav>
-
+      <div class="button-right">
+          <button type="button" class="btn btn-primary" routerLink="/addexpense">New Expenses +</button>
+          <button type="button" class="btn btn-light">...</button>
+          <button type="button" class="btn btn-outline-primary">?</button>
+      </div>
+  </div>
+</nav>
+<div class="body">
   
+  <div class="align-items-center justify-content-centered">
+    <div class="App">
+      <input  type="file" id="input-file-now" class="file-upload" />
+      
+      <p style="margin-right: 25%;"><button type="button" class="btn btn-primary " routerLink="/addexpense">New Expenses +</button></p>   
+  </div>
+  
+  </div>
+</div>
+<div class="footer bg-light">
+  <p class="text-warning text-center ">HELP</p>
+  <p class="text-center" style="font-size:large;">Life cycle of a Expenses</p>
+  <img class="mx-auto d-block img-fluid" style="width: 40rem;" src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/expense-flow-2x-fc121a50fb1eae5078c47fe0638f349a.png">
+</div>

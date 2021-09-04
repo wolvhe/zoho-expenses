@@ -10,4 +10,19 @@
     outline-offset: -10px;
 }
 
-
+.nav-tabs .nav-item .nav-link {
+    background-color: #F7F7FB;
+    color: #4C8DFA;
+}
+.nav-tabs > li > a.basicInfoTab.active {
+    color: black;
+}
+.nav-tabs > li > a.prefTab.active {
+    color: black;
+}
+.nav-tabs > li > a.travelTab.active {
+    color: black;
+}
+.tab-content {
+    background: white;
+}

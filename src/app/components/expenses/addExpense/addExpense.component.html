@@ -3,19 +3,22 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   
       <div class="collapse navbar-collapse" id="#">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" routerLink="/addexpense">Add Expense</a>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link " data-toggle="tab" href="/addexpense" role="tab" aria-controls="home" aria-selected="true">Add Expenses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/bulkaddexpense">Bulk Add Expense</a>
+            <a class="nav-link" data-toggle="tab" href="/bulkaddexpense" role="tab" aria-controls="profile" aria-selected="false">Bulk Add Expenses</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="/fromcards">Add Cards</a>
+            <a class="nav-link travelTab" data-toggle="tab" href="/fromcards" role="tab" aria-controls="contact" aria-selected="false">Add Cards</a>
           </li>
-    
-        </ul>
+      </ul>
         </div>
+        <div >
+            
+          <button type="button" class="btn btn-outline-dark"  style="float: right;" routerLink="/tab">X</button>
+      </div>
     </nav>
   
   </div>

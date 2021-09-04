@@ -1,0 +1,45 @@
+.topnav a:hover {
+    color: blue;
+  }
+  .topnav a {
+    color: black;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.navbar{
+    width: 100%;
+    margin-bottom: -1%;
+    margin-top: 0%;
+    background-color:white;
+}
+
+.body {
+    margin-top: 12%;
+    margin-bottom: 12%;
+}
+.footer{
+    padding-top: 2%;
+}
+.button-right{
+    float: right;
+    margin-right: -2%;
+    
+}
+.App{
+    padding-right: 50px;
+    height: 500px;
+    width: 700px;
+    margin-left: 340px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline:gray 1px solid;
+    outline-offset: -10px;
+}
+
+
