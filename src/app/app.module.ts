@@ -42,6 +42,11 @@ import { AddExpenseComponent } from './components/expenses/addExpense/addExpense
     BulkAddExpenseComponent,
     FromCardsComponent,
     TabComponent
+    
+    
+    
+ 
+    
   ],
   imports: [
     BrowserModule,
