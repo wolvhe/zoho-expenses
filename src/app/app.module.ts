@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { AdvanceComponent } from './components/advance/advance.component';
+import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 
 
 
@@ -46,6 +47,7 @@ import { AdvanceComponent } from './components/advance/advance.component';
     FromCardsComponent,
     TabComponent,
     AdvanceComponent,
+    AlladvanceComponent,
     
     
   ],

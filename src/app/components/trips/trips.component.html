@@ -1,36 +1,45 @@
-<nav class="navbar navbar-default navbar-expand-md navbar-light fixed-top">
-    <div class="topnav navbar navbar-expand-lg">
-        <a href="pendingtrips">Pending Trips</a>
-        <a href="alltrips">All Trips</a>
+<nav class="navbar navbar-default navbar-expand-md navbar-light fixed-top ">
+    <div class="topnav navbar navbar-expand-lg px-4">
+        <a href="pendingTrips">Pending Trips</a>
+        <a href="allTrips">All Trips</a>
 
 
 
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <div class="dropdown">
-                    <span>| &#11167;</span>
-                    <div class="dropdown-content">
-                        <li class="disabled">DEFAULT</li>
-                        <a class="dropdown-item" href="#">All</a>
-                        <a class="dropdown-item" href="#">Approved</a>
-                        <a class="dropdown-item" href="#">Unsubmitted</a>
-                        <a class="dropdown-item" href="#">Awaiting Approval</a>
-                        <a class="dropdown-item" href="#">Rejected</a>
-                        <a class="dropdown-item" href="#">Closed</a>
-                        <a class="dropdown-item" href="#">Cancelled</a>
-                        <a class="dropdown-divider"></a>
-                        <a class="dropdown-item" href="#">+ New Custom view</a>
+
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">|
+
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">All</a>
+                    <a class="dropdown-item" href="#">Approved</a>
+                    <a class="dropdown-item" href="#">Unsubmitted</a>
+                    <a class="dropdown-item" href="#">Awaiting Approval</a>
+                    <a class="dropdown-item" href="#">Rejected</a>
+                    <a class="dropdown-item" href="#">Closed</a>
+                    <a class="dropdown-item" href="#">Cancelled</a>
+                    <div class="dropdown-divider">
+                        <hr>
                     </div>
+                    <a class="dropdown-item" href="#">+ New Custom view</a>
                 </div>
+
+
             </ul>
         </div>
+
+
+
         <div class="button-right">
-            <a type="button" class="rounded btn-primary" style="color:white" routerLink="/trips/new">New Trip +</a>
-            <a type="button" class="btn  btn-light">...</a>
-            <a type="button" class="btn btn-outline-primary">?</a>
+            <button type="button" class="btn btn-primary" routerLink="/trips/new">New Trips + </button>&nbsp;
+            <button type="button" class="btn btn-light">...</button>&nbsp;
+            <button type="button" class="btn btn-outline-primary">?</button>
         </div>
     </div>
 </nav>
+
 <div class="body">
     <img class="mx-auto d-block img-fluid" style="width: 28rem;"
         src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-trips-2x-dac6afb799276749e97e61717bdd4aa7.png">
