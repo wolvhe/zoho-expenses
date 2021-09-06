@@ -20,6 +20,7 @@ import { PreferencesComponent } from './components/mysettings/preferences/prefer
 import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-docs.component';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -42,12 +43,15 @@ import { FormsModule } from '@angular/forms';
     AddExpenseComponent,
     BulkAddExpenseComponent,
     FromCardsComponent,
-    TabComponent
+    TabComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
