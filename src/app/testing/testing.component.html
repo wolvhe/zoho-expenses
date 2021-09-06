@@ -1,0 +1,20 @@
+<p>testing works!</p>
+<div *ngFor="let item of formArray; let i = index">
+    data
+    <button
+    type="button"
+    class="btn deleteButton btn-outline-secondary btn-sm"
+    style="margin-right: 1rem"
+    (click)="filterArray(i)"
+    >
+    <i class="fas fa-trash-alt"></i> Delete
+    </button>
+    
+    <button
+            type="button"
+            class="btn saveButton btn-outline-secondary btn-sm"
+            (click)="formArray.push({})"
+          >
+            Add another work experience
+    </button>
+</div>

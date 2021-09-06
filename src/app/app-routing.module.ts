@@ -1,3 +1,4 @@
+import { TestingComponent } from './testing/testing.component';
 import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { FromCardsComponent } from './components/expenses/from-cards/from-cards.component';
@@ -14,11 +15,13 @@ import { TripsComponent } from './components/trips/trips.component';
 import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 const routes: Routes = [
-  
+  {path: '', component: HomeComponent},
+  {path: 'home', component: HomepageComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'reports', component: ReportsComponent},
   {path: 'login', component: LoginComponent},
@@ -34,6 +37,7 @@ const routes: Routes = [
   {path: 'advances/all', component: AlladvanceComponent},
   {path: 'reports/all', component: AllreportsComponent},
   
+  {path: 'test', component: TestingComponent}
 
 ];
 

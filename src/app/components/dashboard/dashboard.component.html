@@ -1,3 +1,304 @@
-<p>dashboard works!</p>
-
-
+<div class="dash_body">
+  <div style="display: flex; justify-content: space-between">
+    <h5>Hi,&nbsp;&nbsp; //name//</h5>
+    <button
+      style="
+        color: #0e85f3;
+        border: 1px solid lightgray;
+        border-radius: 1px !important;
+      "
+      type="button"
+      class="btn btn-outline-info"
+      data-mdb-ripple-color="dark"
+      (click)="onClickLogout()"
+    >
+      Logout
+    </button>
+  </div>
+  <hr />
+  <div class="right_body">
+    <div class="support">
+        <div class="card">
+          <div class="card-body" style="display: flex">
+            <div>
+              <img
+                style="width: 80px; height: 65px; margin-right: 1rem"
+                src="https://www.bsmatek.com/shop/wp-content/uploads/2019/12/145-1456027_customer-service-icon-customer-care-logo-png.png"
+              />
+            </div>
+            <div>
+              <h5 class="card-title" style="display: flex">
+                2 hours of
+                <h5 style="color: red">&nbsp;FREE&nbsp;</h5>
+                Rapid Setup Assistance!
+              </h5>
+              <small class="card-text">
+                Our product consultants will help you configure Zoho Expense based on
+                your requirements.
+              </small>
+            </div>
+            <div style="margin-left: auto; float: right">
+              <button
+                style="background-color: #0e85f3"
+                type="button"
+                class="btn btn-primary"
+                data-mdb-ripple-color="dark"
+              >
+                Contact Support
+              </button>
+            </div>
+          </div>
+    </div>
+    </div>
+    <br />
+    <div class="fileUpload">
+        <div class="card">
+          <div class="card-body">
+            <i
+              class="fas fa-upload fa-4x"
+              style="margin-left: 46%; margin-bottom: 1rem"
+            ></i>
+            <p style="text-align: center;">
+              Drag & Drop Receipts<br /><small>or click here to upload</small>
+            </p>
+            <div style="display: flex; justify-content: center;">
+              <div
+                style="margin-right: 5px"
+                class="btn-group btn-group-sm"
+                role="group"
+                aria-label="Button group with nested dropdown"
+              >
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  style="background-color: #0e85f3"
+                >
+                  Autoscan Receipts
+                </button>
+                <div class="btn-group btn-group-sm" role="group">
+                  <button
+                    style="
+                      background-color: #0e85f3;
+                      border-left: 1px solid lightgray;
+                    "
+                    id="btnGroupDrop1"
+                    type="button"
+                    class="btn btn-primary dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  ></button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary btn-sm newExpenseBtn">
+                + &nbsp; New Expense
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="reports">
+      <div style="display: flex; justify-content: space-between;">
+          <span>Recent Trips</span>
+          <button style="background-color: white; color: #0e85f3; box-shadow: none;" type="button" class="btn btn-primary btn-sm">+ &nbsp; New Report</button>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="recent-tab"
+                  data-toggle="tab"
+                  href="#recent"
+                  role="tab"
+                  aria-controls="recent"
+                  aria-selected="true"
+                  >Most Recent</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="unsubmittedReports-tab"
+                  data-toggle="tab"
+                  href="#unsubmittedReports"
+                  role="tab"
+                  aria-controls="unsubmittedReports"
+                  aria-selected="false"
+                  >Unsubmitted Reports</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="awaitApproval-tab"
+                  data-toggle="tab"
+                  href="#awaitApproval"
+                  role="tab"
+                  aria-controls="awaitApproval"
+                  aria-selected="false"
+                  >Awaiting Approval</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="awaitReimb-tab"
+                  data-toggle="tab"
+                  href="#awaitReimb"
+                  role="tab"
+                  aria-controls="awaitReimb"
+                  aria-selected="false"
+                  >Awaiting Reimbursement</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="recent"
+                role="tabpanel"
+                aria-labelledby="recent-tab"
+              >
+                recent
+              </div>
+              <div
+                class="tab-pane fade"
+                id="unsubmittedReports"
+                role="tabpanel"
+                aria-labelledby="unsubmittedReports-tab"
+              >
+                unsubmittedReports
+              </div>
+              <div
+                class="tab-pane fade"
+                id="awaitApproval"
+                role="tabpanel"
+                aria-labelledby="awaitApproval-tab"
+              >
+                awaitApproval
+              </div>
+              <div
+                class="tab-pane fade"
+                id="awaitReimb"
+                role="tabpanel"
+                aria-labelledby="awaitReimb-tab"
+              >
+                awaitReimb
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="recentTrips">
+      <div style="display: flex; justify-content: space-between;">
+          <span>Recent Trips</span>
+          <button style="background-color: white; color: #0e85f3; box-shadow: none;" type="button" class="btn btn-primary btn-sm">+ &nbsp;New Trip</button>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                data
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="footer">
+        <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted">    
+      <!-- Section: Links  -->
+      <section class="" style="font-family: Inter,Helvetica,Arial,sans-serif; color: black;">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <div style="font-size: small;" class="text-uppercase mb-4">
+                  OTHER ZOHO APPS
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/books/?utm_source=zohoexpense&utm_medium=footer" class="text-reset">Accounting Software</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/subscriptions/?utm_source=zohoexpense&utm_medium=footer" class="text-reset">Subscription Billing</a>
+              </div>
+              <div style="font-size: small;">
+                  <a href="https://zoho.com/invoice/?utm_source=zohoexpense&utm_medium=footer" class="text-reset">Invoice Software</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/inventory/?utm_source=zohoexpense&utm_medium=footer" class="text-reset">Inventory Management</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/people/?utm_source=zohoexpense&utm_medium=footer" class="text-reset">HR Software</a>
+              </div>
+              <div style="font-size: small;">
+                  <a href="https://zoho.com/?utm_source=zohoexpense&utm_medium=footer" class="text-reset">CRM & Other Apps</a>
+              </div>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <div style="font-size: small;" class="text-uppercase mb-4">
+                  HELP & SUPPORT
+              </div>
+              <div style="font-size: small;">
+                <a href="/dashboard" class="text-reset">Contact Support</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://help.zoho.com/portal/en/community/zoho-expense" class="text-reset">Request a Feature</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/expense/help/v2/" class="text-reset">Help Documentation</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/expense/webinars/" class="text-reset">Register for Webinar</a>
+              </div>
+              <div style="font-size: small;">
+                  <a href="https://zoho.com/expense/kb/" class="text-reset">FAQ</a>
+              </div>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <div style="font-size: small;" class="text-uppercase mb-4">
+                  QUICK LINKS
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/expense/expense-features/" class="text-reset">Features</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/expense/addons/" class="text-reset">Integrations</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/expense/mobile-apps/" class="text-reset">Mobile Apps</a>
+              </div>
+              <div style="font-size: small;">
+                <a href="https://zoho.com/expense/support/?from_newui=true" class="text-reset">Resources</a>
+              </div>
+              <div style="font-size: small;">
+                  <a href="https://zoho.com/expense/resources/" class="text-reset">Essential Business Guides</a>
+              </div>
+              <div style="font-size: small;">
+                  <a href="https://zoho.com/expense/whats-new.html" class="text-reset">What's New?</a>
+              </div>
+            </div>
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <hr>
+      <div class="text-center" style="color: black; font-size: x-small;">
+          <div>© 2021, Zoho Corporation Pvt. Ltd. All Rights Reserved.</div>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    </div>
+  </div>
+</div>

@@ -24,6 +24,8 @@ import { AddExpenseComponent } from './components/expenses/addExpense/addExpense
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
+import { TestingComponent } from './testing/testing.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 
 
@@ -50,8 +52,8 @@ import { AlladvanceComponent } from './components/advance/alladvance/alladvance.
     AllreportsComponent,
     AdvanceComponent,
     AlladvanceComponent,
-    
-    
+    TestingComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
