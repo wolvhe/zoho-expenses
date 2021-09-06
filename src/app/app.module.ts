@@ -19,6 +19,7 @@ import { BasicinfoComponent } from './components/mysettings/basicinfo/basicinfo.
 import { PreferencesComponent } from './components/mysettings/preferences/preferences.component';
 import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-docs.component';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+import { AllreportsComponent } from './components/allreports/allreports.component';
 
 
 
@@ -41,7 +42,8 @@ import { AddExpenseComponent } from './components/expenses/addExpense/addExpense
     AddExpenseComponent,
     BulkAddExpenseComponent,
     FromCardsComponent,
-    TabComponent
+    TabComponent,
+    AllreportsComponent
   ],
   imports: [
     BrowserModule,
