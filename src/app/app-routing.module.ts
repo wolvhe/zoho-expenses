@@ -14,9 +14,11 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
-  
+  {path: '', component: HomeComponent},
+  {path: 'home', component: HomepageComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'reports', component: ReportsComponent},
   {path: 'login', component: LoginComponent},

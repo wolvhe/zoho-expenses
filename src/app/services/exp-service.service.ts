@@ -14,8 +14,13 @@ export class ExpServiceService {
   createUser(data: any) {
     return this.http.post(baseUrl+'/api/signup', data,{responseType: 'text'});
   }
+
   verifyUser(data: any) {
     return this.http.post(baseUrl+'/api/login', data);
+  }
+  
+  getUser(data: any) {
+    return this.http.get(baseUrl+'/api/getuser', data)
   }
 
 }

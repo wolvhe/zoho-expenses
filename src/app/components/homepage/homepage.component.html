@@ -1,0 +1,120 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+            >Disabled</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex input-group w-auto">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Type query"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          data-mdb-ripple-color="dark"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- body -->
+<div style="display: flex;">
+<div class="sidenav">
+      <div class="homeMenu group"><i class="fas fa-home"></i>&nbsp;&nbsp; Home</div>
+      <div class="group">
+        <div class="menuoptions">
+            <i class="fas fa-suitcase"></i>&nbsp;&nbsp;&nbsp;&nbsp; Trips
+          <div class="showme" style="margin-left: auto; float: right">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="menuoptions">
+            <i class="fas fa-file-invoice-dollar"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Expenses
+          <div class="showme" style="margin-left: auto; float: right">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="menuoptions">
+            <i class="fas fa-folder"></i> &nbsp;&nbsp;&nbsp;&nbsp;Reports
+          <div class="showme" style="margin-left: auto; float: right">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="menuoptions">
+            <i class="fas fa-rupee-sign"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Advances
+          <div class="showme" style="margin-left: auto; float: right">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="menuoptions">
+            <i class="far fa-credit-card"></i>&nbsp;&nbsp;&nbsp;&nbsp; Cards
+          <div class="showme" style="margin-left: auto; float: right">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="menuoptions">
+            <i class="fas fa-check-circle"></i> &nbsp;&nbsp;&nbsp;&nbsp;Approvals
+          <div class="showme" style="margin-left: auto; float: right">
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="menuoptions">
+            <i class="fas fa-chart-pie"></i> &nbsp;&nbsp;&nbsp;&nbsp;Analytics
+            <div class="showme" style="margin-left: auto; float: right">
+                <i class="fas fa-plus-circle"></i>
+            </div>
+        </div>
+        <div class="menuoptions">
+            <i class="fas fa-cog"></i> &nbsp;&nbsp;&nbsp; My Settings
+            <div class="showme" style="margin-left: auto; float: right">
+                <i class="fas fa-plus-circle"></i>
+            </div>
+        </div>
+      </div>
+      <div class="group card">
+          <div class="card-body">
+            <i style="color: #fab683;" class="fas fa-laugh-beam"></i><small>&nbsp;&nbsp;&nbsp;&nbsp;Share Feedback</small><br>
+            <i style="color: #a0a5ec;" class="fas fa-chart-line"></i><small>&nbsp;&nbsp;&nbsp;&nbsp;Request a Demo</small>
+          </div>
+      </div>
+      <button class="switchBtn btn btn-outline-primary">Switch to Admin View</button>
+</div>
+<div class="rightbody">
+    <app-dashboard></app-dashboard>
+</div>
+</div>

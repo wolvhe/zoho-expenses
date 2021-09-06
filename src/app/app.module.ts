@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { TestingComponent } from './testing/testing.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 
 
@@ -45,7 +46,8 @@ import { TestingComponent } from './testing/testing.component';
     BulkAddExpenseComponent,
     FromCardsComponent,
     TabComponent,
-    TestingComponent
+    TestingComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
