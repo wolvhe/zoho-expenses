@@ -1,3 +1,4 @@
+import { TestingComponent } from './testing/testing.component';
 import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { FromCardsComponent } from './components/expenses/from-cards/from-cards.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'bulkaddexpense', component:BulkAddExpenseComponent},
   {path: 'fromcards', component: FromCardsComponent},
   {path: 'tab', component: TabComponent},
-  {path: 'expenses', component:ExpensesComponent}
+  {path: 'expenses', component: ExpensesComponent},
+  {path: 'testing', component: TestingComponent}
 
 ];
 

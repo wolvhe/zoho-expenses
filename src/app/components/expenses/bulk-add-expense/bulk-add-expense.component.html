@@ -94,7 +94,7 @@
 
   
  
-
+  <div *ngFor="let item of formArray; let i = index">
   <table class="table table-bordered">
 <tr class="tr-header " style="font-size: medium;">
 <th>File</th>
@@ -145,31 +145,28 @@
     <input type="text" name="" class="form-control">
 </td>
 
-<td><a href='javascript:void(0);'  class='remove'><span class='glyphicon glyphicon-trash'></span></a></td>
-</tr>
-</table>
-<div>
-    <button class="btn btn-link" href="javascript:void(0);" style="font-size:12px;" id="addMore" title="Add More Person">Add More Expenses</button>
-</div> 
-
-<div ngFor="let item of formArray; let i = index">
-  data
+<td>
   <button
   type="button"
-  class="btn deleteButton btn-outline-secondary btn-sm"
+  class="btn deleteButton btn-outline-danger btn-sm"
   style="margin-right: 1rem"
   (click)="filterArray(i)"
   >
-  <i class="fas fa-trash-alt"></i> Delete
+  <i class="fas fa-trash-alt"></i> 
   </button>
+  </td>
+</tr>
+</table>
 
-  <button
-          type="button"
-          class="btn saveButton btn-outline-secondary btn-sm"
-          (click)="formArray.push({})"
-        >
-          Add more Expenses
-  </button>
+
 </div>
-
+<div>
+  <button
+  type="button"
+  class="btn saveButton btn-outline-primary btn-sm"
+  (click)="formArray.push({})"
+>
+  Add more expenses
+</button> 
+</div> 
     

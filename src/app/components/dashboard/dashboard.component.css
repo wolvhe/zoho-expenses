@@ -1,0 +1,34 @@
+.dash_body {
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* background-color: lightgray; */
+}
+.card {
+  border: 1px solid lightgray;
+}
+.reports, .recentTrips, .fileUpload, .support {
+  width: 60%;
+}
+.fileUpload {
+
+  align-items: center;
+}
+.fileUpload > .card {
+  border: 1px solid black ;
+  border-style: dashed;
+}
+.btn {
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.newExpenseBtn {
+  background-color: #e1eff7;
+  color: #0e85f3;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.newExpenseBtn:hover {
+  background-color: #0e85f3;
+  color: #e1eff7;
+}

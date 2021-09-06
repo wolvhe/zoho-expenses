@@ -21,6 +21,7 @@ import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+import { TestingComponent } from './testing/testing.component';
 
 
 
@@ -43,7 +44,8 @@ import { AddExpenseComponent } from './components/expenses/addExpense/addExpense
     AddExpenseComponent,
     BulkAddExpenseComponent,
     FromCardsComponent,
-    TabComponent
+    TabComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,
