@@ -1,1 +1,25 @@
-<p>expenses works!</p>
+<div class="expenses">
+    <h3 style="padding-left: 26px; padding-top: 20px;">Expenses</h3>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link addExpenseTab active" data-toggle="tab" href="/addexpense" role="tab" aria-controls="home" aria-selected="true">Add Expense</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bulkAddExpenseTab" data-toggle="tab" href="/bulkaddexpense" role="tab" aria-controls="profile" aria-selected="false">Bulk Add Expense</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link Tab" data-toggle="tab" href="/fromcards" role="tab" aria-controls="contact" aria-selected="false">Add Card</a>
+        </li>
+        <div >
+            
+            <button type="button" class="btn btn-outline-dark"  style="float: right;" routerLink="/tab">X</button>
+        </div>
+    </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="addexpense" role="tabpanel"><app-addExpense></app-addExpense></div>
+        <div class="tab-pane fade" id="bulkaddexpense" role="tabpanel"><app-bulk-add-expense></app-bulk-add-expense></div>
+        <div class="tab-pane fade" id="fromcards" role="tabpanel"><app-from-cards></app-from-cards></div>
+      </div>
+    </div>
+    
+    

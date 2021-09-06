@@ -93,28 +93,7 @@
 
 
   
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  
-      <div class="collapse navbar-collapse" id="#">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link " data-toggle="tab" href="/addexpense" role="tab" aria-controls="home" aria-selected="true">Add Expenses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="/bulkaddexpense" role="tab" aria-controls="profile" aria-selected="false">Bulk Add Expenses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link travelTab" data-toggle="tab" href="/fromcards" role="tab" aria-controls="contact" aria-selected="false">Add Cards</a>
-          </li>
-      </ul>
-        </div>
-        <div >
-            
-          <button type="button" class="btn btn-outline-dark"  style="float: right;" routerLink="/tab">X</button>
-      </div>
-    </nav>
-  </div>
+ 
 
   <table class="table table-bordered">
 <tr class="tr-header " style="font-size: medium;">
@@ -171,23 +150,26 @@
 </table>
 <div>
     <button class="btn btn-link" href="javascript:void(0);" style="font-size:12px;" id="addMore" title="Add More Person">Add More Expenses</button>
+</div> 
+
+<div ngFor="let item of formArray; let i = index">
+  data
+  <button
+  type="button"
+  class="btn deleteButton btn-outline-secondary btn-sm"
+  style="margin-right: 1rem"
+  (click)="filterArray(i)"
+  >
+  <i class="fas fa-trash-alt"></i> Delete
+  </button>
+
+  <button
+          type="button"
+          class="btn saveButton btn-outline-secondary btn-sm"
+          (click)="formArray.push({})"
+        >
+          Add more Expenses
+  </button>
 </div>
-<link  rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">  
-    <link  rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">  
+
     
-<script>
-$(function(){
-    $('#addMore').on('click', function() {
-              var data = $("#tb tr:eq(1)").clone(true).appendTo("#tb");
-              data.find("input").val('');
-     });
-     $(document).on('click', '.remove', function() {
-         var trIndex = $(this).closest("tr").index();
-            if(trIndex>1) {
-             $(this).closest("tr").remove();
-           } else {
-             alert("Sorry!! Can't remove first row!");
-           }
-      });
-});      
-</script>

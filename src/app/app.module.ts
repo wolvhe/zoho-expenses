@@ -18,6 +18,8 @@ import { TripsFormComponent } from './components/trips/trips-form/trips-form.com
 import { BasicinfoComponent } from './components/mysettings/basicinfo/basicinfo.component';
 import { PreferencesComponent } from './components/mysettings/preferences/preferences.component';
 import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-docs.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 
 
@@ -45,7 +47,10 @@ import { AddExpenseComponent } from './components/expenses/addExpense/addExpense
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -33,7 +33,8 @@
     </div>
   </div>
   <div class="rightbody">
-    <p class="right_headText">Start your 30-days free trial</p>
+    <form #signin = "ngForm" (ngSubmit) = "onClickSubmit(signin.value)">
+      <p class="right_headText">Start your 30-days free trial</p>
     <div style="display: flex; flex-direction: column">
       <input
         type="text"
@@ -41,36 +42,48 @@
         tabindex="1"
         autofocus=""
         placeholder="Organization Name"
+        name="orgname"
+        ngModel
       />
       <input
         type="text"
         class="form-control"
         tabindex="1"
         placeholder="Email"
+        name="email"
+        ngModel
       />
       <input
-        type="text"
+        type="password"
         class="form-control"
         tabindex="1"
         placeholder="Password"
+        name="pwd"   
+        ngModel
       />
       <input
         type="text"
         class="form-control"
         tabindex="1"
         placeholder="India"
+        name="country"
+        ngModel
       />
       <input
         type="text"
         class="form-control"
         tabindex="1"
         placeholder="Andaman and Nicobar Islands"
+        name="state"
+        ngModel
       />
       <input
         type="text"
         class="form-control"
         tabindex="1"
         placeholder="Phone Number"
+        name="phone"
+        ngModel
       />
     </div>
     <div
@@ -100,5 +113,6 @@
         CREATE ACCOUNT
       </button>
     </div>
+    </form>
   </div>
 </div>

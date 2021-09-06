@@ -9,14 +9,16 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { MysettingsComponent } from './components/mysettings/mysettings.component';
 import { SignupComponent } from './components/signup/signup.component';
-
+import { ReportsComponent } from './components/reports/reports.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
+import { ExpensesComponent } from './components/expenses/expenses.component';
 
 const routes: Routes = [
   
   {path: 'dashboard', component: DashboardComponent},
+  {path: 'reports', component: ReportsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'trips', component: TripsComponent},
@@ -25,7 +27,8 @@ const routes: Routes = [
   {path: 'addexpense', component: AddExpenseComponent},
   {path: 'bulkaddexpense', component:BulkAddExpenseComponent},
   {path: 'fromcards', component: FromCardsComponent},
-  {path: 'tab', component: TabComponent}
+  {path: 'tab', component: TabComponent},
+  {path: 'expenses', component:ExpensesComponent}
 
 ];
 

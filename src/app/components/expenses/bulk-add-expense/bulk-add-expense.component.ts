@@ -11,5 +11,9 @@ export class BulkAddExpenseComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  filterArray(index: any) {
+    this.formArray = this.formArray.filter((d,i) => i!= index)
+  }
+  formArray = [{}]
 
 }
