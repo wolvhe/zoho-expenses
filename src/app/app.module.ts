@@ -1,7 +1,7 @@
 import { TabComponent } from './components/expenses/tab/tab.component';
 import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
 import { FromCardsComponent } from './components/expenses/from-cards/from-cards.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+import { AdvanceComponent } from './components/advance/advance.component';
 
 
 
@@ -43,14 +44,16 @@ import { AddExpenseComponent } from './components/expenses/addExpense/addExpense
     AddExpenseComponent,
     BulkAddExpenseComponent,
     FromCardsComponent,
-    TabComponent
+    TabComponent,
+    AdvanceComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

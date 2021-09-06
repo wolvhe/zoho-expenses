@@ -2,16 +2,15 @@
     <div class="topnav navbar navbar-expand-lg">
         <a href="pendingtrips">Pending Trips</a>
         <a href="alltrips">All Trips</a>
-        
 
-        
+
+
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">|
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown">
+                    <span>| &#11167;</span>
+                    <div class="dropdown-content">
+                        <li class="disabled">DEFAULT</li>
                         <a class="dropdown-item" href="#">All</a>
                         <a class="dropdown-item" href="#">Approved</a>
                         <a class="dropdown-item" href="#">Unsubmitted</a>
@@ -19,17 +18,16 @@
                         <a class="dropdown-item" href="#">Rejected</a>
                         <a class="dropdown-item" href="#">Closed</a>
                         <a class="dropdown-item" href="#">Cancelled</a>
-                        <div class="dropdown-divider"><hr></div>
+                        <a class="dropdown-divider"></a>
                         <a class="dropdown-item" href="#">+ New Custom view</a>
                     </div>
-                
-
+                </div>
             </ul>
         </div>
         <div class="button-right">
-            <button type="button" class="btn btn-primary" routerLink="/trips/new">New Trip +</button>
-            <button type="button" class="btn btn-light">...</button>
-            <button type="button" class="btn btn-outline-primary">?</button>
+            <a type="button" class="rounded btn-primary" style="color:white" routerLink="/trips/new">New Trip +</a>
+            <a type="button" class="btn  btn-light">...</a>
+            <a type="button" class="btn btn-outline-primary">?</a>
         </div>
     </div>
 </nav>
@@ -38,15 +36,17 @@
         src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-trips-2x-dac6afb799276749e97e61717bdd4aa7.png">
     <div class="align-items-center justify-content-centered">
         <p class="text-center font-weight-bold" style="font-size:x-large;">Initiate business travel<br></p>
-        <p class="text-center text-secondary"> Trips are requests for business travel that can be approved by the
+        <p class="text-center " style="color: gray;"> Trips are requests for business travel that can be approved by the
             <br>
             organization. Create and access trips here.
         </p>
-        <p class="text-center"><button type="button" class="btn btn-primary " routerLink="/trips/new">New Trip +</button></p>
+        <p class="text-center"><button type="button" class="btn btn-primary " routerLink="/trips/new">New Trip
+                +</button></p>
     </div>
 </div>
 <div class="footer bg-light">
     <p class="text-warning text-center ">HELP</p>
     <p class="text-center" style="font-size:large;">Life cycle of a Trip</p>
-    <img class="mx-auto d-block img-fluid" style="width: 80rem;" src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/trips-notripoption-flow-2x-3f53c1e82307ef6c77250ce13b78f260.png">
+    <img class="mx-auto d-block img-fluid" style="width: 80rem;"
+        src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/trips-notripoption-flow-2x-3f53c1e82307ef6c77250ce13b78f260.png">
 </div>
