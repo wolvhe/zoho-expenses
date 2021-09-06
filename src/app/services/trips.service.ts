@@ -10,6 +10,6 @@ export class TripsService {
 
   constructor(private http: HttpClient) { }
   createtrip(data: any) {
-    return this.http.post(baseUrl+'/trip', data,{responseType: 'text'});
+    return this.http.post(baseUrl+'/api/trip', data,{responseType: 'text'});
   }
 }
