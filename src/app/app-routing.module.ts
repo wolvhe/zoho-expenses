@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
 import { AllreportsComponent } from './components/allreports/allreports.component';
 
+import { AdvanceComponent } from './components/advance/advance.component';
 const routes: Routes = [
   
   {path: 'dashboard', component: DashboardComponent},
@@ -28,7 +29,9 @@ const routes: Routes = [
   {path: 'bulkaddexpense', component:BulkAddExpenseComponent},
   {path: 'fromcards', component: FromCardsComponent},
   {path: 'tab', component: TabComponent},
-  {path: 'allreports', component: AllreportsComponent}
+  {path: 'allreports', component: AllreportsComponent},
+  {path: 'advances', component: AdvanceComponent}
+  
 
 ];
 
