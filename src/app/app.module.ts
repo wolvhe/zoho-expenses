@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { TestingComponent } from './testing/testing.component';
-
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -51,7 +51,8 @@ import { TestingComponent } from './testing/testing.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxDropzoneModule
 
   ],
   providers: [],

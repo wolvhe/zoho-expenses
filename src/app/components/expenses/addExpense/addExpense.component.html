@@ -1,4 +1,5 @@
 <div class = "container">
+  <div class= "row">
   
   </div>
 
@@ -8,15 +9,16 @@
     
     <div class = "img" >
       <div class="App" >
-        <div class="container" style="margin-left: 35%;">
-          <input type="file"  id="input" /> <br />
-          <label htmlFor="input">
-            <div class="label" >
-              <div class="h1">
+        <div>
+          <div class="custom-dropzone" style= "margin-right:70%; height: 650px; width: 650px;" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+            <ngx-dropzone-label>
+              <div>
+                <h2 style="font-size: small;">Attach receipts from computer or cloud</h2>
               </div>
-
-            </div>
-          </label>
+            </ngx-dropzone-label>
+            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+            </ngx-dropzone-image-preview>
+          </div>
         </div>
 </div>
 
@@ -60,7 +62,7 @@
         
         
 
-         <div class = "form-group">
+        <div class = "form-group">
           <label class="text-danger">Category</label>
           <select class = "form-control">
             <option  href="#">Select</option>
@@ -77,8 +79,7 @@
               <option href="#">Telephone Expense</option>
           </select>
         </div>
-        </div> 
-
+        </div>
       
       <div class = "col">
         <div class="form-group row">
@@ -145,7 +146,6 @@
   </footer>
 
 </div>
-
 
 
 

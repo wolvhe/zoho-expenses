@@ -11,14 +11,17 @@ export class TestingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  filterArray(index: any) {
-    this.formArray = this.formArray.filter((d,i) => i!= index)
+  files: File[] = [];
 
-    
-  }
-  
-  formArray = [{}]
+	onSelect(event: any) {
+		console.log(event);
+		this.files.push(...event.addedFiles);
+	}
+
+	onRemove(event: File) {
+		console.log(event);
+		this.files.splice(this.files.indexOf(event), 1);
+	}
 }
 
 

@@ -105,12 +105,16 @@
 <th>REIMBURSABLE</th>
 <th>Description</th>
 <tr>
-    <th><div class="image-upload" style="display: none; width: 80%;cursor: pointer;">
-        <label for="file-input">
-            <img src="https://pbs.twimg.com/profile_images/758084549821730820/_HYHtD8F.jpg"/>
-        </label>
-    
-        <input id="file-input" type="file"/>
+    <th> 
+      <div class="custom-dropzone" style= "height: 10px; width: 10px;" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+        <ngx-dropzone-label>
+          <div>
+            <h2 style="font-size: small;">+</h2>
+          </div>
+        </ngx-dropzone-label>
+      <ngx-dropzone-image-preview  ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-image-preview>
     </div>
 </th>
 <td>   
