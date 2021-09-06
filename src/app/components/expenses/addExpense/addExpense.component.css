@@ -1,0 +1,13 @@
+.App{
+    min-height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline:gray 1px solid;
+    outline-offset: -10px;
+}
+
+

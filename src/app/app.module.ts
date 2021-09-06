@@ -1,6 +1,8 @@
+import { TabComponent } from './components/expenses/tab/tab.component';
+import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
+import { FromCardsComponent } from './components/expenses/from-cards/from-cards.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -18,6 +20,9 @@ import { PreferencesComponent } from './components/mysettings/preferences/prefer
 import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-docs.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+
+
 
 @NgModule({
   declarations: [
@@ -34,7 +39,11 @@ import { HttpClientModule } from '@angular/common/http';
     TripsFormComponent,
     BasicinfoComponent,
     PreferencesComponent,
-    TravelDocsComponent
+    TravelDocsComponent,
+    AddExpenseComponent,
+    BulkAddExpenseComponent,
+    FromCardsComponent,
+    TabComponent
   ],
   imports: [
     BrowserModule,
