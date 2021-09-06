@@ -9,23 +9,28 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { MysettingsComponent } from './components/mysettings/mysettings.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ReportsComponent } from './components/reports/reports.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
-
+import { AdvanceComponent } from './components/advance/advance.component';
+import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  
   {path: 'dashboard', component: DashboardComponent},
+  {path: 'reports', component: ReportsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'trips', component: TripsComponent},
   {path: 'trips/new', component: TripsFormComponent},
   {path: 'mysettings', component: MysettingsComponent},
-  
   {path: 'addexpense', component: AddExpenseComponent},
   {path: 'bulkaddexpense', component:BulkAddExpenseComponent},
   {path: 'fromcards', component: FromCardsComponent},
-  {path: 'tab', component: TabComponent}
+  {path: 'tab', component: TabComponent},
+  {path: 'advances', component: AdvanceComponent},
+  {path: 'advances/all', component: AlladvanceComponent}
+  
 
 ];
 

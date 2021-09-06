@@ -1,5 +1,31 @@
+<!-- <div class= "row">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="collapse navbar-collapse" id="#">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/addexpense">Add Expense</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bulkaddexpense">Bulk Add Expense</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/fromcards">Add Cards</a>
+        </li>
+  
+      </ul>
+      </div>
+  </nav>
+
+</div>
+
+
+
 <div class="container">
 
+
+
+  
     <div class="row">
       <div class="col-md-12">
         <br>
@@ -63,4 +89,81 @@
         </table>
       </div>
     </div>
+  </div> -->
+
+
+  <link  rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<table  class="table table-hover small-text" id="tb">
+<tr class="tr-header " style="font-size: medium;">
+<th>File</th>
+<th style="color: firebrick; font-size: medium;">Expense Date*</th>
+<th>Merchant</th>
+<th style="color:firebrick; font-size: medium;">Category*</th>
+<th>Amount</th>
+<th>REIMBURSABLE</th>
+<th>Description</th>
+<tr>
+    <th><div class="image-upload" style="display: none; width: 80%;cursor: pointer;">
+        <label for="file-input">
+            <img src="https://pbs.twimg.com/profile_images/758084549821730820/_HYHtD8F.jpg"/>
+        </label>
+    
+        <input id="file-input" type="file"/>
+    </div>
+</th>
+<td>   
+    <input type="date" class="form-control" placeholder="eg: 31/01/2021">
+</td>
+<td>
+    <input type="text" name="" class="form-control">
+</td>
+<td><select name="" class="form-control">
+  <option value="" selected>Select </option>
+  <option value="#">Add Travel Expenses</option>
+  <option value="#">Automobile Expense</option>
+  <option value="#">Fuel/Mileage Expense</option>
+  <option value="#">IT and Internet Expense</option>
+  <option value="#">Job Costing</option>
+  <option value="#">Meals and Entertainment</option>
+  <option value="#">Office and Supplies</option>
+  <option value="#">Other Expenses</option>
+  <option value="#">Parking</option>
+  <option value="#">Subcontractor</option>
+  <option value="#">Telephone Expense</option>
+</select></td>
+<td>
+    <input type="text" name="" class="form-control">
+</td>
+<td>
+  <div>
+    <input class="checkbox-inline" type="checkbox" style="padding-top: 20%; padding-left: 20%; text-align: center;" id="checkboxNoLabel" value="" aria-label="...">
   </div>
+</td>
+<td>
+    <input type="text" name="" class="form-control">
+</td>
+
+<td><a href='javascript:void(0);'  class='remove'><span class='glyphicon glyphicon-trash'></span></a></td>
+</tr>
+</table>
+<div>
+    <button class="btn btn-link" href="javascript:void(0);" style="font-size:12px;" id="addMore" title="Add More Person">Add More Expenses</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+<script>
+$(function(){
+    $('#addMore').on('click', function() {
+              var data = $("#tb tr:eq(1)").clone(true).appendTo("#tb");
+              data.find("input").val('');
+     });
+     $(document).on('click', '.remove', function() {
+         var trIndex = $(this).closest("tr").index();
+            if(trIndex>1) {
+             $(this).closest("tr").remove();
+           } else {
+             alert("Sorry!! Can't remove first row!");
+           }
+      });
+});      
+</script>
