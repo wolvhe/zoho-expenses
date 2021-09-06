@@ -21,6 +21,7 @@ import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 
@@ -46,6 +47,7 @@ import { AlladvanceComponent } from './components/advance/alladvance/alladvance.
     BulkAddExpenseComponent,
     FromCardsComponent,
     TabComponent,
+    AllreportsComponent,
     AdvanceComponent,
     AlladvanceComponent,
     

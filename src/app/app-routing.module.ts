@@ -13,6 +13,8 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
+import { AllreportsComponent } from './components/reports/allreports/allreports.component';
+
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 const routes: Routes = [
@@ -29,7 +31,8 @@ const routes: Routes = [
   {path: 'fromcards', component: FromCardsComponent},
   {path: 'tab', component: TabComponent},
   {path: 'advances', component: AdvanceComponent},
-  {path: 'advances/all', component: AlladvanceComponent}
+  {path: 'advances/all', component: AlladvanceComponent},
+  {path: 'reports/all', component: AllreportsComponent},
   
 
 ];

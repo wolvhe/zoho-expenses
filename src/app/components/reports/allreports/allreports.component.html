@@ -1,0 +1,53 @@
+<div>
+    <div *ngIf="!isEmpty">
+        <table class="table">
+
+            <!-- table heading -->
+            <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>REPORT#</th>
+                    <th>REPORT NAME</th>
+                    <th>STATUS</th>
+                    <th>APPROVER</th>
+                    <th>TOTAL</th>
+                    <th>TO BE REIMBURSED</th>
+                    <th>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </th>
+                </tr>
+            </thead>
+
+            <!-- table body  -->
+            <tbody>
+                <tr *ngFor="let report of reports">
+                    <td>
+                        <input type="checkbox" name="" id="">
+                    </td>
+                    <td>{{ report.id }}</td>
+                    <td class="reportName">{{ report.name }} <br> <span class="duration">{{report.durationFrom}} - {{report.durationTo}}</span></td>
+                    <td>
+                        <span class="status">
+                            {{report.status}}
+                        </span>
+                    </td>
+                    <td>{{report.approver}}</td>
+                    <td>Rs. {{report.total}}</td>
+                    <td>Rs. {{report.toBeReimbursed}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="isEmpty">
+        <p>isEmpty</p>
+        <div class="text-center">
+            <img src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-expense-reports-2x-549eedc6516febc152aa1291bc534971.png" height="148" width="210" alt="">
+            <h3>Report business expenses</h3>
+            <p>Expense claims need to be added to a report before submitting <br>for approval and reimbursement. Create and access reports here</p>
+            <button class="btn btn-primary">+ New Report</button>
+        </div>
+    </div>
+</div>
