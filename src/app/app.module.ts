@@ -28,6 +28,7 @@ import { TestingComponent } from './testing/testing.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
+import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
     AdvanceComponent,
     AlladvanceComponent,
     TestingComponent,
-    HomepageComponent
+    HomepageComponent,
+    AlltripsComponent
   ],
   imports: [
     BrowserModule,

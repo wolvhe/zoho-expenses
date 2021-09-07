@@ -18,9 +18,9 @@ import { AllreportsComponent } from './components/reports/allreports/allreports.
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import { CardsComponent } from './components/cards/cards.component'
-
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
+import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomepageComponent},
@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'advances', component: AdvanceComponent},
   {path: 'advances/all', component: AlladvanceComponent},
   {path: 'reports/all', component: AllreportsComponent},
-  
+  {path:'trips/all',component:AlltripsComponent},
   {path: 'test', component: TestingComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'testing', component: TestingComponent},

@@ -17,7 +17,7 @@ export class TripsFormComponent implements OnInit {
     const Tripname=data.Tripname
     const Business_Purpose=data.Business_Purpose
     // flight
-    const f_optradio=data.f_optradio
+    const f_type=data.f_type
     const f_Departure_From=data.f_Departure_From
     const f_Arrive_At=data.f_Arrive_At
     const f_Departure_date=data.f_Departure_date
@@ -25,14 +25,15 @@ export class TripsFormComponent implements OnInit {
     const f_Description=data.f_Description
 
     const flight1={
-      f_optradio,
+      f_type,
       f_Departure_From,
       f_Arrive_At,
       f_Departure_date,
       f_Arrival_date,
       f_Description
-
     }
+    const flight2=[]
+    flight2.push(flight1)
     // Hotel
     const h_location=data.h_location
     const h_check_in=data.h_check_in
@@ -45,6 +46,8 @@ export class TripsFormComponent implements OnInit {
       h_check_out,
       h_description
     }
+    const hotel2=[]
+    hotel2.push(hotel1)
     // car
     const c_pick_up_date=data.c_pick_up_date
     const c_pick_up_time=data.c_pick_up_time
@@ -65,6 +68,9 @@ export class TripsFormComponent implements OnInit {
       c_type,
       c_description
     }
+
+    const car2=[]
+    car2.push(car1)
     //bus
 
     const b_Departure_from=data.b_Departure_from
@@ -78,6 +84,9 @@ export class TripsFormComponent implements OnInit {
       b_Departure_date,
       b_description
     }
+
+    const bus2=[]
+    bus2.push(bus1)
     // train
     const t_Departure_from=data.t_Departure_from
     const t_Arrive_At=data.t_Arrive_At
@@ -90,18 +99,22 @@ export class TripsFormComponent implements OnInit {
       t_Departure_date,
       t_description
     }
+
+    const train2=[]
+    train2.push(train1)
+    
     const data1={
       Travel_type,
       Tripname,
       Business_Purpose,
-      flight1,
-      hotel1,
-      car1,
-      bus1,
-      train1
+      flight2,
+      hotel2,
+      car2,
+      bus2,
+      train2
     }
     console.log(data1)
-    this.trip.createtrip(data)
+    this.trip.createtrip(data1)
     .subscribe(
       (response: any) => {
         alert(response);
