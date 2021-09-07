@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { ExpensesComponent } from './components/expenses/expenses.component';
 
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
@@ -37,7 +38,9 @@ const routes: Routes = [
   {path: 'advances/all', component: AlladvanceComponent},
   {path: 'reports/all', component: AllreportsComponent},
   
-  {path: 'test', component: TestingComponent}
+  {path: 'test', component: TestingComponent},
+  {path: 'expenses', component: ExpensesComponent},
+  {path: 'testing', component: TestingComponent}
 
 ];
 

@@ -1,0 +1,46 @@
+
+.body {
+    margin-top: 12%;
+    margin-bottom: 12%;
+}
+.footer{
+    padding-top: 2%;
+}
+.button-right{
+    float: right;
+    margin-right: -2%;
+    
+}
+.App{
+    padding-right: 50px;
+    height: 500px;
+    width: 700px;
+    margin-left: 340px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline:gray 1px solid;
+    outline-offset: -10px;
+}
+
+
+.mysettings {
+    background-color: #F7F7FB;
+}
+.nav-tabs .nav-item .nav-link {
+    background-color: #F7F7FB;
+    color: #4C8DFA;
+}
+.nav-tabs > li > a.basicInfoTab.active {
+    color: black;
+}
+.nav-tabs > li > a.prefTab.active {
+    color: black;
+}
+.nav-tabs > li > a.travelTab.active {
+    color: black;
+}
+.tab-content {
+    background: white;
+}

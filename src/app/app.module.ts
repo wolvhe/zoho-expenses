@@ -27,6 +27,7 @@ import { AlladvanceComponent } from './components/advance/alladvance/alladvance.
 import { TestingComponent } from './testing/testing.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -60,6 +61,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxDropzoneModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
