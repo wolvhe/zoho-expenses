@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TripsService } from 'src/app/services/trips.service';
+import { ExpServiceService } from 'src/app/services/exp-service.service';
 @Component({
   selector: 'app-trips-form',
   templateUrl: './trips-form.component.html',
   styleUrls: ['./trips-form.component.css']
 })
 export class TripsFormComponent implements OnInit {
+  org: string | undefined;
+  obj: any;
   
-  constructor(private trip:TripsService,private router: Router) { }
+  constructor(private trip:TripsService,private router: Router,private serv: ExpServiceService) { }
   
   // f_details{f_time,f_depart}
   onClickSubmit(data:any){
     console.log(data);
-    const Travel_type=data.Travel_type
-    const Tripname=data.Tripname
-    const Business_Purpose=data.Business_Purpose
+    const travel_type=data.Travel_type
+    const trip_name=data.Tripname
+    const business_purpose=data.Business_Purpose
     // flight
     const f_type=data.f_type
     const f_Departure_From=data.f_Departure_From
@@ -103,10 +106,15 @@ export class TripsFormComponent implements OnInit {
     const train2=[]
     train2.push(train1)
     
+    
+    // email
+    const email=this.obj.email
+
     const data1={
-      Travel_type,
-      Tripname,
-      Business_Purpose,
+      email,
+      travel_type,
+      trip_name,
+      business_purpose,
       flight2,
       hotel2,
       car2,
@@ -125,8 +133,25 @@ export class TripsFormComponent implements OnInit {
       }
     );
   }
-
-  ngOnInit(): void {
+  check(obj: any) {
+    // alert("please");
+    this.serv.getUser(obj).subscribe((res) => {
+      this.org = res;
+    });
   }
+
+  
+  ngOnInit(): void {
+    
+    const store = localStorage.getItem('userInfo');
+    if (store) {
+      this.obj = JSON.parse(store);
+      console.log(this.obj.email);
+      // this.serv.getUser(this.obj.email);
+      this.check(this.obj);
+
+    }
+  }
+  
 
 }

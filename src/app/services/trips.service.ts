@@ -12,6 +12,9 @@ export class TripsService {
   createtrip(data: any) {
     return this.http.post(baseUrl+'/api/trip', data,{responseType: 'text'});
   }
+  getalltrip(data:any){
+    return this.http.get(baseUrl+'/api/gettrip/'+data,{responseType: 'text'});
+  }
   createadvance(data:any){
     return this.http.post(baseUrl+'/api/advance',data,{responseType:'text'});
   }

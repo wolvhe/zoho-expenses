@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { map } from 'rxjs/operators';
 const baseUrl = 'http://localhost:3000';
 
 @Injectable({
@@ -19,8 +19,13 @@ export class ExpServiceService {
     return this.http.post(baseUrl+'/api/login', data);
   }
   
-  getUser(data: any) {
-    return this.http.get(baseUrl+'/api/getuser', data)
+  getUser(data:any) {
+    // console.log(data);
+    
+    return this.http.get(baseUrl+'/api/getname/'+data.email,{responseType: 'text'});
+    // .pipe(map(() => {})).subscribe(() => {
+    //   console.log("hi");
+    // });
   }
 
 }
