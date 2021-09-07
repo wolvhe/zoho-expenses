@@ -23,8 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { AllreportsComponent } from './components/allreports/allreports.component';
 import { AdvanceComponent } from './components/advance/advance.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { AdvanceComponent } from './components/advance/advance.component';
     TabComponent,
     AllreportsComponent,
     AdvanceComponent,
+    ImportcsvComponent,
     
     
   ],
@@ -56,6 +59,9 @@ import { AdvanceComponent } from './components/advance/advance.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatStepperModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
