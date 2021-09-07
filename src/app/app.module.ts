@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { TestingComponent } from './testing/testing.component';
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
+import { HomepageComponent } from './components/homepage/homepage.component';
+
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
     BulkAddExpenseComponent,
     FromCardsComponent,
     TabComponent,
-    TestingComponent
+    TestingComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
