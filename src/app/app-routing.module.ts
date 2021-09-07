@@ -13,6 +13,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
+import { CardsComponent } from './components/cards/cards.component'
 
 const routes: Routes = [
   
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'addexpense', component: AddExpenseComponent},
   {path: 'bulkaddexpense', component:BulkAddExpenseComponent},
   {path: 'fromcards', component: FromCardsComponent},
-  {path: 'tab', component: TabComponent}
+  {path: 'tab', component: TabComponent},
+  {path:'cards',component:CardsComponent}
 
 ];
 
