@@ -53,7 +53,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
 
   ],
   providers: [],
