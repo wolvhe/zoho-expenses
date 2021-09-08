@@ -25,9 +25,9 @@ import { AllreportsComponent } from './components/reports/allreports/allreports.
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 import { TestingComponent } from './testing/testing.component';
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
-import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
