@@ -1,3 +1,4 @@
+import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
 import { TestingComponent } from './testing/testing.component';
 import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
@@ -37,7 +38,7 @@ const routes: Routes = [
   {path: 'advances', component: AdvanceComponent},
   {path: 'advances/all', component: AlladvanceComponent},
   {path: 'reports/all', component: AllreportsComponent},
-  
+  {path: 'approval', component: ApprovalPageComponent},
   {path: 'test', component: TestingComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'testing', component: TestingComponent},

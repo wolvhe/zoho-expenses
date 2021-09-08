@@ -27,8 +27,10 @@ import { AlladvanceComponent } from './components/advance/alladvance/alladvance.
 import { TestingComponent } from './testing/testing.component';
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { HomepageComponent } from './components/homepage/homepage.component';
-
-
+import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
+import { ApprovalTripsComponent } from './components/approval-page/approval-trips/approval-trips.component';
+import { ApprovalReportComponent } from './components/approval-page/approval-report/approval-report.component';
+import { PendingApprovalPageComponent } from './components/approval-page/pending-approval-page/pending-approval-page.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,11 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     AdvanceComponent,
     AlladvanceComponent,
     TestingComponent,
-    HomepageComponent
+    HomepageComponent,
+    ApprovalPageComponent,
+    ApprovalReportComponent,
+    ApprovalTripsComponent,
+    PendingApprovalPageComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +68,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     FormsModule,
     HttpClientModule,
     NgxDropzoneModule
+    
 
   ],
   providers: [],
