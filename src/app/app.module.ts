@@ -53,6 +53,12 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
     ImportcsvComponent,
     
     
+    TabComponent
+    
+    
+    
+ 
+    
   ],
   imports: [
     BrowserModule,

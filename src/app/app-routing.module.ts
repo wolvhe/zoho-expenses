@@ -14,6 +14,7 @@ import { TripsComponent } from './components/trips/trips.component';
 // import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
 import { AllreportsComponent } from './components/allreports/allreports.component';
+import { CardsComponent } from './components/cards/cards.component'
 
 import { AdvanceComponent } from './components/advance/advance.component';
 import { ImportcsvComponent } from './components/importcsv/importcsv.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'allreports', component: AllreportsComponent},
   {path: 'advances', component: AdvanceComponent},
   {path: 'import', component: ImportcsvComponent}
+  {path:'cards',component:CardsComponent}
 
 ];
 
