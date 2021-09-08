@@ -4,13 +4,14 @@
         <th class="bg-dark" style="color: white;" *ngFor="let head of headElements" scope="col">{{head}} </th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let el of elements">
-        <th scope="row">{{el.date}}</th>
-        <td>{{el.trip}}</td>
-        <td>{{el.reference}}</td>
-        <td>{{el.amount}}</td>
-        <td>{{el.r_name}}</td>
+    <tbody *ngFor="let data of datas" >
+      <tr>
+        
+        <td>{{data.date}}</td>
+        <td>{{data.apply_to_trip}}</td>
+        <td>{{data.references}}</td>
+        <td>{{data.amount}}</td>
+        <td>{{data.notes}}</td>
       </tr>
     </tbody>
   </table>

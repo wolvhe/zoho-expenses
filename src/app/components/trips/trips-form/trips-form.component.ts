@@ -12,7 +12,6 @@ export class TripsFormComponent implements OnInit {
   obj: any;
   
   constructor(private trip:TripsService,private router: Router,private serv: ExpServiceService) { }
-  
   // f_details{f_time,f_depart}
   onClickSubmit(data:any){
     console.log(data);
