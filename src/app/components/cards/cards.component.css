@@ -1,0 +1,15 @@
+.navbar{
+    width: 100%;
+    margin-bottom: -1%;
+    margin-top: 0%;
+    background-color:white;
+}
+  .topnav a {
+    color: black;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  

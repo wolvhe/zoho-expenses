@@ -18,16 +18,44 @@
             Add another work experience
     </button>
 </div> -->
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div role="separator" class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+
+
+
+<!-- <div class="content" ng-drop-image ng-model="image.src">
+  <img ng-src="image.src" />
+  <button class = "btn btn-secondary">Hello</button>
 </div>
+
+<script>
+  angular.module('app', ['ngDropImage']);
+</script>  -->
+
+<!-- <input type="file" (change)="onFileChanged($event)">
+<input
+  style="display: none"
+  type="file" (change)="onFileChanged($event)"
+  #fileInput>
+<button (click)="fileInput.click()">Select File</button>
+
+<input
+  style="display: none"
+  type="file" (change)="onFileChanged($event)"
+  #fileInput>
+<button (click)="fileInput.click()">Select File</button>
+<button (click)="onUpload()">Upload!</button> -->
+
+
+
+<p>A custom dropzone.</p>
+
+<div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+	<ngx-dropzone-label>
+		<div>
+			<h2>My custom dropzone</h2>
+		</div>
+	</ngx-dropzone-label>
+	<ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+		<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+	</ngx-dropzone-image-preview>
+</div>
+
