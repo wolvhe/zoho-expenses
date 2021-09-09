@@ -124,8 +124,9 @@ body {
 }
 .search-box {
 	position: relative;
-    margin-left: 2rem;
-    margin-right: 24rem;
+    margin-left: 3rem;
+    /* margin-right: 4rem; */
+    width: 14rem;
 }	
 .search-box input {
 	padding-right: 35px;

@@ -8,8 +8,11 @@ import { TripsService } from 'src/app/services/trips.service';
 })
 export class TripsFormComponent implements OnInit {
   
-  constructor(private trip:TripsService,private router: Router) { }
   
+  constructor(private trip:TripsService,private router: Router) { 
+    var ttype=true;
+  }
+ 
   // f_details{f_time,f_depart}
   onClickSubmit(data:any){
     console.log(data);
@@ -100,6 +103,7 @@ export class TripsFormComponent implements OnInit {
       bus1,
       train1
     }
+    
     console.log(data1)
     this.trip.createtrip(data)
     .subscribe(
@@ -113,7 +117,13 @@ export class TripsFormComponent implements OnInit {
     );
   }
 
+
+  
+  
+  
   ngOnInit(): void {
+
   }
 
+  
 }
