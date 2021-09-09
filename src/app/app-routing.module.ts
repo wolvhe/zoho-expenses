@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: 'tab', component: TabComponent},
   {path: 'allreports', component: AllreportsComponent},
   {path: 'advances', component: AdvanceComponent},
-  {path: 'import', component: ImportcsvComponent}
+  {path: 'import', component: ImportcsvComponent},
   {path:'cards',component:CardsComponent}
 
 ];

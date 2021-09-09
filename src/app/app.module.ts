@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImportcsvComponent } from './components/importcsv/importcsv.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -51,13 +52,7 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
     AllreportsComponent,
     AdvanceComponent,
     ImportcsvComponent,
-    
-    
     TabComponent
-    
-    
-    
- 
     
   ],
   imports: [
@@ -67,7 +62,8 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
