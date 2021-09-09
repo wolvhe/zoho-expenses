@@ -21,13 +21,19 @@ import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
-import { AllreportsComponent } from './components/allreports/allreports.component';
+import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { AdvanceComponent } from './components/advance/advance.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
+import { TestingComponent } from './testing/testing.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
+
 
 @NgModule({
   declarations: [
@@ -52,8 +58,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     AllreportsComponent,
     AdvanceComponent,
     ImportcsvComponent,
-    TabComponent
+    TabComponent,
     
+    AlladvanceComponent,
+    TestingComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +72,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatStepperModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxDropzoneModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

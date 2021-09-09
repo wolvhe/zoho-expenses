@@ -92,8 +92,10 @@
   </div> -->
 
 
-  <link  rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<table  class="table table-hover small-text" id="tb">
+  
+ 
+  <div *ngFor="let item of formArray; let i = index">
+  <table class="table table-bordered">
 <tr class="tr-header " style="font-size: medium;">
 <th>File</th>
 <th style="color: firebrick; font-size: medium;">Expense Date*</th>
@@ -103,12 +105,16 @@
 <th>REIMBURSABLE</th>
 <th>Description</th>
 <tr>
-    <th><div class="image-upload" style="display: none; width: 80%;cursor: pointer;">
-        <label for="file-input">
-            <img src="https://pbs.twimg.com/profile_images/758084549821730820/_HYHtD8F.jpg"/>
-        </label>
-    
-        <input id="file-input" type="file"/>
+    <th> 
+      <div class="custom-dropzone" style= "height: 10px; width: 10px;" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+        <ngx-dropzone-label>
+          <div>
+            <h2 style="font-size: small;">+</h2>
+          </div>
+        </ngx-dropzone-label>
+      <ngx-dropzone-image-preview  ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-image-preview>
     </div>
 </th>
 <td>   
@@ -135,35 +141,36 @@
     <input type="text" name="" class="form-control">
 </td>
 <td>
-  <div>
-    <input class="checkbox-inline" type="checkbox" style="padding-top: 20%; padding-left: 20%; text-align: center;" id="checkboxNoLabel" value="" aria-label="...">
+  <div style="text-align: center;">
+    <input class="checkbox-inline" type="checkbox" style="font-size: 30px;" id="checkboxNoLabel" value="" aria-label="...">
   </div>
 </td>
 <td>
     <input type="text" name="" class="form-control">
 </td>
 
-<td><a href='javascript:void(0);'  class='remove'><span class='glyphicon glyphicon-trash'></span></a></td>
+<td>
+  <button
+  type="button"
+  class="btn deleteButton btn-outline-danger btn-sm"
+  style="margin-right: 1rem"
+  (click)="filterArray(i)"
+  >
+  <i class="fas fa-trash-alt"></i> 
+  </button>
+  </td>
 </tr>
 </table>
-<div>
-    <button class="btn btn-link" href="javascript:void(0);" style="font-size:12px;" id="addMore" title="Add More Person">Add More Expenses</button>
+
+
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
-<script>
-$(function(){
-    $('#addMore').on('click', function() {
-              var data = $("#tb tr:eq(1)").clone(true).appendTo("#tb");
-              data.find("input").val('');
-     });
-     $(document).on('click', '.remove', function() {
-         var trIndex = $(this).closest("tr").index();
-            if(trIndex>1) {
-             $(this).closest("tr").remove();
-           } else {
-             alert("Sorry!! Can't remove first row!");
-           }
-      });
-});      
-</script>
+<div>
+  <button
+  type="button"
+  class="btn saveButton btn-outline-primary btn-sm"
+  (click)="formArray.push({})"
+>
+  Add more expenses
+</button> 
+</div> 
+    

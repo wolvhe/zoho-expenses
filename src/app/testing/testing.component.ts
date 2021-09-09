@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-bulk-add-expense',
-  templateUrl: './bulk-add-expense.component.html',
-  styleUrls: ['./bulk-add-expense.component.css']
+  selector: 'app-testing',
+  templateUrl: './testing.component.html',
+  styleUrls: ['./testing.component.css']
 })
-export class BulkAddExpenseComponent implements OnInit {
+export class TestingComponent implements OnInit {
 
   constructor() { }
 
@@ -22,10 +22,8 @@ export class BulkAddExpenseComponent implements OnInit {
 		console.log(event);
 		this.files.splice(this.files.indexOf(event), 1);
 	}
-
-  filterArray(index: any) {
-    this.formArray = this.formArray.filter((d,i) => i!= index)
-  }
-  formArray = [{}]
-
 }
+
+
+
+

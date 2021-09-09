@@ -6,8 +6,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    outline:gray 1px solid;
-    outline-offset: -10px;
+   
 }
 
+.nav-tabs .nav-item .nav-link {
+    background-color: #F7F7FB;
+    color: #4C8DFA;
+}
+.nav-tabs > li > a.basicInfoTab.active {
+    color: black;
+}
+.nav-tabs > li > a.prefTab.active {
+    color: black;
+}
+.nav-tabs > li > a.travelTab.active {
+    color: black;
+}
+.tab-content {
+    background: white;
+}
 
+.custom-dropzone img {
+	height: 250px;
+	background: #333;
+	color: #fff;
+	border: 5px dashed rgb(235, 79, 79);
+	border-radius: 5px;
+	font-size: 20px;
+}
