@@ -43,7 +43,7 @@ const routes: Routes = [
   {path: 'test', component: TestingComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'testing', component: TestingComponent},
-  {path:'cards',component:CardsComponent}
+  {path: 'cards',component:CardsComponent}
 
 ];
 

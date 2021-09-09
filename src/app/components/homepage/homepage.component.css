@@ -11,8 +11,12 @@
 .menuoptions {
   margin-bottom: 10px;
 }
-.menuoptions:hover {
-  color: #0e85f3;
+.menuoptions > a {
+  text-decoration: none;
+  color: darkslategray;
+}
+.menuoptions:hover, .menuoptions > a:hover {
+  color: #0e85f3 !important;
   font-weight: bold;
   cursor: pointer;
 }

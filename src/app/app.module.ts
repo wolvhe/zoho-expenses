@@ -31,7 +31,7 @@ import { ApprovalPageComponent } from './components/approval-page/approval-page.
 import { ApprovalTripsComponent } from './components/approval-page/approval-trips/approval-trips.component';
 import { ApprovalReportComponent } from './components/approval-page/approval-report/approval-report.component';
 import { PendingApprovalPageComponent } from './components/approval-page/pending-approval-page/pending-approval-page.component';
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,14 +60,15 @@ import { PendingApprovalPageComponent } from './components/approval-page/pending
     ApprovalPageComponent,
     ApprovalReportComponent,
     ApprovalTripsComponent,
-    PendingApprovalPageComponent
+    PendingApprovalPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

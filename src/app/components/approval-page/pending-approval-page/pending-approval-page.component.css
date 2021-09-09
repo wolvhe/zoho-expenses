@@ -1,0 +1,32 @@
+.card {
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+.countBlock {
+    width: 4rem;
+    height: 4rem;
+    background: #fbe7a9;
+    border-radius: 8px;
+    text-align: center;
+}
+.countBlock-text {
+    padding: 20px;
+}
+.card-text {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.card-bottom-body {
+    min-height: 60vh;
+    max-height: fit-content;
+}
+.card-bottom-text {
+    padding-top: 8rem;
+    color: #696d9a;
+    text-align: center;
+    letter-spacing: -.1px;
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+}

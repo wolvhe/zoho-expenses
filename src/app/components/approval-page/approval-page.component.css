@@ -17,3 +17,7 @@
 .tab-content {
     background: white;
 }
+.approvalBtn:hover {
+    background: cornflowerblue;
+    color: white;
+}
