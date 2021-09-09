@@ -34,12 +34,33 @@
   
   <div class="align-items-center justify-content-centered">
     <div class="App">
-      <input  type="file" id="input-file-now" class="file-upload" />
-      
-      <p style="margin-right: 25%;"><button type="button" class="btn btn-primary " routerLink="/expenses">New Expenses +</button></p>   
-  </div>
-  
-  </div>
+      <div class="custom-dropzone" style= " height: 450px; width: 650px;" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+        <ngx-dropzone-label>
+          <div>
+            <h1 style="font-size: x-large;">Drag & Drop Receipts</h1>
+            <h2 style="font-size: small;">or click here to upload</h2>
+            <div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm">Autoscan Receipts</button>
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                  <a class="dropdown-item" href="#">From Computer</a>
+                  <a class="dropdown-item" href="#">From Clouds</a>
+              </div>
+            </div>
+          
+              <a href="#" class="btn btn-primary btn-sm disabled" role="button" aria-disabled="true">+ New Expense</a>
+            </div>           
+          </div>
+        </ngx-dropzone-label>
+        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+        </ngx-dropzone-image-preview>
+      </div>    
+ </div>
+</div>
+
 </div>
 <div class="footer bg-light">
   <p class="text-warning text-center ">HELP</p>
