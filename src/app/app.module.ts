@@ -1,7 +1,7 @@
 import { TabComponent } from './components/expenses/tab/tab.component';
 import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
 import { FromCardsComponent } from './components/expenses/from-cards/from-cards.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,10 +21,16 @@ import { TravelDocsComponent } from './components/mysettings/travel-docs/travel-
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
+import { AllreportsComponent } from './components/reports/allreports/allreports.component';
+import { AdvanceComponent } from './components/advance/advance.component';
+import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 import { TestingComponent } from './testing/testing.component';
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { HomepageComponent } from './components/homepage/homepage.component';
-
-
+import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
+import { ApprovalTripsComponent } from './components/approval-page/approval-trips/approval-trips.component';
+import { ApprovalReportComponent } from './components/approval-page/approval-report/approval-report.component';
+import { PendingApprovalPageComponent } from './components/approval-page/pending-approval-page/pending-approval-page.component';
 
 @NgModule({
   declarations: [
@@ -46,14 +52,23 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     BulkAddExpenseComponent,
     FromCardsComponent,
     TabComponent,
+    AllreportsComponent,
+    AdvanceComponent,
+    AlladvanceComponent,
     TestingComponent,
-    HomepageComponent
+    HomepageComponent,
+    ApprovalPageComponent,
+    ApprovalReportComponent,
+    ApprovalTripsComponent,
+    PendingApprovalPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxDropzoneModule
+    
 
   ],
   providers: [],

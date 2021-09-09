@@ -1,1 +1,649 @@
-<p>cards works!</p>
+<nav class="navbar navbar-default navbar-expand-md navbar-light fixed-top">
+    <div class="topnav navbar navbar-expand-lg">
+        <h3 style="margin-left:3rem">Cards</h3>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        </div>
+        <div class="button-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    + Add Cards
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+                            Corporate Card</a></li>
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+                            Personal Card</a></li>
+                </ul>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-primary">?</button>
+        </div>
+    </div>
+</nav>
+<div style="text-align: center;position: relative;top: 10rem;">
+    <img style="width: 13rem;"
+        src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-cards-list-2x-02f7ede5c3a9a8d219668b357347f2d1.png"
+        alt="">
+    <h4>Access corporate and personal cards</h4>
+    <div style="line-height: 4px; font-size: 12px;margin-top: 1rem;">
+        <p>Add or access cards and view imported card statements.</p>
+        <p>Reconcile card statements or directly convert them to</p>
+        <p>expenses.</p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                + Add Cards
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add
+                        Corporate Card</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Personal
+                        Card</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Modal for cards-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 900px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="font-size: 15px;text-align: left;">
+                    <div class="input-group mb-3" style="width: 52rem;margin-left: 1rem;">
+                        <select class="form-select" id="inputGroupSelect02">
+                            <option selected>Find Your Card...</option>
+                            <option value="1"><p data-bs-toggle="modal" data-bs-target="#bank8Modal"> 121 Financial Credit Union - Bank</p></option>
+                            <option value="2">1880 Bank</option>
+                            <option value="3">1st Advantage FCU - Bank</option>
+                            <option value="4">1st Advantage FCU - Credit Cards</option>
+                            <option value="5">1st Bank (Cash Mangement) - Bank</option>
+                            <option value="6">1st Bank (WY) - Bank</option>
+                            <option value="7">1st Bank in Hominy - Bank</option>
+                            <option value="8">1st Bank of Sea Isle City (Business) - Bank</option>
+                            <option value="9">1st Bank of Sea Isle City - Bank</option>
+                            <option value="10">1st Bank Yuma</option>
+                        </select>
+                    </div>
+                    <p style="margin-left: 1rem;">Or Select from the popular cards</p>
+                    <!--row 1  -->
+                    <div style="display: flex; flex-direction: row;margin: 1rem; cursor: pointer;">
+                        <div class="card mb-3"
+                            style="max-width: 500px; display: flex;max-height: 80px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; flex: 1;margin: 10px;"
+                            data-bs-toggle="modal" data-bs-target="#bank1Modal" data-bs-dismiss="modal">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 60px;margin-top: 10px;margin-left: 15px;"
+                                        src="data:image/png;base64,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"
+                                        class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">HDFC Bank (India) -</p>
+                                        <p class="card-text">Credit Card</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="card mb-3"
+                            style="max-width: 500px; display: flex;max-height: 80px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;flex: 1;margin: 10px;"
+                            data-bs-toggle="modal" data-bs-target="#bank2Modal">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 60px;margin-top: 10px;margin-left: 15px;"
+                                        src="data:image/jpeg;base64,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"
+                                        class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">Citibank (India) - Credit Card</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row 2 -->
+                    <div style="display: flex; flex-direction: row;margin: 1rem;cursor: pointer; ">
+                        <div class="card mb-3"
+                            style="max-width: 500px; display: flex;max-height: 80px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; flex: 1;margin: 10px;"
+                            data-bs-toggle="modal" data-bs-target="#bank3Modal">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 40px;margin-top: 15px;margin-left: 38px;"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/State-Bank-of-India-Logo.svg/500px-State-Bank-of-India-Logo.svg.png"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">State Bank of India Credit Cards (India)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="card mb-3"
+                            style="max-width: 500px; display: flex;max-height: 80px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;flex: 1;margin: 10px;"
+                            data-bs-toggle="modal" data-bs-target="#bank4Modal">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 40px;margin-top: 15px;margin-left: 25px;"
+                                        src="data:image/png;base64,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"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">American Express Cards (India)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row 3 -->
+                    <div style="display: flex; flex-direction: row;margin: 1rem;cursor: pointer; ">
+                        <div class="card mb-3"
+                            style="max-width: 500px; display: flex;max-height: 80px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; flex: 1;margin: 10px;"
+                            data-bs-toggle="modal" data-bs-target="#bank5Modal">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 60px;margin-top: 10px;margin-left: 30px;"
+                                        src="https://pbs.twimg.com/profile_images/1410470676582993930/XKUOzWfQ_400x400.jpg"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">Standard Chartered Bank (India) - Credit Card</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="card mb-3"
+                            style="max-width: 500px; display: flex;max-height: 80px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;flex: 1;margin: 10px;"
+                            data-bs-toggle="modal" data-bs-target="#bank6Modal">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 60px;margin-top: 10px;margin-left: 30px;"
+                                        src="https://ps.w.org/wpc-paypal-express-checkout/assets/icon-256x256.png?rev=1890038"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p class="card-text">PayPal - Bank</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+                <div class="modal-footer" style="justify-content: left;">
+                    <p>Can't find your card on the list? Let's do it the old-fashioned way.</p><br />
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#bank7Modal">import your feeds manually</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal for bank -->
+    <!-- Modal 1-->
+    <div class="modal fade " id="bank1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a style="margin-left: -78rem;" href="/" data-bs-dismiss="modal"><i class="fas fa-angle-left"></i>
+                        back</a><br>
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <img style="height: 60px;margin-top: 10px;margin-left: 15px; display: flex;"
+                            src="data:image/png;base64,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"
+                            class="img-fluid rounded-start" alt="...">
+                        <h6 style="display: flex; margin-top: 2rem;">HDFC Bank (India) - Credit Card</h6>
+                    </div>
+                    <p style="text-align: center;margin-left: 2.5rem;margin-top: 1rem;font-size: 12px;">Login URL :
+                        &nbsp;<a
+                            href="https://netbanking.hdfcbank.com/netbanking/">https://netbanking.hdfcbank.com/netbanking/</a>
+                    </p>
+                    <div style="text-align: left;width: 30rem;margin-left: 28rem;margin-top: 2rem;">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
+                                (Login ID)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                    </div><br>
+                    <div class="form-check">
+                        <input style="position: relative;left: 28rem;" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label style="position: relative;right: 6rem;" class="form-check-label" for="flexCheckDefault">
+                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2-->
+    <div class="modal fade " id="bank2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a style="margin-left: -78rem;" href="/" data-bs-dismiss="modal"><i class="fas fa-angle-left"></i>
+                        back</a><br>
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <img style="height: 60px;margin-top: 10px;margin-left: 15px; display: flex;"
+                            src="data:image/jpeg;base64,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"
+                            class="img-fluid rounded-start" alt="...">
+                        <h6 style="display: flex; margin-top: 2rem;">Citibank (India) - Credit Card</h6>
+                    </div>
+                    <p style="text-align: center;margin-left: 2.5rem;margin-top: 1rem;font-size: 12px;">Login URL :
+                        &nbsp;<a href="http://www.online.citibank.co.in/">http://www.online.citibank.co.in/</a></p>
+                    <div style="text-align: left;width: 30rem;margin-left: 28rem;margin-top: 2rem;">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
+                                (Login ID)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                    </div><br>
+                    <div class="form-check">
+                        <input style="position: relative;left: 28rem;" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label style="position: relative;right: 6rem;" class="form-check-label" for="flexCheckDefault">
+                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 3 -->
+    <div class="modal fade " id="bank3Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a style="margin-left: -78rem;" href="/" data-bs-dismiss="modal"><i class="fas fa-angle-left"></i>
+                        back</a><br>
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <img style="height: 60px;margin-top: 10px;margin-left: 15px; display: flex;"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/State-Bank-of-India-Logo.svg/500px-State-Bank-of-India-Logo.svg.png"
+                            class="img-fluid rounded-start" alt="...">
+                        <h6 style="display: flex; margin-top: 2rem;">State Bank of India Credit Cards (India)</h6>
+                    </div>
+                    <p style="text-align: center;margin-left: 2.5rem;margin-top: 1rem;font-size: 12px;">Login URL :
+                        &nbsp;<a href="http://www.sbicard.com/">http://www.sbicard.com/</a></p>
+                    <div style="text-align: left;width: 30rem;margin-left: 28rem;margin-top: 2rem;">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
+                                (Login ID)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                    </div><br>
+                    <div class="form-check">
+                        <input style="position: relative;left: 28rem;" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label style="position: relative;right: 6rem;" class="form-check-label" for="flexCheckDefault">
+                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 4 -->
+    <div class="modal fade " id="bank4Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a style="margin-left: -78rem;" href="/" data-bs-dismiss="modal"><i class="fas fa-angle-left"></i>
+                        back</a><br>
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <img style="height: 60px;margin-top: 10px;margin-left: 15px; display: flex;"
+                            src="data:image/png;base64,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"
+                            class="img-fluid rounded-start" alt="...">
+                        <h6 style="display: flex; margin-top: 2rem;">American Express Cards (India)</h6>
+                    </div>
+                    <p style="text-align: center;margin-left: 2.5rem;margin-top: 1rem;font-size: 12px;">Login URL :
+                        &nbsp;<a
+                            href="https://www.americanexpress.com/india/">https://www.americanexpress.com/india/</a></p>
+                    <div style="text-align: left;width: 30rem;margin-left: 28rem;margin-top: 2rem;">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
+                                (Login ID)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                    </div><br>
+                    <div class="form-check">
+                        <input style="position: relative;left: 28rem;" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label style="position: relative;right: 6rem;" class="form-check-label" for="flexCheckDefault">
+                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 5 -->
+    <div class="modal fade " id="bank5Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a style="margin-left: -78rem;" href="/" data-bs-dismiss="modal"><i class="fas fa-angle-left"></i>
+                        back</a><br>
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <img style="height: 60px;margin-top: 10px;margin-left: 15px; display: flex;"
+                            src="https://pbs.twimg.com/profile_images/1410470676582993930/XKUOzWfQ_400x400.jpg"
+                            class="img-fluid rounded-start" alt="...">
+                        <h6 style="display: flex; margin-top: 2rem;">Standard Chartered Bank (India) - Credit Card</h6>
+                    </div>
+                    <p style="text-align: center;margin-left: 2.5rem;margin-top: 1rem;font-size: 12px;">Login URL :
+                        &nbsp;<a
+                            href="https://ibank.standardchartered.co.in/nfs/login.htm">https://ibank.standardchartered.co.in/nfs/login.htm</a>
+                    </p>
+                    <div style="text-align: left;width: 30rem;margin-left: 28rem;margin-top: 2rem;">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
+                                (Login ID)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                    </div><br>
+                    <div class="form-check">
+                        <input style="position: relative;left: 28rem;" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label style="position: relative;right: 6rem;" class="form-check-label" for="flexCheckDefault">
+                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 6 -->
+    <div class="modal fade " id="bank6Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a style="margin-left: -78rem;" href="/" data-bs-dismiss="modal"><i class="fas fa-angle-left"></i>
+                        back</a><br>
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <img style="height: 60px;margin-top: 10px;margin-left: 15px; display: flex;"
+                            src="https://ps.w.org/wpc-paypal-express-checkout/assets/icon-256x256.png?rev=1890038"
+                            class="img-fluid rounded-start" alt="...">
+                        <h6 style="display: flex; margin-top: 2rem;">PayPal - Bank</h6>
+                    </div>
+                    <p style="text-align: center;margin-left: 2.5rem;margin-top: 1rem;font-size: 12px;">Login URL :
+                        &nbsp;<a
+                            href="https://www.paypal.com/signin/?country.x=US&locale.x=en_US">https://www.paypal.com/signin/?country.x=US&locale.x=en_US</a>
+                    </p>
+                    <div style="text-align: left;width: 30rem;margin-left: 28rem;margin-top: 2rem;">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
+                                (Login ID)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                    </div><br>
+                    <div class="form-check">
+                        <input style="position: relative;left: 28rem;" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label style="position: relative;right: 6rem;" class="form-check-label" for="flexCheckDefault">
+                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 7 -->
+    <div class="modal fade " id="bank7Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="font-size: 14px; ">
+                    <div style="text-align: left;width: 30rem;margin-left: 28rem;">
+                        <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Select Card
+                            Type *</label>
+                        <div style="display: flex; flex-direction: row; margin-bottom: 1rem;margin-left: 1rem;" >
+                            <div style="display: flex; flex: 1;">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">Debit Card</label>
+                            </div>
+                            <div style="display: flex; flex: 1;">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">Credit Card</label>
+                            </div>
+                        </div>
+                        <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Card/Account Name
+                           *</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" style=" margin-bottom: 1rem;">
+                        <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">
+                            Currency *</label>
+                        <select class="form-select" aria-label="Default select example" style=" margin-bottom: 1rem;">
+                            <option selected>INR - Indian Rupee</option>
+                            <option value="1">AED - Dirham</option>
+                            <option value="2">AUD - Australian Dollor</option>
+                            <option value="3">CAD - Canadian Dollor</option>
+                            <option value="4">CNY - Yuan Renminbi </option>
+                            <option value="5">EUR - Euro</option>
+                            <option value="6">GBP - Pound Sterling</option>
+                            <!-- <option value="7">INR - Indian Rupee</option> -->
+                            <option value="8">JPY - Japnese Yen</option>
+                            <option value="9">SAR - Saudi Riyal</option>
+                            <option value="10">USD - United States Dollor</option>
+                            <option value="11">ZAR - South African Rand</option>
+                        </select>
+                        <div class="mb-3" style=" margin-bottom: 1rem;">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: black;"> Bank Name
+                                *</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3" style=" margin-bottom: 1rem;">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: black;">Billing Date
+                                *</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3" style=" margin-bottom: 1rem;">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: black;">Description
+                                *</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Max 500 characters" style="height: 6rem;">
+                        </div>
+                    </div><br>
+                    <div class="form-check">
+                        <input style="position: relative;left: 28rem;" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label style="position: relative;right: 6rem;" class="form-check-label" for="flexCheckDefault">
+                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 8 -->
+    <div class="modal fade " id="bank8Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a style="margin-left: -78rem;" href="/" data-bs-dismiss="modal"><i class="fas fa-angle-left"></i>
+                        back</a><br>
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <img style="height: 60px;margin-top: 10px;margin-left: 15px; display: flex;"
+                            src="https://ps.w.org/wpc-paypal-express-checkout/assets/icon-256x256.png?rev=1890038"
+                            class="img-fluid rounded-start" alt="...">
+                        <h6 style="display: flex; margin-top: 2rem;">PayPal - Bank</h6>
+                    </div>
+                    <p style="text-align: center;margin-left: 2.5rem;margin-top: 1rem;font-size: 12px;">Login URL :
+                        &nbsp;<a
+                            href="https://www.paypal.com/signin/?country.x=US&locale.x=en_US">https://www.paypal.com/signin/?country.x=US&locale.x=en_US</a>
+                    </p>
+                    <div style="text-align: left;width: 30rem;margin-left: 28rem;margin-top: 2rem;">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
+                                (Login ID)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
+                                (Password)*</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                    </div><br>
+                    <div class="form-check">
+                        <input style="position: relative;left: 28rem;" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault">
+                        <label style="position: relative;right: 6rem;" class="form-check-label" for="flexCheckDefault">
+                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms and
+                                Conditions</a>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

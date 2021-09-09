@@ -1,0 +1,19 @@
+
+th {
+    color: rgb(177, 173, 173);
+}
+
+.reportName {
+    color: rgb(27, 27, 207);
+}
+
+.status {
+    color: #fff;
+    background-color: #928fa3;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.duration {
+    color: grey;
+}
