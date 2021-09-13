@@ -33,7 +33,7 @@ export class ImportcsvComponent implements OnInit {
     reader.onload = () => {
       let text = reader.result;
       let data = this.csvToArray(text)
-      console.log(JSON.stringify(data));
+      console.log(JSON.stringify(data[0]));
     };
     reader.readAsText(input.files[0]);
     

@@ -25,7 +25,6 @@ import { AllreportsComponent } from './components/reports/allreports/allreports.
 import { AdvanceComponent } from './components/advance/advance.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatStepperModule} from '@angular/material/stepper';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
@@ -33,8 +32,10 @@ import { TestingComponent } from './testing/testing.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
-
-
+import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,8 @@ import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
     
     AlladvanceComponent,
     TestingComponent,
-    HomepageComponent
+    HomepageComponent,
+    ImportReportsComponent
   ],
   imports: [
     BrowserModule,
@@ -72,8 +74,11 @@ import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
     BrowserAnimationsModule,
     MatStepperModule,
     MatFormFieldModule,
+    MatInputModule,
     ReactiveFormsModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    MatAutocompleteModule,
+    MatInputModule
 
   ],
   providers: [],

@@ -24,6 +24,7 @@ import { CardsComponent } from './components/cards/cards.component'
 
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
+import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomepageComponent},
@@ -44,7 +45,7 @@ const routes: Routes = [
   {path: 'advances', component: AdvanceComponent},
   {path: 'advances/all', component: AlladvanceComponent},
   {path: 'reports/all', component: AllreportsComponent},
-  
+  {path: 'reports/import', component: ImportReportsComponent},
   {path: 'test', component: TestingComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'testing', component: TestingComponent},
