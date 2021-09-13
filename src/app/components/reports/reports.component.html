@@ -83,24 +83,24 @@
                 <form>
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Report Name:</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder="eg:Trip to New York">
+                        <input type="text" class="form-control" [formControl]="reportName" placeholder="eg:Trip to New York">
                     </div>
                     <div class="mb-3">
                         <label for="message-text" class="col-form-label">Buisness Purpose:</label>
-                        <textarea class="form-control" id="message-text" placeholder="Max 500 Characters"></textarea>
+                        <textarea class="form-control" [formControl]="businessPurpose" placeholder="Max 500 Characters"></textarea>
                     </div>
                     <label> Duration</label>
                     <div style="display: flex; flex-direction: row;">
                         <div class="form-group mb-5" style="display: flex; flex: 1;">
-                            <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
+                            <input type="date" class="form-control form-control-lg" [formControl]="durationFrom" placeholder="eg:31/01/2021">
                         </div>
                         <div class="form-group mb-5" style="display: flex; flex: 1;">
-                            <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
+                            <input type="date" class="form-control form-control-lg" [formControl]="durationTo" placeholder="eg:31/01/2021">
                         </div>
                     </div>
                     <label> Associate With Trip</label>
                     <div class="input-group mb-3">
-                        <select class="form-select" id="inputGroupSelect02">
+                        <select class="form-select" [formControl]="associateWithTrip">
                           <option selected>Select</option>
                           <option value="1"></option>
                           <option value="2"></option>
@@ -112,8 +112,7 @@
                 </form>
             </div>
             <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save
-                    changes</button> </div>
+                    data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary" (click)="postReport()" >Save changes</button> </div>
         </div>
     </div>
 </div>
