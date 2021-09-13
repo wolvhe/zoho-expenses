@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddExpenseComponent implements OnInit {
 
+status:any
 
-  constructor() { }
+  constructor() { 
+
+    this.status = true
+
+
+  }
 
   ngOnInit(): void {
   }
@@ -23,6 +29,10 @@ export class AddExpenseComponent implements OnInit {
 		console.log(event);
 		this.files.splice(this.files.indexOf(event), 1);
 	}
+paystatus(){
+  this.status = !this.status
+}
+   
 
   
   sortedItems = ['Air Travel Expense', 'Automobile Expense', 'Fuel/Mileage Expense', 'IT and Internet Expense', 'Job Costing', 'Meals and Entertainment', 'Office and Supplies', 'Other Expenses', 'Parking', 'Subcontractor', 'Telephone Expense'];
@@ -36,5 +46,7 @@ export class AddExpenseComponent implements OnInit {
 
 export class data {
   constructor() {
+
+    
   }
 }
