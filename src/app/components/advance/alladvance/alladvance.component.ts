@@ -2,16 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { TripsService } from 'src/app/services/trips.service';
 import { ExpServiceService } from 'src/app/services/exp-service.service';
 import { Advancemodel } from 'src/app/models/advancemodel';
+
+
 @Component({
   selector: 'app-alladvance',
   templateUrl: './alladvance.component.html',
   styleUrls: ['./alladvance.component.css']
 })
 export class AlladvanceComponent implements OnInit {
+  [x: string]: any;
   public obj: any = {};
   public org: string = "";
+  temp = []
+  rows!: any;
+  amount!: string;
   
-  datas!: any;
   
   constructor(private trip: TripsService, private serv: ExpServiceService) { }
 
@@ -34,7 +39,20 @@ export class AlladvanceComponent implements OnInit {
 
     }
   }
+  updateFilter(event:any) {
+    const val = event.target.value.toLowerCase();
 
+    // filter our data
+    const temp = this.temp.filter(function (d: { apply_to_trip: string; }) {
+      return d.apply_to_trip.toLowerCase().indexOf(val) !== -1 || !val;
+    });
+
+    // update the rows
+    this.rows = temp;
+    // Whenever the filter changes, always go back to the first page
+    // this.myFilterTable.offset = 0;
+    
+  }
   // elements: any = [
   //     {date: '12/07/2021', trip: '0001', reference: 'Chickmanglur', amount: '50,000',r_name:'Banglore'},
   //   ];
@@ -44,20 +62,21 @@ export class AlladvanceComponent implements OnInit {
 
   viewadvance(email: any): void {
     console.log(email)
-    this.trip.getalladvnace(email)
+    this.trip.getalladvance(email)
       .subscribe(
         data => {
 
-          this.datas=data
+          this.rows=data
           
-          console.log(data)
+          console.log(this.rows)
           
         }
       )
   }
+ 
   
-  }
   
+}
 
 
 

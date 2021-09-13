@@ -29,8 +29,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
-
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +63,9 @@ import { AlltripsComponent } from './components/trips/alltrips/alltrips.componen
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    Ng2SearchPipeModule,
+    NgxDatatableModule,
 
   ],
   providers: [],

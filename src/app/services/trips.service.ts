@@ -19,7 +19,7 @@ export class TripsService {
   createadvance(data:any){
     return this.http.post(baseUrl+'/api/advance',data,{responseType:'text'});
   }
-  getalladvnace(data:any){
+  getalladvance(data:any){
     return this.http.get<Advancemodel>(baseUrl+'/api/getadvance/'+data);
   }
 }

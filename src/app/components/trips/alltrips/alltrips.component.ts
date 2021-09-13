@@ -43,7 +43,7 @@ export class AlltripsComponent implements OnInit {
     this.trip.getalltrip(email)
     .subscribe(
       data=>{
-          this.data=data
+        this.data=data
         console.log(this.data)
         console.log(this.data.flight[0].f_type)
         console.log(data)
