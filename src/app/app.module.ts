@@ -40,6 +40,9 @@ import { ImportReportsComponent } from './components/reports/import-reports/impo
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
+import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +75,8 @@ import {MatInputModule} from '@angular/material/input'
     ApprovalReportComponent,
     ApprovalTripsComponent,
     PendingApprovalPageComponent,
-    ImportReportsComponent
+    ImportReportsComponent,
+    AlltripsComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +92,9 @@ import {MatInputModule} from '@angular/material/input'
     ReactiveFormsModule,
     NgxDropzoneModule,
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
+    Ng2SearchPipeModule,
+    NgxDatatableModule,
 
   ],
   providers: [],

@@ -21,11 +21,11 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
-import { CardsComponent } from './components/cards/cards.component';
-
+import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
+import { CardsComponent } from './components/cards/cards.component'
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
-import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
+import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
 const routes: Routes = [
   
   {path: 'dashboard', component: DashboardComponent},
@@ -47,6 +47,7 @@ const routes: Routes = [
   {path: 'reports/all', component: AllreportsComponent},
   {path: 'approval', component: ApprovalPageComponent},
   {path: 'reports/import', component: ImportReportsComponent},
+  {path:'trips/all',component:AlltripsComponent},
   {path: 'test', component: TestingComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'testing', component: TestingComponent},
