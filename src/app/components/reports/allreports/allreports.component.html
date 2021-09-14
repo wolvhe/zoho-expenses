@@ -1,4 +1,20 @@
 <div>
+    <div class="row">
+        <div class="col-8 px-2">
+            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-light">Bulk Update</button>
+            <button class="btn btn-light">Archive</button>
+            <button class="btn btn-light">Export</button>
+            <button class="btn btn-light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div>
     <div *ngIf="!isEmpty">
         <table class="table">
 
@@ -27,13 +43,12 @@
 
             <!-- table body  -->
             <tbody>
-                <tr *ngFor="let report of reports">
+                <tr *ngFor="let report of allReports">
                     <td>
                         <input type="checkbox" name="" id="">
                     </td>
-                    <td>{{ report.id }}</td>
-                    <td class="reportName">{{ report.name }} <br> <span class="duration">{{report.durationFrom}} -
-                            {{report.durationTo}}</span></td>
+                    <td>{{ report._id }}</td>
+                    <td class="reportName">{{ report.name }} <br> <span class="duration">{{report.durationFrom}} - {{report.durationTo}}</span></td>
                     <td>
                         <span class="status">
                             {{report.status}}
@@ -87,8 +102,8 @@
                     <!-- column-1 -->
                     <div style="margin-top: 2rem;">
                         <div style="display: flex; flex-direction: row;">
-                            <p>Trip#</p>
-                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" style="margin-left: 6rem;">
+                            <p>Reports#</p>
+                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" style="margin-left: 4rem;">
                         </div><br>
                         <!--  -->
                         <div style="display: flex; flex-direction: row; position: relative; top: 1rem;">
@@ -103,22 +118,28 @@
                             </div>
                         </div>
                         <!--  -->
-                        <div style="display: flex; flex-direction: row; position: relative; top: 1rem;">
-                            <p>Destination City</p>
+                        
+                        <div style="display: flex; flex-direction: row; position: relative;top: 2rem;">
+                            <p>Total Range</p>
                             <div>
-                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 1.5rem;">
-                                    <select class="form-select" id="inputGroupSelect02">
-                                        <option selected></option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                <div style="display: flex; flex-direction: row; margin-left: 3.2rem;">
+                                    <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
+                                        <input type="text" class="form-control form-control-lg" >
+                                    </div>
+                                    <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem; margin-left: 2rem;">
+                                        <input type="text" class="form-control form-control-lg" >
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <!--  -->
+                        <div style="display: flex; flex-direction: row; position: relative; top: 2.5rem;">
+                            <p>Buisness Purpose</p>
+                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" style="margin-left: 1rem; width: 22rem;">
                         </div><br>
                         <!--  -->
-                        <div style="display: flex; flex-direction: row; margin-top: 2.5rem;">
-                            <p>Filter By</p>
+                        <div style="display: flex; flex-direction: row; position: relative; top: 4rem;">
+                            <p>Project</p>
                             <div>
                                 <div class="input-group mb-3" style="width: 22rem;  margin-left: 5rem;">
                                     <select class="form-select" id="inputGroupSelect02">
@@ -131,24 +152,17 @@
                             </div>
                         </div><br>
                         <!--  -->
-                        <div style="display: flex; flex-direction: row;">
-                            <p>Customer</p>
-                            <div>
-                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 4.2rem;">
-                                    <select class="form-select" id="inputGroupSelect02">
-                                        <option selected></option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div><br>
+                        <div class="form-check" style="position: relative; top: 2.5rem; left: 8rem;">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Search among shared reports
+                            </label>
+                          </div>
                     </div>
                     <!-- column-2 -->
                     <div style="margin-left: 3rem; margin-top: 2rem;">
                         <div style="display: flex; flex-direction: row;">
-                            <p>Travel Type</p>
+                            <p>Report Name</p>
                             <div style="display: flex; flex: 4;">
                                 <div class="input-group mb-3" style="width: 22rem; margin-left: 4rem;">
                                     <select class="form-select" id="inputGroupSelect02">
@@ -163,7 +177,7 @@
                         <!--  -->
                         <div style="display: flex; flex-direction: row;">
                             <p>End Date</p>
-                            <div style="display: flex; flex-direction: row; margin-left: 5rem;">
+                            <div style="display: flex; flex-direction: row; margin-left: 5.5rem;">
                                 <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
                                     <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
                                 </div>
@@ -173,29 +187,38 @@
                             </div>
                         </div>
                         <!--  -->
-                        <div style="display: flex; flex-direction: row;">
-                            <p>Budget Amount</p>
+                        <div style="display: flex; flex-direction: row; position: relative; top: 1rem;">
+                            <p>Filter By</p>
                             <div>
-                                <div style="display: flex; flex-direction: row; margin-left: 2rem;">
-                                    <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
-                                        <input type="text" class="form-control form-control-lg" >
-                                    </div>
-                                    <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem; margin-left: 2rem;">
-                                        <input type="text" class="form-control form-control-lg" >
-                                    </div>
+                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 6rem;">
+                                    <select class="form-select" id="inputGroupSelect02">
+                                        <option selected></option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
                                 </div>
                             </div>
-                        </div>
-                        <!--  -->
-                        <div style="display: flex; flex-direction: row; position: relative; top: 1rem;">
-                            <p>Buisness Purpose</p>
-                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" style="margin-left: 1rem; width: 22rem;">
                         </div><br>
                         <!--  -->
-                        <div style="display: flex; flex-direction: row; position: relative; top: 2rem;">
-                            <p>Project</p>
+                        <div style="display: flex; flex-direction: row; margin-top: 2.5rem;">
+                            <p>Customer</p>
                             <div>
-                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 5.8rem;">
+                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 5.5rem;">
+                                    <select class="form-select" id="inputGroupSelect02">
+                                        <option selected></option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><br>
+                        <!--  -->
+                        <div style="display: flex; flex-direction: row;">
+                            <p>Associated To T...</p>
+                            <div>
+                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 2.5rem;">
                                     <select class="form-select" id="inputGroupSelect02">
                                         <option selected></option>
                                         <option value="1">One</option>

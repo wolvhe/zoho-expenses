@@ -1,4 +1,4 @@
-<table class="table table-hover ">
+<!-- <table class="table table-hover ">
   <thead>
     <tr>
       <th class="bg-dark" style="color: white;" *ngFor="let head of headElements" scope="col">{{head}} </th>
@@ -20,7 +20,7 @@
       <td>{{el.r_name}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 <!-- modal -->
 <div class="modal" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -96,7 +96,7 @@
           <div style="display: flex; flex-direction: row;">
             <p>Associated to T...</p>
             <div>
-              <div class="input-group mb-3" style="width: 22rem;  margin-left: 1rem;">
+              <div class="input-group mb-3" style="width: 22rem;  margin-left: 1.5rem;">
                 <select class="form-select" id="inputGroupSelect02">
                   <option selected>Select</option>
                   <option value="1">One</option>
@@ -200,4 +200,54 @@
       </div>
     </div>
   </div>
+</div>
+<!-- <nav class="navbar">
+  <input class="form-control" type="text" name="Amount" [(ngModel)] =amount (ngModelChange)="Search($event)" placeholder="Enter Amount">
+</nav> -->
+<!-- <table class="table table-hover ">
+    <thead>
+      <tr>
+        <th class="bg-dark" style="color: white;" *ngFor="let head of headElements" scope="col" >{{head}} </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of rows" >
+      <tr>
+        
+        <td>{{data.date}}</td>
+        <td>{{data.apply_to_trip}}</td>
+        <td>{{data.references}}</td>
+        <td>{{data.amount}}</td>
+        <td>{{data.notes}}</td>
+      </tr>
+    </tbody>
+  </table>
+   -->
+
+
+<div >
+  <div style="position: absolute; width: 85rem; top: 2rem; padding-left: 10px;">
+    <ngx-datatable class="material" [rows]="rows"  [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+      [rowHeight]="40"  [limit]="10" [scrollbarV]="false" (sort)="onSort($event)" [sorts]="[{prop: 'name', dir: 'asc'}]">
+
+
+      <ngx-datatable-column name="DATE" prop="date" [width]="100"></ngx-datatable-column>
+      <ngx-datatable-column name="TRIP#" prop="apply_to_trip"> </ngx-datatable-column>
+
+      <ngx-datatable-column name="REFERENCE" prop="references"> </ngx-datatable-column>
+
+      <ngx-datatable-column name="AMOUNT" prop="amount"> </ngx-datatable-column>
+
+      <ngx-datatable-column name="REPORT NAME" prop="notes"> </ngx-datatable-column>
+
+    </ngx-datatable>
+  </div>
+  <div style="position: absolute; top:2rem; z-index: 1;"> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+      viewBox="0 0 16 16" style="cursor: pointer; margin-left: 80rem;" data-bs-toggle="modal"
+      data-bs-target="#searchModal">
+      <path
+        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+    </svg>
+  </div>
+
 </div>

@@ -23,6 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { AdvanceComponent } from './components/advance/advance.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatStepperModule} from '@angular/material/stepper';
+import { ImportcsvComponent } from './components/importcsv/importcsv.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 import { TestingComponent } from './testing/testing.component';
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
@@ -32,6 +36,13 @@ import { ApprovalTripsComponent } from './components/approval-page/approval-trip
 import { ApprovalReportComponent } from './components/approval-page/approval-report/approval-report.component';
 import { PendingApprovalPageComponent } from './components/approval-page/pending-approval-page/pending-approval-page.component';
 
+import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
+import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,22 +65,37 @@ import { PendingApprovalPageComponent } from './components/approval-page/pending
     TabComponent,
     AllreportsComponent,
     AdvanceComponent,
+    ImportcsvComponent,
+    TabComponent,
+    
     AlladvanceComponent,
     TestingComponent,
     HomepageComponent,
     ApprovalPageComponent,
     ApprovalReportComponent,
     ApprovalTripsComponent,
-    PendingApprovalPageComponent
+    PendingApprovalPageComponent,
+    ImportReportsComponent,
+    AlltripsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
     
     
+    BrowserAnimationsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    NgxDropzoneModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    Ng2SearchPipeModule,
+    NgxDatatableModule,
 
   ],
   providers: [],
