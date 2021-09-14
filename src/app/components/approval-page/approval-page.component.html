@@ -1,0 +1,24 @@
+<div class="approval">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link addExpenseTab active" data-toggle="tab" href="#pendingapproval" role="tab" aria-controls="home" aria-selected="true">Pending Approval</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bulkAddExpenseTab" data-toggle="tab" href="#approvaltrips" role="tab" aria-controls="profile" aria-selected="false">Trips</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link Tab" data-toggle="tab" href="#approvalreport" role="tab" aria-controls="contact" aria-selected="false">Reports</a>
+        </li>
+        <div >
+            
+            <button type="button" class="btn btn-outline-primary"  style="margin-left: 55rem;margin-top: 5px;" >?</button>
+        </div>
+    </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="pendingapproval" role="tabpanel"><app-pending-approval-page></app-pending-approval-page></div>
+        <div class="tab-pane fade" id="approvaltrips" role="tabpanel"><app-approval-trips></app-approval-trips></div>
+        <div class="tab-pane fade" id="approvalreport" role="tabpanel"><app-approval-report></app-approval-report></div>
+      </div>
+    </div>
+    
+    
