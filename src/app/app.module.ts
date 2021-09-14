@@ -30,7 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 import { TestingComponent } from './testing/testing.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-
+import { MatSearchableSelectModule } from 'mat-searchable-select';
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -60,7 +60,6 @@ import {MatInputModule} from '@angular/material/input'
     AdvanceComponent,
     ImportcsvComponent,
     TabComponent,
-    
     AlladvanceComponent,
     TestingComponent,
     HomepageComponent,
@@ -78,8 +77,8 @@ import {MatInputModule} from '@angular/material/input'
     ReactiveFormsModule,
     NgxDropzoneModule,
     MatAutocompleteModule,
-    MatInputModule
-
+    MatInputModule,
+    MatSearchableSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
