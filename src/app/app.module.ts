@@ -31,6 +31,8 @@ import { ApprovalPageComponent } from './components/approval-page/approval-page.
 import { ApprovalTripsComponent } from './components/approval-page/approval-trips/approval-trips.component';
 import { ApprovalReportComponent } from './components/approval-page/approval-report/approval-report.component';
 import { PendingApprovalPageComponent } from './components/approval-page/pending-approval-page/pending-approval-page.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage'
 
 @NgModule({
   declarations: [
@@ -67,8 +69,16 @@ import { PendingApprovalPageComponent } from './components/approval-page/pending
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxDropzoneModule
-    
+    NgxDropzoneModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyC4_Z1FK1Iy_AIfUVjEhVUVK6gx6wLvFh0",
+      authDomain: "imagegallery-9f3d5.firebaseapp.com",
+      projectId: "imagegallery-9f3d5",
+      storageBucket: "imagegallery-9f3d5.appspot.com",
+      messagingSenderId: "311923668193",
+      appId: "1:311923668193:web:988cafb52db0eeeb6d73a0"
+    }),
+    AngularFireStorageModule,
 
   ],
   providers: [],

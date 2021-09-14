@@ -1,56 +1,57 @@
-<div class = "container">
+<div class="container">
 
 
 
-<div class= "row card-body" >
-  <div class="col-lg-8" style="left: 50; top: 50;" >
-    
-    <div class = "img" >
-      <div class="App" >
-        <div>
-          <div class="custom-dropzone" style= "margin-right:70%; height: 650px; width: 650px;" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
-            <ngx-dropzone-label>
-              <div>
-                <h2 style="font-size: small;">Attach receipts from computer or cloud</h2>
-              </div>
-            </ngx-dropzone-label>
-            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
-            </ngx-dropzone-image-preview>
+  <div class="row card-body">
+    <div class="col-lg-8" style="left: 50; top: 50;">
+
+      <div class="img">
+        <div class="App">
+          <div>
+            <div class="custom-dropzone" style="margin-right:70%; height: 650px; width: 650px;" ngx-dropzone
+              [accept]="'image/*'" (change)="onSelect($event)">
+              <ngx-dropzone-label>
+                <div>
+                  <h2 style="font-size: small;">Attach receipts from computer or cloud</h2>
+                </div>
+              </ngx-dropzone-label>
+              <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+                [removable]="true" (removed)="onRemove(f)">
+              </ngx-dropzone-image-preview>
+            </div>
           </div>
         </div>
-</div>
 
-  </div>
-  <button class="btn btn-primary" type="submit">Save and Close</button> &nbsp;
-    <button type="button" class="btn btn-outline-primary">Save and New</button>&nbsp;
-    <button type="button" class="btn btn-light">Cancel</button>&nbsp;
-    
+      </div>
+      
 
-</div>
+    </div>
 
 
 
-  <div class="col-lg-4 " style="text-align: left;">
-  
+    <div class="col-lg-4 " style="text-align: left;">
+
+      <form #expense="ngForm" (ngSubmit)="addexpense(expense.value)">
 
       <div class="col-mt-3">
-          <div>
+        <div>
           <label for="formGroupExampleInput" class="text-danger">Expense Date*</label>
-          <input type="date" class="form-control" placeholder="eg: 31/01/2021">
+          <input type="date" class="form-control" placeholder="eg: 31/01/2021" ngModel name="exp_date">
         </div>
         <div>
           <br>
 
 
-            <div class = "formgroup">
+          <div class="formgroup">
             <label for="formGroupExampleInput">Merchant</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Select or type to add">
-        </div>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Select or type to add"
+              ngModel name="merchant">
+          </div>
           <br>
         </div>
-        </div>
+      </div>
 
-        <!-- <div class = "formgroup">
+      <!-- <div class = "formgroup">
           <label for="formGroupExampleInput " class="text-danger">Amount*</label>
           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="0.00">
           <br>
@@ -59,8 +60,8 @@
       <label for="formGroupExampleInput" class="text-danger">Amount*</label>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <button class="btn btn" type="button"  aria-haspopup="true" aria-expanded="false">
-          <!-- <div class="dropdown-menu">
+          <button class="btn btn" type="button" aria-haspopup="true" aria-expanded="false">
+            <!-- <div class="dropdown-menu">
              <a class="dropdown-item" >AUD-Australian Dollar</a>
             <a class="dropdown-item" >CAD-Canadian Dollar </a>
             <a class="dropdown-item" >CNY-Yuan Renminbi</a>
@@ -71,128 +72,134 @@
             <a class="dropdown-item" >SAR-Saudi Riyal</a>
             <a class="dropdown-item" >USD-United States Dollar</a>
             <a class="dropdown-item" >ZAR-South African Rand</a>  -->
-            <select style="width: 3.25rem;">
-               <option  href="#">INR</option>
-              <option  href="#">AUD-Australian Dollar</option>
-                <option href="#">CAD-Canadian Dollar</option>
-                <option href="#">CNY-Yuan Renminbi</option>
-                <option href="#">EUR-Euro</option>
-                <option href="#">GPB-Pound Sterling</option>
-                <option href="#">INR-Indian Rupee</option>
-                <option href="#">JPY-Japanese Yen</option>
-                <option href="#">SAR-Saudi Riyal</option>
-                <option href="#">USD-United States Dollar</option>
-                <option href="#">ZAR-South African Rand</option> 
-              </select>
-              </button>
+            <select style="width: 3.25rem;" ngModel name="amounttype">
+              <option href="#">INR</option>
+              <option href="#">AUD-Australian Dollar</option>
+              <option href="#">CAD-Canadian Dollar</option>
+              <option href="#">CNY-Yuan Renminbi</option>
+              <option href="#">EUR-Euro</option>
+              <option href="#">GPB-Pound Sterling</option>
+              <option href="#">INR-Indian Rupee</option>
+              <option href="#">JPY-Japanese Yen</option>
+              <option href="#">SAR-Saudi Riyal</option>
+              <option href="#">USD-United States Dollar</option>
+              <option href="#">ZAR-South African Rand</option>
+            </select>
+          </button>
 
-          </div>
-          <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="0.00">
         </div>
-       
-        
-        
+        <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="0.00" ngModel
+          name="amount">
+      </div>
 
-        <div class = "form-group">
-          <label class="text-danger">Category</label>
-          <div class = "row">
-          <div class="col-9" >
-            <select class = "form-control" style="width: 275px;"  >
-              <option  >Select</option>
-              <option  >Add Travel Expenses</option>
-                <option >Automobile Expense</option>
-                <option >Fuel/Mileage Expense</option>
-                <option >IT and Internet Expense</option>
-                <option >Job Costing</option>
-                <option >Meals and Entertainment</option>
-                <option >Office and Supplies</option>
-                <option >Other Expenses</option>
-                <option >Parking</option>
-                <option >Subcontractor</option>
-                <option >Telephone Expense</option>
+
+
+
+      <div class="form-group">
+        <label class="text-danger">Category</label>
+        <div class="row">
+          <div class="col-9">
+            <select class="form-control" style="width: 275px;" ngModel name="category">
+              <option>Select</option>
+              <option value="Air Travel Expenses">Air Travel Expenses</option>
+              <option value="Automobile Expense">Automobile Expense</option>
+              <option value="Fuel/Mileage Expense">Fuel/Mileage Expense</option>
+              <option value="IT and Internet Expense">IT and Internet Expense</option>
+              <option value="Job Costing">Job Costing</option>
+              <option value="Meals and Entertainment">Meals and Entertainment</option>
+              <option value="Office and Supplies">Office and Supplies</option>
+              <option value="Other Expenses">Other Expenses</option>
+              <option value="Parking">Parking</option>
+              <option value="Subcontractor">Subcontractor</option>
+              <option value="Telephone Expense">Telephone Expense</option>
 
             </select>
           </div>
           <div class="col">
-            
-            <button class="btn btn-light " href="#categoryModal" data-toggle="modal" style="width: 60px;"> +</button>
+
+            <button class="btn btn-light " type="button" href="#categoryModal" data-toggle="modal" style="width: 60px;"> +</button>
           </div>
 
         </div>
       </div>
 
-       <!-- modal 2 -->
-    <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+      <!-- modal 2 -->
+      <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="categoryModalLabel">New Category</h5> <button type="button" class="close"
-                    data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+              <h5 class="modal-title" id="categoryModalLabel">New Category</h5> <button type="button" class="close"
+                data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
             </div>
             <div class="modal-body">
-                <form>                    
-                        <div class="col-sm-8" style="float: right;">
-                            <div class="mb-3">
-                                <label for="Account-code" class="col-form-label text-danger">Category Name *</label>
-                                <input type="text" class="form-control" id="Account-code" >
-                            </div>
-                            <div>
-                        </div>
+              <form>
+                <div class="col-sm-8" style="float: right;">
+                  <div class="mb-3">
+                    <label for="Account-code" class="col-form-label text-danger">Category Name *</label>
+                    <input type="text" class="form-control" id="Account-code" ngModel name="">
+                  </div>
+                  <div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-sm-10">
+                      <img
+                        src="data:image/png;base64,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"
+                        class="rounded float-left" style="height: 90px; width: 90px;">
                     </div>
-                    
-                    <div class = "col">
-                        <div class="form-group row">
-                          <div class="col-sm-10">
-                            <img src="data:image/png;base64,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" class="rounded float-left" 
-                            style="height: 90px; width: 90px;">
-                          </div>
-                        </div>
+                  </div>
+                </div>
+                <br>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1" ngModel name="">
+                        <label class="form-check-label" for="gridCheck1">
+                          Make this a sub-category
+                        </label>
                       </div>
-                      <br>
-                      <div class = "col">
-                        <div class="form-group row">
-                          <div class="col-sm-10">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" id="gridCheck1">
-                              <label class="form-check-label" for="gridCheck1">
-                                Make this a sub-category
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                
-                
-                    <div class="mb-3">
-                        <label for="Account-code" class="col-form-label">Account Code</label>
-                        <input type="text" class="form-control" id="Account-code" >
                     </div>
-                    
-                    
-                    <label> A unique reference code for this category that is limited to 50 characters and can comprise of letters, digits, hyphen and underscore</label>
-                    
-                    
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Description</label>
-                        <textarea class="form-control" id="message-text" placeholder="Max 500 Characters"></textarea>
-                    </div>
-                      
-                   
-                </form>
+                  </div>
+                </div>
+
+
+                <div class="mb-3">
+                  <label for="Account-code" class="col-form-label">Account Code</label>
+                  <input type="text" class="form-control" id="Account-code" ngModel name="">
+                </div>
+
+
+                <label> A unique reference code for this category that is limited to 50 characters and can comprise of
+                  letters, digits, hyphen and underscore</label>
+
+
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Description</label>
+                  <textarea class="form-control" id="message-text" placeholder="Max 500 Characters" ngModel
+                    name=""></textarea>
+                </div>
+
+
+              </form>
             </div>
-            <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save
-                    changes</button> </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save
+                changes</button>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
 
 
 
 
-      <div class = "col">
+      <div class="col">
         <div class="form-group row">
           <div class="col-sm-10">
             <div class="form-check">
@@ -205,125 +212,116 @@
         </div>
       </div>
 
-      <div class = "form-group">
+      <div class="form-group">
         <label>Paid Through</label>
-        <select class = "form-control">
+        <select class="form-control" ngModel name="paid_through">
           <!-- <h6 class= "dropdown-header" >Cash</h6> -->
-          <option  href="#">Petty Cash</option>
-          <option  href="#">Undeposited Funds</option>
-          <option  href="#">TDS Payable</option>
-          </select>
+          <option href="#">Petty Cash</option>
+          <option href="#">Undeposited Funds</option>
+          <option href="#">TDS Payable</option>
+        </select>
       </div>
-      
-      <div class = "col-sm-20">
+
+      <div class="col-sm-20">
         <div class="form-group">
           <label for="formGroupExampleInput">Description</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ngModel name="description"></textarea>
         </div>
-        
+
       </div>
-      
-      <div class = "col-sm-20">
+
+      <div class="col-sm-20">
         <div class="form-group">
           <label for="formGroupExampleInput">Reference#</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" ngModel name="reference">
         </div>
-        </div>
-      
-        <!-- <div class="form-group">
-          <label for="exampleFormControlSelect1">Add to Reports</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-              <option>Select</option>
-              </select>
-        </div> -->
+      </div>
 
-        <!-- <div class = "form-group">
-          <label>Add to Report</label>
-        <br>
-            <select class = "form-control">
-            <option  href="#">Select</option>
-            <option> <a href="#">+ New Report</a></option>
-            </select> 
-             
-        
-        </div> -->
+      <div class="form-group">
+        <label class="text-danger">Add to Report</label>
+        <div class="row">
+          <div class="col-9">
+            <select class="form-control" style="width: 275px;" ngModel name="add_to_report">
+              <option value="airline">airline</option>
+              <option value="airline">busline</option>
 
-
-        <div class = "form-group">
-          <label class="text-danger">Add to Report</label>
-          <div class = "row">
-          <div class="col-9" >
-            <select class = "form-control" style="width: 275px;"  >
-              <option >Select</option>
             </select>
           </div>
           <div class="col">
-            
-            <button class="btn btn-light " href="#exampleModal" data-toggle="modal" style="width: 60px;"> +</button>
+
+            <button class="btn btn-light " href="#exampleModal" data-toggle="modal" style="width: 60px;" type="button"> +</button>
           </div>
 
         </div>
       </div>
 
+      <button class="btn btn-primary" type="submit">Save and Close</button> &nbsp;
+      <button type="button" class="btn btn-outline-primary">Save and New</button>&nbsp;
+      <button type="button" class="btn btn-light">Cancel</button>&nbsp;
 
-       
-  </div>
-  <footer style="text-align: center;">
-    <div class="mw-50 d-none font-small d-lg-inline-block">
+
+      </form>
+
+    </div>
+
+    <footer style="text-align: center;">
+      <div class="mw-50 d-none font-small d-lg-inline-block">
 
         Why add expenses manually when you can get those receipts autoscanned.
 
-          <a tabindex="-1" target="_blank" rel="noopener noreferrer" href="https://zoho.com/expense/help/v2/expenses/autoscan-receipts/">Learn More!</a>
+        <a tabindex="-1" target="_blank" rel="noopener noreferrer"
+          href="https://zoho.com/expense/help/v2/expenses/autoscan-receipts/">Learn More!</a>
 
-  </div>  
-  </footer>
+      </div>
+    </footer>
 
-</div>
-<!-- modal 1 -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  </div>
+  <!-- modal 1 -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New Report</h5> <button type="button" class="close"
-                    data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label" class="text-danger">Report Name *</label>
-                        <input type="text" class="form-control" id="recipient-name" placeholder="eg:Trip to New York">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Business Purpose</label>
-                        <textarea class="form-control" id="message-text" placeholder="Max 500 Characters"></textarea>
-                    </div>
-                    <label> Duration</label>
-                    <div style="display: flex; flex-direction: row;">
-                        <div class="form-group mb-5" style="display: flex; flex: 1;">
-                            <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
-                        </div>
-                        <div class="form-group mb-5" style="display: flex; flex: 1;">
-                            <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
-                        </div>
-                    </div>
-                    <label> Associate With Trip</label>
-                    <div class="input-group mb-3">
-                        <select class="form-select" id="inputGroupSelect02">
-                          <option selected>Select</option>
-                          <option value="1"></option>
-                          <option value="2"></option>
-                          <option value="3"></option>
-                        </select>
-                      </div>
-                      
-                   
-                </form>
-            </div>
-            <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save
-                    changes</button> </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Report</h5> <button type="button" class="close"
+            data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
         </div>
-    </div>
+        <div class="modal-body">
 
-   
+
+          <form #newreport="ngForm" (ngSubmit)="addnewreport(newreport.value)">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label" class="text-danger">Report Name *</label>
+              <input type="text" class="form-control" id="recipient-name" placeholder="eg:Trip to New York" ngModel name="rep_name">
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Business Purpose</label>
+              <textarea class="form-control" id="message-text" placeholder="Max 500 Characters" ngModel name="purpose"></textarea>
+            </div>
+            <label> Duration</label>
+            <div style="display: flex; flex-direction: row;">
+              <div class="form-group mb-5" style="display: flex; flex: 1;">
+                <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021" ngModel name="start_dur">
+              </div>
+              <div class="form-group mb-5" style="display: flex; flex: 1;">
+                <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021" ngModel name="end_dur">
+              </div>
+            </div>
+            <label> Associate With Trip</label>
+            <div class="input-group mb-3">
+              <select class="form-select" id="inputGroupSelect02" ngModel name="ast_trip">
+                <option selected>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save
+                changes</button> </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>

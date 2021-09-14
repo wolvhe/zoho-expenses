@@ -26,6 +26,14 @@ export class BulkAddExpenseComponent implements OnInit {
   filterArray(index: any) {
     this.formArray = this.formArray.filter((d,i) => i!= index)
   }
-  formArray = [{}]
+  formArray = [{exp_date:"",merchant:""}]
+
+  onsubmit(data: any){
+    console.log(data);
+  }
+
+  addexpense(){
+    this.formArray.push({exp_date:"",merchant:""})
+  }
 
 }
