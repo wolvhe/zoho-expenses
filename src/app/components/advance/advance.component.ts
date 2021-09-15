@@ -5,7 +5,7 @@ import { ExpServiceService } from 'src/app/services/exp-service.service';
 @Component({
   selector: 'app-advance',
   templateUrl: './advance.component.html',
-  styleUrls: ['./advance.component.css']
+  styleUrls: ['./advance.component.css', '../homepage/homepage.component.css', '../dashboard/dashboard.component.css']
 })
 export class AdvanceComponent implements OnInit {
   org: string | undefined;

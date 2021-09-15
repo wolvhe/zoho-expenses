@@ -43,6 +43,14 @@ import {MatInputModule} from '@angular/material/input'
 import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { AdvancepageComponent } from './home/advancepage/advancepage.component';
+import { ReportspageComponent } from './home/reportspage/reportspage.component';
+import { ExpensespageComponent } from './home/expensespage/expensespage.component';
+import { TripspageComponent } from './home/tripspage/tripspage.component';
+import { CardspageComponent } from './home/cardspage/cardspage.component';
+import { ApprovalpageComponent } from './home/approvalpage/approvalpage.component';
+import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +84,14 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     ApprovalTripsComponent,
     PendingApprovalPageComponent,
     ImportReportsComponent,
-    AlltripsComponent
+    AlltripsComponent,
+    AdvancepageComponent,
+    ReportspageComponent,
+    ExpensespageComponent,
+    TripspageComponent,
+    CardspageComponent,
+    ApprovalpageComponent,
+    MysettingspageComponent,
   ],
   imports: [
     BrowserModule,
