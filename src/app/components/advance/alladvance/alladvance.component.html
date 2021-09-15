@@ -1,16 +1,37 @@
-<table class="table table-hover ">
+<!-- <nav class="navbar">
+  <input class="form-control" type="text" name="Amount" [(ngModel)] =amount (ngModelChange)="Search($event)" placeholder="Enter Amount">
+</nav> -->
+<!-- <table class="table table-hover ">
     <thead>
       <tr>
-        <th class="bg-dark" style="color: white;" *ngFor="let head of headElements" scope="col">{{head}} </th>
+        <th class="bg-dark" style="color: white;" *ngFor="let head of headElements" scope="col" >{{head}} </th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let el of elements">
-        <th scope="row">{{el.date}}</th>
-        <td>{{el.trip}}</td>
-        <td>{{el.reference}}</td>
-        <td>{{el.amount}}</td>
-        <td>{{el.r_name}}</td>
+    <tbody *ngFor="let data of rows" >
+      <tr>
+        
+        <td>{{data.date}}</td>
+        <td>{{data.apply_to_trip}}</td>
+        <td>{{data.references}}</td>
+        <td>{{data.amount}}</td>
+        <td>{{data.notes}}</td>
       </tr>
     </tbody>
   </table>
+   -->
+
+ 
+
+<ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+  [rowHeight]="40" [limit]="10" [scrollbarV]="false" (sort)="onSort($event)" [sorts]="[{prop: 'name', dir: 'asc'}]">
+
+  
+  <ngx-datatable-column  name="DATE" prop="date" [width]="100"></ngx-datatable-column>
+  <ngx-datatable-column name="TRIP#" prop="apply_to_trip" >  </ngx-datatable-column>
+
+  <ngx-datatable-column name="REFERENCE" prop="references" > </ngx-datatable-column>
+
+  <ngx-datatable-column name="AMOUNT" prop="amount"> </ngx-datatable-column>
+
+  <ngx-datatable-column name="REPORT NAME" prop="notes" > </ngx-datatable-column>
+</ngx-datatable>

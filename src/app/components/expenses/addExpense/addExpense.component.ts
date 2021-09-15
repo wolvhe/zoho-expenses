@@ -4,6 +4,7 @@ import { ReportService } from 'src/app/services/report.service';
 
 import { AngularFireStorage } from '@angular/fire/storage';
 import firebase from 'firebase/app';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -14,7 +15,12 @@ import firebase from 'firebase/app';
 export class AddExpenseComponent implements OnInit {
 
   public email: string = "";
-  constructor(private afStorage: AngularFireStorage,private http: HttpClient, private rep: ReportService) { }
+status:any
+
+  constructor(private afStorage: AngularFireStorage,private SpinnerService: NgxSpinnerService,private http: HttpClient, private rep: ReportService) {
+    this.status = true
+   }
+
 
   ngOnInit(): void {
     const store = localStorage.getItem('userInfo');
@@ -31,6 +37,16 @@ export class AddExpenseComponent implements OnInit {
   files: File[] = [];
 
 
+	onRemove(event: File) {
+		console.log(event);
+		this.files.splice(this.files.indexOf(event), 1);
+	}
+
+
+paystatus(){
+  this.status = !this.status
+}
+   
 
   addnewreport(report: any) {
     // console.log(report);
@@ -60,10 +76,7 @@ export class AddExpenseComponent implements OnInit {
     this.files.push(...event.addedFiles);
   }
 
-  onRemove(event: File) {
-    console.log(event);
-    this.files.splice(this.files.indexOf(event), 1);
-  }
+  
 
 
   sortedItems = ['Air Travel Expense', 'Automobile Expense', 'Fuel/Mileage Expense', 'IT and Internet Expense', 'Job Costing', 'Meals and Entertainment', 'Office and Supplies', 'Other Expenses', 'Parking', 'Subcontractor', 'Telephone Expense'];
@@ -75,12 +88,27 @@ export class AddExpenseComponent implements OnInit {
 
   public images: any[] = [];
 
-  async uploadImage() {
+  async uploadImage(data:any) {
+    this.SpinnerService.show();
+
     for (let i = 0; i < this.files.length; i++) {
       const snap = await this.afStorage.upload('/images' + Math.random() + this.files[i], this.files[i]);
       this.getUrl(snap);
     }
-    this.files = [];
+    // this.files = [];
+    const wait = setInterval(() => {
+      if (this.files.length == this.images.length) {
+        // alert("done");
+        console.log("uploaded")
+        this.SpinnerService.hide();
+
+        this.files = [];
+        // this.images = [];
+        this.submitexpenses(data)
+        clearInterval(wait);
+      }
+
+    }, 1000);
   }
 
   private async getUrl(snap: firebase.storage.UploadTaskSnapshot) {
@@ -92,7 +120,11 @@ export class AddExpenseComponent implements OnInit {
 
   addexpense(data: any) {
     console.log(this.files);
-    this.uploadImage();
+    this.uploadImage(data);
+    
+  }
+
+  submitexpenses(data:any){
     if (this.email != "") {
       data.email = this.email;
       data.receipts=this.images;

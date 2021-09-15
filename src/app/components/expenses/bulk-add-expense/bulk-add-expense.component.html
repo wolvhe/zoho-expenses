@@ -1,63 +1,65 @@
+ <form (ngSubmit)="addall()">
+
+
 <div *ngFor="let item of formArray; let i = index">
 
- <!-- <form #exp[i]="ngForm" (ngSubmit)="exp[i].value"> -->
 
   <table class="table table-bordered">
     <tr class="tr-header " style="font-size: medium;">
       <th>File</th>
       <th style="color: firebrick; font-size: medium;">Expense Date*</th>
       <th>Merchant</th>
-      <!-- <th style="color:firebrick; font-size: medium;">Category*</th> -->
+      <th style="color:firebrick; font-size: medium;">Category*</th>
       <th>Amount</th>
-      <!-- <th>REIMBURSABLE</th> -->
+      <th>REIMBURSABLE</th>
       <th>Description</th>
     <tr>
       <th>
-        <!-- <div class="custom-dropzone" style="height: 10px; width: 10px;" ngx-dropzone [accept]="'image/*'"
-          (change)="onSelect($event)">
+        <div class="custom-dropzone" style="height: 10px; width: 10px;" ngx-dropzone [accept]="'image/*'"
+          (change)="onSelect($event,i)">
           <ngx-dropzone-label>
             <div>
               <h2 style="font-size: small;">+</h2>
             </div>
           </ngx-dropzone-label>
-          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
-            [removable]="true" (removed)="onRemove(f)">
+          <!-- <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+            [removable]="true" (removed)="onRemove(f,i)">
             <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-          </ngx-dropzone-image-preview>
-        </div> -->
+          </ngx-dropzone-image-preview> -->
+        </div>
       </th>
       <td>
-        <input type="date" class="form-control" placeholder="eg: 31/01/2021" name="" ngModel>
+        <input type="date" class="form-control" placeholder="eg: 31/01/2021" name="exp_date" [(ngModel)]="item.exp_date">
       </td>
       <td>
-        <input type="text" name="" class="form-control" ngModel >
+        <input type="text" name="merchant" class="form-control"  [(ngModel)]="item.merchant" >
       </td>
-      <!-- <td><select name="" class="form-control">
+      <td><select name="" class="form-control" name="category" [(ngModel)]="item.category">
           <option value="" selected>Select </option>
-          <option value="#">Add Travel Expenses</option>
-          <option value="#">Automobile Expense</option>
-          <option value="#">Fuel/Mileage Expense</option>
-          <option value="#">IT and Internet Expense</option>
-          <option value="#">Job Costing</option>
-          <option value="#">Meals and Entertainment</option>
-          <option value="#">Office and Supplies</option>
-          <option value="#">Other Expenses</option>
-          <option value="#">Parking</option>
-          <option value="#">Subcontractor</option>
-          <option value="#">Telephone Expense</option>
-        </select></td> -->
-      <!-- <td>
-        <input type="text" name="" class="form-control">
-      </td> -->
-      <!-- <td>
+          <option value="Travel Expenses">Travel Expenses</option>
+          <option value="Automobile Expense">Automobile Expense</option>
+          <option value="Fuel/Mileage Expense">Fuel/Mileage Expense</option>
+          <option value="IT and Internet Expense">IT and Internet Expense</option>
+          <option value="Job Costing">Job Costing</option>
+          <option value="Meals and Entertainment">Meals and Entertainment</option>
+          <option value="Office and Supplies">Office and Supplies</option>
+          <option value="Other Expenses">Other Expenses</option>
+          <option value="Parking">Parking</option>
+          <option value="Subcontractor">Subcontractor</option>
+          <option value="Telephone Expense">Telephone Expense</option>
+        </select></td>
+      <td>
+        <input type="text" name="amount" class="form-control"  [(ngModel)]="item.amount">
+      </td>
+      <td>
         <div style="text-align: center;">
           <input class="checkbox-inline" type="checkbox" style="font-size: 30px;" id="checkboxNoLabel" value=""
             aria-label="...">
         </div>
-      </td> -->
-      <!-- <td>
-        <input type="text" name="" class="form-control">
-      </td> -->
+      </td>
+     <td>
+        <input type="text" name="description" class="form-control"  [(ngModel)]="item.description">
+      </td>
 
       <td>
         <button type="button" class="btn deleteButton btn-outline-danger btn-sm" style="margin-right: 1rem"
@@ -67,7 +69,6 @@
       </td>
     </tr>
   </table>
- <!-- </form> -->
 
 
 </div>
@@ -77,3 +78,13 @@
     Add more expenses
   </button>
 </div>
+
+<div>
+  <button type="submit" class="btn saveButton btn-outline-primary btn-sm">
+    submit
+  </button>
+</div>
+ </form>
+ <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+  <p style="color: white">Please Wait uploading... </p>  
+  </ngx-spinner>
