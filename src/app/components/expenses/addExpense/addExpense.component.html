@@ -8,9 +8,11 @@
     <div class = "img" >
       <div class="App" >
         <div>
+          
           <div class="custom-dropzone" style= "margin-right:70%; height: 650px; width: 650px;" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
             <ngx-dropzone-label>
               <div>
+                <i class="fas fa-upload fa-4x" style="margin-left: 1%; margin-bottom: 1rem"></i>
                 <h2 style="font-size: small;">Attach receipts from computer or cloud</h2>
               </div>
               Claim       </ngx-dropzone-label>
@@ -302,7 +304,7 @@
 
       <div *ngIf = status class = "form-group">
         <label>Paid Through</label>
-        <select class = "form-control">
+        <select class = "form-control custom-select">
           <!-- <h6 class= "dropdown-header" >Cash</h6> -->
           <option  href="#">Petty Cash</option>
           <option  href="#">Undeposited Funds</option>
