@@ -29,13 +29,14 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 import { TestingComponent } from './testing/testing.component';
-import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
 import { ApprovalTripsComponent } from './components/approval-page/approval-trips/approval-trips.component';
 import { ApprovalReportComponent } from './components/approval-page/approval-report/approval-report.component';
 import { PendingApprovalPageComponent } from './components/approval-page/pending-approval-page/pending-approval-page.component';
 
+import { MatSearchableSelectModule } from 'mat-searchable-select';
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -67,7 +68,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     AdvanceComponent,
     ImportcsvComponent,
     TabComponent,
-    
     AlladvanceComponent,
     TestingComponent,
     HomepageComponent,
@@ -97,6 +97,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     Ng2SearchPipeModule,
     NgxDatatableModule,
 
+    MatSearchableSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

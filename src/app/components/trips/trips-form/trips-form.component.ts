@@ -10,6 +10,7 @@ import { ExpServiceService } from 'src/app/services/exp-service.service';
 export class TripsFormComponent implements OnInit {
   org: string | undefined;
   obj: any;
+  international :any
   
   constructor(private trip:TripsService,private router: Router,private serv: ExpServiceService) { }
   // f_details{f_time,f_depart}
@@ -142,7 +143,7 @@ export class TripsFormComponent implements OnInit {
 
   
   ngOnInit(): void {
-    
+    this.international = false
     const store = localStorage.getItem('userInfo');
     if (store) {
       this.obj = JSON.parse(store);
@@ -151,6 +152,11 @@ export class TripsFormComponent implements OnInit {
       this.check(this.obj);
 
     }
+  }
+
+  region()
+  {
+    this.international = !this.international
   }
   
 
