@@ -5,7 +5,7 @@ import { ExpServiceService } from 'src/app/services/exp-service.service';
 @Component({
   selector: 'app-advance',
   templateUrl: './advance.component.html',
-  styleUrls: ['./advance.component.css']
+  styleUrls: ['./advance.component.css', '../homepage/homepage.component.css', '../dashboard/dashboard.component.css']
 })
 export class AdvanceComponent implements OnInit {
   [x: string]: any;
@@ -40,6 +40,21 @@ export class AdvanceComponent implements OnInit {
 
   
   ngOnInit(): void {
+    
+    const store = localStorage.getItem('userInfo');
+    if (store) {
+      this.obj = JSON.parse(store);
+      console.log(this.obj.email);
+      // this.serv.getUser(this.obj.email);
+      this.check(this.obj);
+      const email=this.obj.email
+      this .email(email)
+
+    }
+  }
+  email(email:any){
+    this.email=email
+    
   }
 
   

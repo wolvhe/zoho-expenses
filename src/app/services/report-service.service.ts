@@ -24,4 +24,9 @@ export class ReportServiceService {
   archieveReport(data:any): Observable<any> {
     return this.http.put<any>('http://localhost:3000/api/reports/edit', data)
   }
+
+  importBulkReports(data:any): Observable<any> {
+    console.log(data);
+    return this.http.post<any>('http://localhost:3000/api/reports/bulkimport', data)
+  }
 }

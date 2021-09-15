@@ -7,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddExpenseComponent implements OnInit {
 
+status:any
 
-  constructor() { }
+check:any
+
+  constructor() { 
+
+    this.status = true
+    this.check = false
+
+
+  }
 
   ngOnInit(): void {
   }
@@ -24,6 +33,23 @@ export class AddExpenseComponent implements OnInit {
 		this.files.splice(this.files.indexOf(event), 1);
 	}
 
+  filterArray(index: any) {
+    this.formArray = this.formArray.filter((d,i) => i!= index)
+  }
+  formArray = [{}]
+
+paystatus(){
+  this.status = !this.status
+}
+
+paycheck(){
+  this.check = !this.check
+}
+
+
+
+   
+
   
   sortedItems = ['Air Travel Expense', 'Automobile Expense', 'Fuel/Mileage Expense', 'IT and Internet Expense', 'Job Costing', 'Meals and Entertainment', 'Office and Supplies', 'Other Expenses', 'Parking', 'Subcontractor', 'Telephone Expense'];
   searchValue: string = '';
@@ -36,5 +62,7 @@ export class AddExpenseComponent implements OnInit {
 
 export class data {
   constructor() {
+
+    
   }
 }
