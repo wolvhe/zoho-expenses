@@ -85,6 +85,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     HttpClientModule,
     NgxDropzoneModule,
     
+    
     BrowserAnimationsModule,
     MatStepperModule,
     MatFormFieldModule,
