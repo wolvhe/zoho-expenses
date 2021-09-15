@@ -51,6 +51,7 @@ import { TripspageComponent } from './home/tripspage/tripspage.component';
 import { CardspageComponent } from './home/cardspage/cardspage.component';
 import { ApprovalpageComponent } from './home/approvalpage/approvalpage.component';
 import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.co
     CardspageComponent,
     ApprovalpageComponent,
     MysettingspageComponent,
+    AnalyticsComponent,
   ],
   imports: [
     BrowserModule,
