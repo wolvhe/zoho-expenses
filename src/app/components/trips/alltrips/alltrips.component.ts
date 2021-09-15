@@ -10,7 +10,7 @@ import { Tripmodel } from 'src/app/models/tripmodel';
 export class AlltripsComponent implements OnInit {
   public obj: any = {};
   public org: string = "";
-  data: any;
+  datas: any;
   
   constructor(private trip:TripsService,private serv: ExpServiceService) { }
   check(obj: any) {
@@ -31,11 +31,6 @@ export class AlltripsComponent implements OnInit {
       this.viewtrip(email)
   }
 }
-  // elements: any = [
-  //   {date: '12/07/2021', trip: '0001', reference: 'Chickmanglur', amount: '50,000',r_name:'Banglore'},
-  // ];
-
-  headElements = ['TRIP#','TRIP_DETAILS', 'DESTINATION', 'STATUS','APPROVER'];
   
   trips=Array
   viewtrip(email: any):void{
@@ -43,12 +38,16 @@ export class AlltripsComponent implements OnInit {
     this.trip.getalltrip(email)
     .subscribe(
       data=>{
-        this.data=data
-        console.log(this.data)
-        console.log(this.data.flight[0].f_type)
-        console.log(data)
+        this.datas=data
+        console.log(this.datas)
+        console.log(this.datas.flight[0].f_type)
+        console.log(this.datas)
       }
     )
   }
+  // getClassColor({status}) {
+  //   console.log(status)
+  //   return "color:green";
+  // }
 }
 

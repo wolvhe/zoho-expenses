@@ -17,16 +17,16 @@ import { TripsComponent } from './components/trips/trips.component';
 import { HomeComponent } from './home/home.component';
 import { TripsFormComponent } from './components/trips/trips-form/trips-form.component';
 // import { AllreportsComponent } from './components/allreports/allreports.component';
-
+import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
 import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
-import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
+
 import { CardsComponent } from './components/cards/cards.component'
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
-import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
+
 import { ReportspageComponent } from './home/reportspage/reportspage.component';
 import { ExpensespageComponent } from './home/expensespage/expensespage.component';
 import { TripspageComponent } from './home/tripspage/tripspage.component';
@@ -34,6 +34,7 @@ import { CardspageComponent } from './home/cardspage/cardspage.component';
 import { ApprovalpageComponent } from './home/approvalpage/approvalpage.component';
 import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomepageComponent},
@@ -43,6 +44,8 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'trips', component: TripspageComponent},
   {path: 'trips/new', component: TripsFormComponent},
+  {path: 'trips/all', component:AlltripsComponent},
+  // {path: 'mysettings', component: MysettingsComponent},
   {path: 'mysettings', component: MysettingspageComponent},
   {path: 'addexpense', component: AddExpenseComponent},
   {path: 'bulkaddexpense', component:BulkAddExpenseComponent},

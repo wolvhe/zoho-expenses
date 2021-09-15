@@ -8,6 +8,7 @@ import { ExpServiceService } from 'src/app/services/exp-service.service';
   styleUrls: ['./advance.component.css', '../homepage/homepage.component.css', '../dashboard/dashboard.component.css']
 })
 export class AdvanceComponent implements OnInit {
+  [x: string]: any;
   org: string | undefined;
   obj: any;
 
