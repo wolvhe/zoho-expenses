@@ -9,9 +9,12 @@ export class AddExpenseComponent implements OnInit {
 
 status:any
 
+check:any
+
   constructor() { 
 
     this.status = true
+    this.check = true
 
 
   }
@@ -29,9 +32,22 @@ status:any
 		console.log(event);
 		this.files.splice(this.files.indexOf(event), 1);
 	}
+
+  filterArray(index: any) {
+    this.formArray = this.formArray.filter((d,i) => i!= index)
+  }
+  formArray = [{}]
+
 paystatus(){
   this.status = !this.status
 }
+
+paycheck(){
+  this.check = !this.check
+}
+
+
+
    
 
   
