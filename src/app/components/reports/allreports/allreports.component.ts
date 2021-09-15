@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportServiceService } from 'src/app/services/report-service.service';
 
 @Component({
   selector: 'app-allreports',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllreportsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private reportService: ReportServiceService) { }
+
+  allReports:any
 
   ngOnInit(): void {
+    this.reportService.getAllReports().subscribe(reports => {
+      this.allReports = reports
+    })
   }
 
   isEmpty = false

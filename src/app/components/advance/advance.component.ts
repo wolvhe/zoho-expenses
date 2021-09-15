@@ -8,6 +8,7 @@ import { ExpServiceService } from 'src/app/services/exp-service.service';
   styleUrls: ['./advance.component.css']
 })
 export class AdvanceComponent implements OnInit {
+  [x: string]: any;
   org: string | undefined;
   obj: any;
 
@@ -39,21 +40,6 @@ export class AdvanceComponent implements OnInit {
 
   
   ngOnInit(): void {
-    
-    const store = localStorage.getItem('userInfo');
-    if (store) {
-      this.obj = JSON.parse(store);
-      console.log(this.obj.email);
-      // this.serv.getUser(this.obj.email);
-      this.check(this.obj);
-      const email=this.obj.email
-      this .email(email)
-
-    }
-  }
-  email(email:any){
-    this.email=email
-    
   }
 
   

@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { TripsService } from 'src/app/services/trips.service';
 import { ExpServiceService } from 'src/app/services/exp-service.service';
-import { Tripmodel } from 'src/app/models/tripmodel';
+
 @Component({
-  selector: 'app-alltrips',
-  templateUrl: './alltrips.component.html',
-  styleUrls: ['./alltrips.component.css']
+  selector: 'app-approval-trips',
+  templateUrl: './approval-trips.component.html',
+  styleUrls: ['./approval-trips.component.css']
 })
-export class AlltripsComponent implements OnInit {
+export class ApprovalTripsComponent implements OnInit {
   public obj: any = {};
   public org: string = "";
   datas: any;
-  
+
   constructor(private trip:TripsService,private serv: ExpServiceService) { }
   check(obj: any) {
     // alert("please");
@@ -40,14 +40,11 @@ export class AlltripsComponent implements OnInit {
       data=>{
         this.datas=data
         console.log(this.datas)
-        console.log(this.datas.flight[0].f_type)
         console.log(this.datas)
       }
     )
   }
-  // getClassColor({status}) {
-  //   console.log(status)
-  //   return "color:green";
-  // }
+
+
 }
 

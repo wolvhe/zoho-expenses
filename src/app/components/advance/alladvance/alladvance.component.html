@@ -18,9 +18,9 @@
       </tr>
     </tbody>
   </table>
-   -->
+   --> 
 
- 
+<!-- <input type="text"  placeholder="Type to filter the name column..." (keyup)="updateFilter($event)" > -->
 
 <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
   [rowHeight]="40" [limit]="10" [scrollbarV]="false" (sort)="onSort($event)" [sorts]="[{prop: 'name', dir: 'asc'}]">

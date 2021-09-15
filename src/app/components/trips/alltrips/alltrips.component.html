@@ -1,25 +1,9 @@
-<table class="table table-hover ">
-    <thead>
-      <tr>
-        <th class="bg-dark" style="color: white;" *ngFor="let head of headElements" scope="col">{{head}} </th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let datas of data">
-      <tr >
-        <td>{{datas.email}}</td>
-        <td>{{datas.trip_name}}</td>
-        <td>{{datas.flight[0].f_Arrive_At}}</td>
-        <!-- <td>{{status}}</td>
-        <td>{{approver}}</td> -->
-      </tr>
-    </tbody>
-  </table>
 
-  <ngx-datatable class="material" [rows]="data" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-  [rowHeight]="40" [limit]="10" [scrollbarV]="false"  [sorts]="[{prop: 'name', dir: 'asc'}]">
 
-  
-  <ngx-datatable-column  name="TRIP#" prop="email" [width]="100"></ngx-datatable-column>
+<ngx-datatable  style="width: 100%" class="material" [rows]="datas" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+  [rowHeight]="40" [limit]="10" [scrollbarV]="false" [sorts]="[{prop: 'name', dir: 'asc'}]">
+
+  <ngx-datatable-column name="TRIP#" prop="email" [width]="100"></ngx-datatable-column>
   <ngx-datatable-column name="TRIP_DETAILS" prop="trip_name" >  </ngx-datatable-column>
   
   <ngx-datatable-column name="DESTINATION"> 
@@ -27,7 +11,9 @@
       {{row.flight[0].f_Arrive_At}}
     </ng-template>
   </ngx-datatable-column>
-  <ngx-datatable-column name="STATUS" prop=""> </ngx-datatable-column>
+  <ngx-datatable-column name="STATUS">
+    <span class="folder-color "></span> sdjik</ngx-datatable-column>
 
-  <ngx-datatable-column name="APPROVER" prop="" > </ngx-datatable-column>
+  <ngx-datatable-column name="APPROVER" prop="email"> </ngx-datatable-column>
 </ngx-datatable>
+ 
