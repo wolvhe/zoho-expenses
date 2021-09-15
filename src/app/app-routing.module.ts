@@ -27,7 +27,8 @@ import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
 const routes: Routes = [
-  
+  {path: '', component: HomeComponent},
+  {path: 'home', component: HomepageComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'reports', component: ReportsComponent},
   {path: 'login', component: LoginComponent},
