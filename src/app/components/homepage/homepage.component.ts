@@ -9,8 +9,9 @@ import { ExpServiceService } from 'src/app/services/exp-service.service';
 })
 export class HomepageComponent implements OnInit {
 
-
-  constructor(private serv:ExpServiceService) { }
+  constructor(private serv:ExpServiceService) { 
+   
+  }
 
   ngOnInit(): void {
   }
