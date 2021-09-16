@@ -11,8 +11,11 @@ export class AlltripsComponent implements OnInit {
   public obj: any = {};
   public org: string = "";
   datas: any;
+  checkbox:boolean
   
-  constructor(private trip:TripsService,private serv: ExpServiceService) { }
+  constructor(private trip:TripsService,private serv: ExpServiceService) { 
+    this.checkbox=false
+  }
   check(obj: any) {
     // alert("please");
     this.serv.getUser(obj).subscribe((res) => {
@@ -45,6 +48,14 @@ export class AlltripsComponent implements OnInit {
       }
     )
   }
+  navbar(){
+    this.checkbox=!this.checkbox
+  }
+  handleSelected($event:any) {
+    if ($event.target.checked === true) {
+    // Handle your code
+    }
+ }
   
   // getClassColor({status}) {
   //   console.log(status)

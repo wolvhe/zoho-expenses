@@ -11,6 +11,7 @@ export class AdvanceComponent implements OnInit {
   [x: string]: any;
   org: string | undefined;
   obj: any;
+  datas: any;
 
   constructor(private advance:TripsService,private router: Router,private serv:ExpServiceService) { }
   onClickSubmit(data:any){
@@ -40,22 +41,32 @@ export class AdvanceComponent implements OnInit {
 
   
   ngOnInit(): void {
-    
     const store = localStorage.getItem('userInfo');
     if (store) {
       this.obj = JSON.parse(store);
-      console.log(this.obj.email);
+      // console.log(this.obj.email);
       // this.serv.getUser(this.obj.email);
       this.check(this.obj);
       const email=this.obj.email
-      this .email(email)
-
-    }
+      this.viewtrip(email) 
+      this.email(email)
+    
+    
   }
+} 
   email(email:any){
     this.email=email
     
   }
+  viewtrip(email: any):void{
+    console.log(email)
+    this.advance.getalltrip(email)
+    .subscribe(
+      (data: any)=>{
+        this.datas=data
+        console.log(this.datas)
+      }
+    )}
 
   
 }

@@ -99,12 +99,12 @@
                         </div>
                     </div>
                     <label> Associate With Trip</label>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3" style="color: black;">
                         <select class="form-select" [formControl]="associateWithTrip">
-                          <option selected>Select</option>
-                          <option value="1"></option>
+                          <option *ngFor="let data of datas">{{data.trip_name}}</option>
+                          <!-- <option value="1"></option>
                           <option value="2"></option>
-                          <option value="3"></option>
+                          <option value="3"></option> -->
                         </select>
                       </div>
                       

@@ -16,15 +16,16 @@
       </tr>
     </tbody>
   </table> -->
-
-
-<div>
+  <div *ngIf="checkbox">
+    <div class="nav bar">
+    </div>
+    </div>
   <div style="position: absolute; width: 85rem; top: 2rem; padding-left: 10px;">
     <ngx-datatable class="material" [rows]="datas" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-      [rowHeight]="40" [limit]="10" [scrollbarV]="false" [sorts]="[{prop: 'name', dir: 'asc'}]">
+      [rowHeight]="40" [limit]="10" [scrollbarV]="false" [sorts]="[{prop: 'name', dir: 'asc'}]" >
 
 
-      <ngx-datatable-column
+      <ngx-datatable-column 
             [width]="30"
             [sortable]="false"
             [canAutoResize]="false"
@@ -32,8 +33,10 @@
             [resizeable]="false"
             [headerCheckboxable]="true"
             [checkboxable]="true"
+            
           ></ngx-datatable-column>
-
+          
+        
       <ngx-datatable-column name="TRIP#" prop="email" [width]="100"></ngx-datatable-column>
       <ngx-datatable-column name="TRIP_DETAILS" prop="trip_name"> </ngx-datatable-column>
 
@@ -47,8 +50,9 @@
       <ngx-datatable-column name="APPROVER" prop="approver"> </ngx-datatable-column>
     </ngx-datatable>
   </div>
+
   <div>
-    <div style="position: absolute; top:2rem; z-index: 1;">
+    <div style="position: abs0lute; top:2rem; z-index: 1;">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
         viewBox="0 0 16 16" style="cursor: pointer; margin-left: 80rem;" data-bs-toggle="modal"
         data-bs-target="#searchModal">
@@ -210,4 +214,6 @@
               </div>
           </div>
       </div>
-  </div>
+  </div>    
+
+
