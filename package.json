@@ -37,6 +37,7 @@
     "ngx-dropzone": "^3.0.0",
     "ngx-easy-table": "^15.0.0",
     "ngx-select-dropdown": "^2.1.0",
+    "ngx-mat-select-search": "^3.3.0",
     "ngx-table": "0.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.1",
