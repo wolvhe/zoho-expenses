@@ -16,10 +16,12 @@ export class ReportsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  email:string = 'email@example.com'
+
   reportName = new FormControl('')
   businessPurpose = new FormControl('')
-  durationFrom = new FormControl('')
-  durationTo = new FormControl('')
+  startDate = new FormControl('')
+  endDate = new FormControl('')
   associateWithTrip = new FormControl('')
   newReport: any
   allReports:any
@@ -27,10 +29,11 @@ export class ReportsComponent implements OnInit {
   postReport () {
     console.log(this.reportName.value);
     this.newReport = {
-      "name": this.reportName.value,
+      "email": this.email,
+      "reportName": this.reportName.value,
       "businessPurpose": this.businessPurpose.value,
-      "durationFrom": this.durationFrom.value,
-      "durationTo": this.durationTo.value,
+      "startDate": this.startDate.value,
+      "endDate": this.endDate.value,
       "associateWithTrip": this.associateWithTrip.value,
       "status": "DRAFT"
     }

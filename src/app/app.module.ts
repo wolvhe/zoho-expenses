@@ -31,6 +31,8 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 import { TestingComponent } from './testing/testing.component';
+import { MatSearchableSelectModule } from 'mat-searchable-select';
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
@@ -41,9 +43,6 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage'
 
 import { SelectDropDownModule } from 'ngx-select-dropdown';
-
-import { MatSearchableSelectModule } from 'mat-searchable-select';
-import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -135,6 +134,7 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
     CommonModule,
     SelectDropDownModule,
     MatInputModule,
+    MatSearchableSelectModule,
     Ng2SearchPipeModule,
     NgxDatatableModule,
 
