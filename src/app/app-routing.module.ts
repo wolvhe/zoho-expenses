@@ -1,3 +1,4 @@
+import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
 import { TestingComponent } from './testing/testing.component';
 import { BulkAddExpenseComponent } from './components/expenses/bulk-add-expense/bulk-add-expense.component';
 import { AddExpenseComponent } from './components/expenses/addExpense/addExpense.component';
@@ -20,14 +21,13 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
+import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import { CardsComponent } from './components/cards/cards.component'
-
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
-import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
+import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomepageComponent},
+  
   {path: 'dashboard', component: DashboardComponent},
   {path: 'reports', component: ReportsComponent},
   {path: 'login', component: LoginComponent},
@@ -45,12 +45,14 @@ const routes: Routes = [
   {path: 'advances', component: AdvanceComponent},
   {path: 'advances/all', component: AlladvanceComponent},
   {path: 'reports/all', component: AllreportsComponent},
+  {path: 'approval', component: ApprovalPageComponent},
   {path: 'reports/import', component: ImportReportsComponent},
+  {path:'trips/all',component:AlltripsComponent},
   {path: 'test', component: TestingComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'testing', component: TestingComponent},
   {path:'cards',component:CardsComponent}
-
+  
 ];
 
 @NgModule({

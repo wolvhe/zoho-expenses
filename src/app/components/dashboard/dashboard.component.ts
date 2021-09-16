@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ExpServiceService } from 'src/app/services/exp-service.service';
 
 
 @Component({
@@ -8,14 +9,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  public obj: any = {};
+  public org: string = "";
 
-  constructor(private router: Router) { }
 
+  constructor(private router: Router, private serv: ExpServiceService) { }
+
+  check(obj: any) {
+    // alert("please");
+    this.serv.getUser(obj).subscribe((res) => {
+      console.log(res);
+      this.org = res;
+    });
+  }
+  
   ngOnInit(): void {
+    const store = localStorage.getItem('userInfo');
+    if (store) {
+      this.obj = JSON.parse(store);
+      console.log(this.obj);
+      // this.serv.getUser(this.obj.email);
+      this.check(this.obj);
+
+    }
   }
 
-  onClickLogout(){
-    this.router.navigate(['/login']);  
+  onClickLogout() {
+    this.router.navigate(['/login']);
     localStorage.clear()
   }
 }

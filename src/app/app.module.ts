@@ -32,10 +32,23 @@ import { TestingComponent } from './testing/testing.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MatSearchableSelectModule } from 'mat-searchable-select';
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
+import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
+import { ApprovalTripsComponent } from './components/approval-page/approval-trips/approval-trips.component';
+import { ApprovalReportComponent } from './components/approval-page/approval-report/approval-report.component';
+import { PendingApprovalPageComponent } from './components/approval-page/pending-approval-page/pending-approval-page.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage'
+
 import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
+import { AlltripsComponent } from './components/trips/alltrips/alltrips.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
+import { NgxSpinnerModule } from "ngx-spinner";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,13 +76,29 @@ import {MatInputModule} from '@angular/material/input'
     AlladvanceComponent,
     TestingComponent,
     HomepageComponent,
-    ImportReportsComponent
+    ApprovalPageComponent,
+    ApprovalReportComponent,
+    ApprovalTripsComponent,
+    PendingApprovalPageComponent,
+    ImportReportsComponent,
+    AlltripsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxDropzoneModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyC4_Z1FK1Iy_AIfUVjEhVUVK6gx6wLvFh0",
+      authDomain: "imagegallery-9f3d5.firebaseapp.com",
+      projectId: "imagegallery-9f3d5",
+      storageBucket: "imagegallery-9f3d5.appspot.com",
+      messagingSenderId: "311923668193",
+      appId: "1:311923668193:web:988cafb52db0eeeb6d73a0"
+    }),
+    AngularFireStorageModule,
+    
     BrowserAnimationsModule,
     MatStepperModule,
     MatFormFieldModule,
@@ -78,7 +107,10 @@ import {MatInputModule} from '@angular/material/input'
     NgxDropzoneModule,
     MatAutocompleteModule,
     MatInputModule,
-    MatSearchableSelectModule
+    MatSearchableSelectModule,
+    Ng2SearchPipeModule,
+    NgxDatatableModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
