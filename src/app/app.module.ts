@@ -37,6 +37,8 @@ import { ApprovalPageComponent } from './components/approval-page/approval-page.
 import { ApprovalTripsComponent } from './components/approval-page/approval-trips/approval-trips.component';
 import { ApprovalReportComponent } from './components/approval-page/approval-report/approval-report.component';
 import { PendingApprovalPageComponent } from './components/approval-page/pending-approval-page/pending-approval-page.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage'
 
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 
@@ -57,6 +59,9 @@ import { CardspageComponent } from './home/cardspage/cardspage.component';
 import { ApprovalpageComponent } from './home/approvalpage/approvalpage.component';
 import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
+
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -100,6 +105,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     ApprovalpageComponent,
     MysettingspageComponent,
     AnalyticsComponent,
+    TabspageComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,6 +114,16 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     HttpClientModule,
     NgxDropzoneModule,
     NgxDatatableModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyC4_Z1FK1Iy_AIfUVjEhVUVK6gx6wLvFh0",
+      authDomain: "imagegallery-9f3d5.firebaseapp.com",
+      projectId: "imagegallery-9f3d5",
+      storageBucket: "imagegallery-9f3d5.appspot.com",
+      messagingSenderId: "311923668193",
+      appId: "1:311923668193:web:988cafb52db0eeeb6d73a0"
+    }),
+    AngularFireStorageModule,
+    
     BrowserAnimationsModule,
     MatStepperModule,
     MatFormFieldModule,
@@ -120,7 +136,8 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     Ng2SearchPipeModule,
     NgxDatatableModule,
 
-    MatSearchableSelectModule
+    MatSearchableSelectModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

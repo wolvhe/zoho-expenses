@@ -45,6 +45,7 @@ export class AlltripsComponent implements OnInit {
       }
     )
   }
+  
   // getClassColor({status}) {
   //   console.log(status)
   //   return "color:green";
