@@ -17,8 +17,8 @@ export class ReportServiceService {
   }
 
   allReports:any
-  getAllReports(): Observable<any> {
-    return this.http.get<any>('http://localhost:3000/api/reports')
+  getAllReports(email:string): Observable<any> {
+    return this.http.get<any>(`http://localhost:3000/api/reports/${email}`)
   }
 
   archieveReport(data:any): Observable<any> {
