@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
         // this.router.navigate(['/'])
         localStorage.setItem('userInfo',JSON.stringify(response));
         this.router.navigate(['/home']);  
+        
       },
       (error: any) => {
         console.log(error);

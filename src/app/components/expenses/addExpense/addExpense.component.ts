@@ -16,9 +16,11 @@ export class AddExpenseComponent implements OnInit {
 
   public email: string = "";
 status:any
+  check: boolean;
 
   constructor(private afStorage: AngularFireStorage,private SpinnerService: NgxSpinnerService,private http: HttpClient, private rep: ReportService) {
     this.status = true
+    this.check=false
    }
 
 
@@ -42,10 +44,21 @@ status:any
 		this.files.splice(this.files.indexOf(event), 1);
 	}
 
+  filterArray(index: any) {
+    this.formArray = this.formArray.filter((d,i) => i!= index)
+  }
+  formArray = [{}]
 
 paystatus(){
   this.status = !this.status
 }
+
+paycheck(){
+  this.check = !this.check
+}
+
+
+
    
 
   addnewreport(report: any) {

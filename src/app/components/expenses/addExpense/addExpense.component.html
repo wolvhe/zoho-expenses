@@ -59,9 +59,23 @@
           <br>
       </div> -->
 
-      <label for="formGroupExampleInput" class="text-danger">Amount*</label>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
+      <div *ngIf = !check>
+        <div class="row">
+        <div class="col-lg-8">
+      <label for="formGroupExampleInput" class="text-danger">Amount*  
+      </label>
+      </div>
+      
+
+       
+        <div class="col">
+          <button class="btn btn-link " style = "font-size: small;" (click)="paycheck()">Itemize</button>
+          
+        </div>
+      </div>
+      <div class="row">
+      <div class="input-group mb-3 col-lg-3">
+        <div class="input-group-prepend ">
           <button class="btn btn" type="button" aria-haspopup="true" aria-expanded="false">
             <!-- <div class="dropdown-menu">
              <a class="dropdown-item" >AUD-Australian Dollar</a>
@@ -90,9 +104,85 @@
           </button>
 
         </div>
+        </div>
+        <div class="col">
         <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="0.00" ngModel
           name="amount">
+        </div>
+        </div>
       </div>
+      <div *ngIf = check >
+        <div style = "text-align: right;"> <button class="btn btn-link " style = "font-size: small;" (click)="paycheck()">Back to single expense</button> </div>
+        <div>
+          <label> Currency </label>
+          <br>
+          <select class = "form-control custom-select mb-4" style="width: 460px;"  >
+            <option  href="#">INR</option>
+           <option  href="#">AUD-Australian Dollar</option>
+             <option href="#">CAD-Canadian Dollar</option>
+             <option href="#">CNY-Yuan Renminbi</option>
+             <option href="#">EUR-Euro</option>
+             <option href="#">GPB-Pound Sterling</option>
+             <option href="#">INR-Indian Rupee</option>
+             <option href="#">JPY-Japanese Yen</option>
+             <option href="#">SAR-Saudi Riyal</option>
+             <option href="#">USD-United States Dollar</option>
+             <option href="#">ZAR-South African Rand</option> 
+           </select>  
+
+        </div>
+      <div *ngFor="let item of formArray; let i = index">
+        <table class="table table-bordered">
+      <tr class="tr-header " style="font-size: medium;">
+      <th style="color:firebrick; font-size: medium;">Category*</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <tr>
+      <td><select name="" class="form-control">
+        <option value="" selected>Select </option>
+        <option value="#">Add Travel Expenses</option>
+        <option value="#">Automobile Expense</option>
+        <option value="#">Fuel/Mileage Expense</option>
+        <option value="#">IT and Internet Expense</option>
+        <option value="#">Job Costing</option>
+        <option value="#">Meals and Entertainment</option>
+        <option value="#">Office and Supplies</option>
+        <option value="#">Other Expenses</option>
+        <option value="#">Parking</option>
+        <option value="#">Subcontractor</option>
+        <option value="#">Telephone Expense</option>
+      </select></td>
+      <td>
+          <input type="text" name="" class="form-control">
+      </td>
+      <td>
+          <input type="text" name="" class="form-control">
+      </td>
+      
+      <td>
+        <button
+        type="button"
+        class="btn deleteButton btn-outline-danger btn-sm"
+        style="margin-right: 1rem"
+        (click)="filterArray(i)"
+        >
+        <i class="fas fa-trash-alt"></i> 
+        </button>
+        </td>
+      </tr>
+      </table>
+      
+      
+      </div>
+      
+      <div>
+         <button class="btn btn-link " style = "font-size: small;"
+        (click)="formArray.push({})"
+      >
+        Add another line
+      </button> 
+      </div> 
+    </div>
 
 
 

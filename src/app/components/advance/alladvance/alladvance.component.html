@@ -1,3 +1,210 @@
+<!-- <table class="table table-hover ">
+  <thead>
+    <tr>
+      <th class="bg-dark" style="color: white;" *ngFor="let head of headElements" scope="col">{{head}} </th>
+      <th class="bg-dark" style="color: white;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#searchModal">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let el of elements">
+      <th scope="row">{{el.date}}</th>
+      <td>{{el.trip}}</td>
+      <td>{{el.reference}}</td>
+      <td>{{el.amount}}</td>
+      <td>{{el.r_name}}</td>
+    </tr>
+  </tbody>
+</table> -->
+<!-- modal -->
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 70rem; position: relative; right: 19rem; height: 42rem;">
+      <div class="modal-header" style="background-color: #f8f8fd;">
+        <div style="display: flex; flex: 1; margin-top: 1rem;">
+          <div>
+            <p>Search</p>
+          </div>
+          <div>
+            <div class="input-group mb-3" style="width: 22rem; margin-left: 5rem;">
+              <select class="form-select" id="inputGroupSelect02">
+                <option selected></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: row;">
+        <!-- column-1 -->
+        <div style="margin-top: 2rem;">
+          <!--  -->
+          <div style="display: flex; flex-direction: row; position: relative; ">
+            <p>Start Date</p>
+            <div style="display: flex; flex-direction: row; margin-left: 4rem;">
+              <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
+                <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
+              </div>
+              <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem; margin-left: 2rem;">
+                <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div style="display: flex; flex-direction: row; position: relative; top: 1rem;">
+            <p>Filter By</p>
+            <div>
+              <div class="input-group mb-3" style="width: 22rem;  margin-left: 5rem;">
+                <select class="form-select" id="inputGroupSelect02">
+                  <option selected>Select</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div><br>
+          <!--  -->
+          <div style="display: flex; flex-direction: row;">
+            <p>Notes</p>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+              style="margin-left: 6rem;">
+          </div><br>
+          <!--  -->
+          <div style="display: flex; flex-direction: row; margin-top: 2.5rem;">
+            <p>Project</p>
+            <div>
+              <div class="input-group mb-3" style="width: 22rem;  margin-left: 5.5rem;">
+                <select class="form-select" id="inputGroupSelect02">
+                  <option selected>Select</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div><br>
+          <!--  -->
+          <div style="display: flex; flex-direction: row;">
+            <p>Associated to T...</p>
+            <div>
+              <div class="input-group mb-3" style="width: 22rem;  margin-left: 1.5rem;">
+                <select class="form-select" id="inputGroupSelect02">
+                  <option selected>Select</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div><br>
+        </div>
+        
+        <!-- column-2 -->
+        <div style="margin-left: 3rem; margin-top: 2rem;">
+          <!-- <div style="display: flex; flex-direction: row;">
+                      <p>Travel Type</p>
+                      <div style="display: flex; flex: 4;">
+                          <div class="input-group mb-3" style="width: 22rem; margin-left: 4rem;">
+                              <select class="form-select" id="inputGroupSelect02">
+                                  <option selected></option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div><br> -->
+          <!--  -->
+          <!-- <div style="display: flex; flex-direction: row;">
+                      <p>End Date</p>
+                      <div style="display: flex; flex-direction: row; margin-left: 5rem;">
+                          <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
+                              <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
+                          </div>
+                          <div class="form-group mb-5" style="display: flex  <div style="display: flex; flex-direction: row;">
+                      <p>End Date</p>
+                      <div style="display: flex; flex-direction: row; margin-left: 5rem;">
+                          <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
+                              <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
+                          </div>
+                          <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem; margin-left: 2rem;">
+                              <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
+                          </div>
+                      </div>
+                  </div>; flex: 1; width: 10rem; margin-left: 2rem;">
+                              <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
+                          </div>
+                      </div>
+                  </div> -->
+          <!--  -->
+          <div style="display: flex; flex-direction: row;">
+            <p>Budget Amount</p>
+            <p class="chase">
+               
+            </p>
+            <div>
+              <div style="display: flex; flex-direction: row; margin-left: 2rem;">
+                <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
+                  <input type="text" class="form-control form-control-lg">
+                </div>
+                <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem; margin-left: 2rem;">
+                  <input type="text" class="form-control form-control-lg">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div style="display: flex; flex-direction: row; position: relative; top: 1rem;">
+            <p>Reference#</p>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"
+              style="margin-left: 4rem; width: 22rem;">
+          </div><br>
+          <!--  -->
+          <div style="display: flex; flex-direction: row; position: relative; top: 2rem;">
+            <p>Customer</p>
+            <div>
+              <div class="input-group mb-3" style="width: 22rem;  margin-left: 4.6rem;">
+                <select class="form-select" id="inputGroupSelect02">
+                  <option selected>Select</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div><br>
+          <!--  -->
+          <div style="display: flex; flex-direction: row; position: relative; top: 2rem;">
+            <p>Report Name</p>
+            <div>
+              <div class="input-group mb-3" style="width: 22rem;  margin-left: 3.2rem;">
+                <select class="form-select" id="inputGroupSelect02">
+                  <option selected>Select</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div><br>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- <nav class="navbar">
   <input class="form-control" type="text" name="Amount" [(ngModel)] =amount (ngModelChange)="Search($event)" placeholder="Enter Amount">
 </nav> -->
@@ -18,20 +225,36 @@
       </tr>
     </tbody>
   </table>
-   -->
+   --> 
+
+
+<div >
+  <div style="position: absolute; width: 85rem; top: 2rem; padding-left: 10px;">
+    <ngx-datatable class="material" [rows]="rows"  [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+      [rowHeight]="40"  [limit]="10" [scrollbarV]="false" (sort)="onSort($event)" [sorts]="[{prop: 'name', dir: 'asc'}]">
+
+
+      <ngx-datatable-column name="DATE" prop="date" [width]="100"></ngx-datatable-column>
+      <ngx-datatable-column name="TRIP#" prop="apply_to_trip"> </ngx-datatable-column>
+
+      <ngx-datatable-column name="REFERENCE" prop="references"> </ngx-datatable-column>
+
+      <ngx-datatable-column name="AMOUNT" prop="amount"> </ngx-datatable-column>
+
+      <ngx-datatable-column name="REPORT NAME" prop="notes"> </ngx-datatable-column>
+
+    </ngx-datatable>
+
 
  
+  </div>
+  <div style="position: absolute; top:2rem; z-index: 1;"> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+      viewBox="0 0 16 16" style="cursor: pointer; margin-left: 80rem;" data-bs-toggle="modal"
+      data-bs-target="#searchModal">
+      <path
+        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+    </svg>
+  </div>
 
-<ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-  [rowHeight]="40" [limit]="10" [scrollbarV]="false" (sort)="onSort($event)" [sorts]="[{prop: 'name', dir: 'asc'}]">
-
-  
-  <ngx-datatable-column  name="DATE" prop="date" [width]="100"></ngx-datatable-column>
-  <ngx-datatable-column name="TRIP#" prop="apply_to_trip" >  </ngx-datatable-column>
-
-  <ngx-datatable-column name="REFERENCE" prop="references" > </ngx-datatable-column>
-
-  <ngx-datatable-column name="AMOUNT" prop="amount"> </ngx-datatable-column>
-
-  <ngx-datatable-column name="REPORT NAME" prop="notes" > </ngx-datatable-column>
-</ngx-datatable>
+</div>

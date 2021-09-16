@@ -10,14 +10,18 @@ import { ExpServiceService } from 'src/app/services/exp-service.service';
 export class TripsFormComponent implements OnInit {
   org: string | undefined;
   obj: any;
+  international :any
   
-  constructor(private trip:TripsService,private router: Router,private serv: ExpServiceService) { }
+  constructor(private trip:TripsService,private router: Router,private serv: ExpServiceService) { this.international=false }
   // f_details{f_time,f_depart}
   onClickSubmit(data:any){
     console.log(data);
     const travel_type=data.Travel_type
+    const trip_no=0
     const trip_name=data.Tripname
     const business_purpose=data.Business_Purpose
+    const designation_country=data.Designation_Country
+    const visa=data.Visa
     // flight
     const f_type=data.f_type
     const f_Departure_From=data.f_Departure_From
@@ -111,9 +115,12 @@ export class TripsFormComponent implements OnInit {
 
     const data1={
       email,
+      trip_no,
       travel_type,
       trip_name,
       business_purpose,
+      designation_country,
+      visa,
       flight2,
       hotel2,
       car2,
@@ -142,17 +149,22 @@ export class TripsFormComponent implements OnInit {
 
   
   ngOnInit(): void {
-    
+    this.international = false
     const store = localStorage.getItem('userInfo');
     if (store) {
       this.obj = JSON.parse(store);
-      console.log(this.obj.email);
+      // console.log(this.obj.email);
       // this.serv.getUser(this.obj.email);
       this.check(this.obj);
+      const email=this.obj.email
 
     }
   }
-  
 
+  region()
+  {
+    this.international = !this.international
+  }
   
-}
+  }
+  
