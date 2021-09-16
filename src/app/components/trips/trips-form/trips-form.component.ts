@@ -161,9 +161,13 @@ export class TripsFormComponent implements OnInit {
     }
   }
 
+  regionfalse()
+  {
+    this.international = false
+  }
   region()
   {
-    this.international = !this.international
+    this.international = true
   }
   
   }

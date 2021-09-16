@@ -33,14 +33,9 @@ import { TripspageComponent } from './home/tripspage/tripspage.component';
 import { CardspageComponent } from './home/cardspage/cardspage.component';
 import { ApprovalpageComponent } from './home/approvalpage/approvalpage.component';
 import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.component';
-<<<<<<< HEAD
-import { AnalyticsComponent } from './analytics/analytics.component';
-import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
-=======
 import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
->>>>>>> 78e745db4b8af6aa21c065b27981d9b6b9bcdca4
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomepageComponent},
