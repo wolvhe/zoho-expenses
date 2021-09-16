@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TripsService } from 'src/app/services/trips.service';
 import { ExpServiceService } from 'src/app/services/exp-service.service';
 import { Tripmodel } from 'src/app/models/tripmodel';
+import { ColumnMode } from '@swimlane/ngx-datatable';
 @Component({
   selector: 'app-alltrips',
   templateUrl: './alltrips.component.html',
@@ -19,6 +20,8 @@ export class AlltripsComponent implements OnInit {
       this.org = res;
     });
   }
+  ColumnMode = ColumnMode;
+  
   ngOnInit(): void {
     
     const store = localStorage.getItem('userInfo');
@@ -45,6 +48,14 @@ export class AlltripsComponent implements OnInit {
       }
     )
   }
+
+  // getRowClass() {
+  //   console.log('rowClass')
+  //   return {
+  //     'row-color': true
+  //   }
+  // }
+
   
   // getClassColor({status}) {
   //   console.log(status)

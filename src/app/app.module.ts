@@ -60,8 +60,9 @@ import { ApprovalpageComponent } from './home/approvalpage/approvalpage.componen
 import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 
 @NgModule({
   declarations: [
@@ -106,8 +107,10 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MysettingspageComponent,
     AnalyticsComponent,
     TabspageComponent,
+    AnalyticspageComponent,
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -137,7 +140,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     NgxDatatableModule,
 
     MatSearchableSelectModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
