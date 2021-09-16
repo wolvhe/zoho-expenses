@@ -62,6 +62,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
 
 import { NgxSpinnerModule } from "ngx-spinner";
+import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +107,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MysettingspageComponent,
     AnalyticsComponent,
     TabspageComponent,
+    AllexpensesComponent,
   ],
   imports: [
     BrowserModule,
