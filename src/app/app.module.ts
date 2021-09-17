@@ -105,6 +105,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MysettingspageComponent,
     AnalyticsComponent,
     TabspageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -134,8 +135,6 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MatInputModule,
     MatSearchableSelectModule,
     Ng2SearchPipeModule,
-    NgxDatatableModule,
-
     MatSearchableSelectModule,
     NgxSpinnerModule
   ],

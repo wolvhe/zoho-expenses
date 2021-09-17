@@ -1,11 +1,11 @@
-<div>
+<div *ngIf="isSelected">
     <div class="row">
         <div class="col-8 px-2">
             <button class="btn btn-primary">Submit</button>
             <button class="btn btn-light">Bulk Update</button>
             <button class="btn btn-light">Archive</button>
             <button class="btn btn-light">Export</button>
-            <button class="btn btn-light">
+            <button class="btn btn-light" (click)="delete()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                     <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
                 </svg>
@@ -16,52 +16,38 @@
 
 <div>
     <div *ngIf="!isEmpty">
-        <table class="table">
+        
+        <ngx-datatable
+        class="material"
+        [rows]="allReports"
+        [selected]="selected"
+        [selectionType]="selectionType.checkbox"
+        (activate)="onActivate($event)"
+        (select)="onSelect($event)"
+        >
 
-            <!-- table heading -->
-            <thead>
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th>REPORT#</th>
-                    <th>REPORT NAME</th>
-                    <th>STATUS</th>
-                    <th>APPROVER</th>
-                    <th>TOTAL</th>
-                    <th>TO BE REIMBURSED</th>
-                    <th>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16" style="cursor: pointer;" data-bs-toggle="modal"
-                            data-bs-target="#searchModal">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
-
-                    </th>
-                </tr>
-            </thead>
-
-            <!-- table body  -->
-            <tbody>
-                <tr *ngFor="let report of allReports">
-                    <td>
-                        <input type="checkbox" name="" id="">
-                    </td>
-                    <td>{{ report._id }}</td>
-                    <td class="reportName">{{ report.reportName }} <br> <span class="duration">{{report.startDate}} - {{report.endDate}}</span></td>
-                    <td>
-                        <span class="status">
-                            {{report.status}}
-                        </span>
-                    </td>
-                    <td>{{report.approver}}</td>
-                    <td>Rs. {{report.total}}</td>
-                    <td>Rs. {{report.toBeReimbursed}}</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <ngx-datatable-column
+            [sortable]='false'
+            [canAutoResize]='false'
+            [draggable]='false'
+            [headerCheckboxable]='true'
+            [checkboxable]='true'
+            >
+        </ngx-datatable-column>
+        <ngx-datatable-column name="REPORT#" prop="reportNumber" class="resizeable" >
+        </ngx-datatable-column>
+        <ngx-datatable-column name="REPORT NAME" prop="reportName" >
+        </ngx-datatable-column>
+        <ngx-datatable-column name="STATUS" prop="status" >
+        </ngx-datatable-column>
+        <ngx-datatable-column name="TOTAL" prop="total" >
+        </ngx-datatable-column>
+        <ngx-datatable-column name="TO BE REIMBURSED" prop="toBeReimbursed" >
+        </ngx-datatable-column>
+        </ngx-datatable>
     </div>
+
+
     <div *ngIf="isEmpty">
         <p>isEmpty</p>
         <div class="text-center">

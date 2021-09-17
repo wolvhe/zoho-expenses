@@ -16,7 +16,7 @@ export class ReportsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  email:string = 'email@example.com'
+  email:string = 'gowtham758550@gmail.com'
 
   reportName = new FormControl('')
   businessPurpose = new FormControl('')
@@ -35,7 +35,7 @@ export class ReportsComponent implements OnInit {
       "startDate": this.startDate.value,
       "endDate": this.endDate.value,
       "associateWithTrip": this.associateWithTrip.value,
-      "status": "DRAFT"
+      "status": "SUCCESS"
     }
     console.log(this.newReport);
     
