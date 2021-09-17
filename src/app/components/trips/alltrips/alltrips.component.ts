@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TripsService } from 'src/app/services/trips.service';
 import { ExpServiceService } from 'src/app/services/exp-service.service';
 import { Tripmodel } from 'src/app/models/tripmodel';
+import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
 @Component({
   selector: 'app-alltrips',
   templateUrl: './alltrips.component.html',
@@ -34,6 +35,31 @@ export class AlltripsComponent implements OnInit {
       this.viewtrip(email)
   }
 }
+isEmpty:boolean = false
+  isSelected:boolean = false
+
+  // rows = []
+  selected:any = []
+
+  columnMode = ColumnMode
+  selectionType = SelectionType
+
+  onSelect ({selected}:any) {
+    this.selected.splice(0, this.selected.length)
+    this.selected.push(...selected)
+    // console.log(this.selected.length);
+    if (this.selected.length === 0) {
+      this.isSelected = false
+    } else {
+      this.isSelected = true
+    }
+  }
+
+  onActivate(event:any) {
+    // console.log(event);
+  }
+
+  
   
   trips=Array
   viewtrip(email: any):void{

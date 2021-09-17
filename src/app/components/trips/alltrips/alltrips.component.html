@@ -1,4 +1,13 @@
-
+<div *ngIf="isSelected">
+    <div class="row">
+        <div class="col-8 px-2">
+            
+            <button class="btn btn-light" >Bulk Update</button>
+            
+            
+        </div>
+    </div>
+</div>
 
  
 <!-- <table class="table table-hover ">
@@ -16,25 +25,23 @@
       </tr>
     </tbody>
   </table> -->
-  <div *ngIf="checkbox">
-    <div class="nav bar">
-    </div>
-    </div>
+
   <div style="position: absolute; width: 85rem; top: 2rem; padding-left: 10px;">
     <ngx-datatable class="material" [rows]="datas" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-      [rowHeight]="40" [limit]="10" [scrollbarV]="false" [sorts]="[{prop: 'name', dir: 'asc'}]" >
+      [rowHeight]="40" [limit]="10" [scrollbarV]="false" [sorts]="[{prop: 'name', dir: 'asc'}]" [selected]="selected"
+      [selectionType]="selectionType.checkbox"
+      (activate)="onActivate($event)"
+      (select)="onSelect($event)">
 
-
-      <ngx-datatable-column 
-            [width]="30"
-            [sortable]="false"
-            [canAutoResize]="false"
-            [draggable]="false"
-            [resizeable]="false"
-            [headerCheckboxable]="true"
-            [checkboxable]="true"
-            
-          ></ngx-datatable-column>
+      <ngx-datatable-column
+      [sortable]='false'
+      [canAutoResize]='false'
+      [draggable]='false'
+      [headerCheckboxable]='true'
+      [checkboxable]='true'
+      >
+  </ngx-datatable-column>
+      
           
         
       <ngx-datatable-column name="TRIP#" prop="email" [width]="100"></ngx-datatable-column>
