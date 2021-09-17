@@ -400,12 +400,11 @@
             </div>
             <label> Associate With Trip</label>
             <div class="input-group mb-3">
-              <select class="form-select" id="inputGroupSelect02" ngModel name="associateWithTrip">
-                <option selected>Select</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
+              
+                <select class="form-select form-control form-control-lg " id="inputGroupSelect02" name="associateWithTrip" ngModel>
+                  <option *ngFor="let data of datas" value="{{data.trip_name}}">{{data.trip_name}}</option>
+                  </select>
+                
             </div>
 
             <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
