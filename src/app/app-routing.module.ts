@@ -36,6 +36,7 @@ import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.co
 import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
+import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomepageComponent},
@@ -66,7 +67,7 @@ const routes: Routes = [
   {path: 'testing', component: TestingComponent},
   {path: 'cards',component:CardspageComponent},
   {path: 'analytics',component: AnalyticsComponent},
-  
+  {path: 'tab/all', component: AllexpensesComponent}
 
   
 ];
