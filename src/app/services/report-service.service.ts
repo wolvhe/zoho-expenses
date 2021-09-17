@@ -7,26 +7,30 @@ import { Observable } from 'rxjs';
 })
 export class ReportServiceService {
 
-  baseURL = "localhost:3000"
+  baseURL = "http://localhost:3000/api"
 
   constructor(private http: HttpClient) { }
 
   createReport(data:any): Observable<any> {
     console.log(data);
-    return this.http.post('http://localhost:3000/api/reports/new', data)
+    return this.http.post(`${this.baseURL}/reports/new`, data)
   }
 
   allReports:any
-  getAllReports(): Observable<any> {
-    return this.http.get<any>('http://localhost:3000/api/reports')
+  getAllReports(email:string): Observable<any> {
+    return this.http.get<any>(`${this.baseURL}/reports/${email}`)
   }
 
   archieveReport(data:any): Observable<any> {
-    return this.http.put<any>('http://localhost:3000/api/reports/edit', data)
+    return this.http.put<any>('${this.baseURL}/reports/edit', data)
+  }
+
+  deleteReport(email:string, reportName:string): Observable<any> {
+    return this.http.delete<any>(`${this.baseURL}/reports/delete/${email}/${reportName}`)
   }
 
   importBulkReports(data:any): Observable<any> {
     console.log(data);
-    return this.http.post<any>('http://localhost:3000/api/reports/bulkimport', data)
+    return this.http.post<any>('${this.baseURL}/reports/bulkimport', data)
   }
 }

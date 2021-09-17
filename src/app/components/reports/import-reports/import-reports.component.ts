@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ReportServiceService } from 'src/app/services/report-service.service';
 
 @Component({
@@ -8,21 +7,11 @@ import { ReportServiceService } from 'src/app/services/report-service.service';
   styleUrls: ['./import-reports.component.css']
 })
 export class ImportReportsComponent implements OnInit {
+  email: string = 'email@example.com';
 
-  selectFile!: FormGroup;
-  mapFields!: FormGroup
-  finishImport!: FormGroup
-
-  constructor(private _formBuilder: FormBuilder, private reportService: ReportServiceService) { }
+  constructor(private reportService: ReportServiceService) { }
 
   ngOnInit(): void {
-    this.selectFile = this._formBuilder.group({
-      selectFileCtrl: ['', Validators.required]
-    })
-
-    this.mapFields = this._formBuilder.group({
-      mapFieldsCtrl: ['', Validators.required]
-    })
   }
 
 
@@ -382,6 +371,8 @@ export class ImportReportsComponent implements OnInit {
         // console.log(this.mappedOptions[key]);
         report[key] = this.JSONreport[document][this.mappedOptions[key]]
       }
+      report["email"] = this.email
+      report["status"] = "DRAFT"
       this.reports.push(report)
     }
     console.log(this.reports);
