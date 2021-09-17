@@ -17,6 +17,7 @@ export class AddExpenseComponent implements OnInit {
   public email: string = "";
 status:any
   check: boolean;
+  reports:any=[];
 
   constructor(private afStorage: AngularFireStorage,private SpinnerService: NgxSpinnerService,private http: HttpClient, private rep: ReportService) {
     this.status = true
@@ -32,6 +33,7 @@ status:any
       this.email = obj.email;
       this.rep.getReport(obj.email).subscribe((res) => {
         console.log(res);
+        this.reports=res;
       });
     }
   }
