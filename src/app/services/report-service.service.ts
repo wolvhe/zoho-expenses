@@ -33,4 +33,7 @@ export class ReportServiceService {
     console.log(data);
     return this.http.post<any>('${this.baseURL}/reports/bulkimport', data)
   }
+  updateReport(data:any): Observable<any> {
+    return this.http.put<any>(`${this.baseURL}/reports/edit`, data)
+  }
 }

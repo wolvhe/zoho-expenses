@@ -1,226 +1,225 @@
 <div *ngIf="isSelected">
     <div class="row">
-        <div class="col-8 px-2">
-            <button class="btn btn-primary">Submit</button>
-            <button class="btn btn-light">Bulk Update</button>
-            <button class="btn btn-light">Archive</button>
-            <button class="btn btn-light">Export</button>
-            <button class="btn btn-light" (click)="delete()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                </svg>
-            </button>
-        </div>
+      <div class="col-8 px-2">
+        <!-- <button class="btn btn-primary">Submit</button> -->
+        <button
+          class="btn btn-light"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Bulk Update
+        </button>
+        <!-- <button class="btn btn-light">Archive</button> -->
+        <!-- <button class="btn btn-light">Export</button> -->
+        <button class="btn btn-light" (click)="delete()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-trash-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
-</div>
-
-<div>
+  </div>
+  
+  <div>
     <div *ngIf="!isEmpty">
-        
-        <ngx-datatable
+      <ngx-datatable
         class="material"
         [rows]="allReports"
         [selected]="selected"
         [selectionType]="selectionType.checkbox"
         (activate)="onActivate($event)"
         (select)="onSelect($event)"
-        >
-
+      >
         <ngx-datatable-column
-            [sortable]='false'
-            [canAutoResize]='false'
-            [draggable]='false'
-            [headerCheckboxable]='true'
-            [checkboxable]='true'
-            >
+          [sortable]="false"
+          [canAutoResize]="false"
+          [draggable]="false"
+          [headerCheckboxable]="true"
+          [checkboxable]="true"
+        >
         </ngx-datatable-column>
-        <ngx-datatable-column name="REPORT#" prop="reportNumber" class="resizeable" >
+        <ngx-datatable-column
+          name="REPORT#"
+          prop="reportNumber"
+          class="resizeable"
+        >
         </ngx-datatable-column>
-        <ngx-datatable-column name="REPORT NAME" prop="reportName" >
+        <ngx-datatable-column name="REPORT NAME" prop="reportName">
         </ngx-datatable-column>
-        <ngx-datatable-column name="STATUS" prop="status" >
+        <ngx-datatable-column name="STATUS" prop="status"> </ngx-datatable-column>
+        <ngx-datatable-column name="TOTAL" prop="total"> </ngx-datatable-column>
+        <ngx-datatable-column name="TO BE REIMBURSED" prop="toBeReimbursed">
         </ngx-datatable-column>
-        <ngx-datatable-column name="TOTAL" prop="total" >
-        </ngx-datatable-column>
-        <ngx-datatable-column name="TO BE REIMBURSED" prop="toBeReimbursed" >
-        </ngx-datatable-column>
-        </ngx-datatable>
+      </ngx-datatable>
     </div>
-
-
+  
     <div *ngIf="isEmpty">
-        <p>isEmpty</p>
-        <div class="text-center">
-            <img src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-expense-reports-2x-549eedc6516febc152aa1291bc534971.png"
-                height="148" width="210" alt="">
-            <h3>Report business expenses</h3>
-            <p>Expense claims need to be added to a report before submitting <br>for approval and reimbursement. Create
-                and access reports here</p>
-            <button class="btn btn-primary">+ New Report</button>
-        </div>
+      <p>isEmpty</p>
+      <div class="text-center">
+        <img
+          src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-expense-reports-2x-549eedc6516febc152aa1291bc534971.png"
+          height="148"
+          width="210"
+          alt=""
+        />
+        <h3>Report business expenses</h3>
+        <p>
+          Expense claims need to be added to a report before submitting <br />for
+          approval and reimbursement. Create and access reports here
+        </p>
+        <button class="btn btn-primary">+ New Report</button>
+      </div>
     </div>
-
-
-
+  
     <!-- Modal -->
-    <div class="modal" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="width: 70rem; position: relative; right: 19rem; height: 42rem;">
-                <div class="modal-header" style="background-color: #f8f8fd;">
-                    <div style="display: flex; flex: 1; margin-top: 1rem;">
-                        <div >
-                            <p>Search</p>
-                        </div>
-                        <div >
-                            <div class="input-group mb-3" style="width: 22rem; margin-left: 5rem;">
-                                <select class="form-select" id="inputGroupSelect02">
-                                    <option selected></option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Button trigger modal -->
+    
+  
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              class="btn btn-link p-0 float-right close-button my-auto"
+              role="button"
+              aria-label="Close"
+              type="button"
+              data-ember-action=""
+              data-ember-action-844="844"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 342.4 342.4"
+                class="icon-hover icon-large border rounded-circle"
+              >
+                <path
+                  d="M193.8 171.2L320.3 45.1c6.3-6.2 6.3-16.4 0-22.6-6.2-6.3-16.4-6.3-22.6 0L171.2 148.6 45.1 22.1c-6.2-6.3-16.4-6.3-22.6 0-6.3 6.2-6.3 16.4 0 22.6l126.1 126.5L22.1 297.3c-6.3 6.2-6.3 16.4 0 22.6 3.1 3.1 7.2 4.7 11.3 4.7 4.1 0 8.2-1.6 11.3-4.7l126.5-126.1 126.1 126.5c3.1 3.1 7.2 4.7 11.3 4.7 4.1 0 8.2-1.6 11.3-4.7 6.3-6.2 6.3-16.4 0-22.6L193.8 171.2z"
+                ></path>
+              </svg>
+            </button>
+            <h4 class="modal-title" id="">Bulk Field Update</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="modal-body">
+                <div
+                  tabindex="-1"
+                  id="ember845"
+                  class="outline-0 form-alert-errors ember-view"
+                >
+                  <!---->
                 </div>
-                <div class="modal-body" style="display: flex; flex-direction: row;">
-                    <!-- column-1 -->
-                    <div style="margin-top: 2rem;">
-                        <div style="display: flex; flex-direction: row;">
-                            <p>Reports#</p>
-                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" style="margin-left: 4rem;">
-                        </div><br>
-                        <!--  -->
-                        <div style="display: flex; flex-direction: row; position: relative; top: 1rem;">
-                            <p>Start Date</p>
-                            <div style="display: flex; flex-direction: row; margin-left: 4rem;">
-                                <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
-                                    <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
-                                </div>
-                                <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem; margin-left: 2rem;">
-                                    <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
-                        
-                        <div style="display: flex; flex-direction: row; position: relative;top: 2rem;">
-                            <p>Total Range</p>
-                            <div>
-                                <div style="display: flex; flex-direction: row; margin-left: 3.2rem;">
-                                    <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
-                                        <input type="text" class="form-control form-control-lg" >
-                                    </div>
-                                    <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem; margin-left: 2rem;">
-                                        <input type="text" class="form-control form-control-lg" >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
-                        <div style="display: flex; flex-direction: row; position: relative; top: 2.5rem;">
-                            <p>Buisness Purpose</p>
-                            <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" style="margin-left: 1rem; width: 22rem;">
-                        </div><br>
-                        <!--  -->
-                        <div style="display: flex; flex-direction: row; position: relative; top: 4rem;">
-                            <p>Project</p>
-                            <div>
-                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 5rem;">
-                                    <select class="form-select" id="inputGroupSelect02">
-                                        <option selected></option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div><br>
-                        <!--  -->
-                        <div class="form-check" style="position: relative; top: 2.5rem; left: 8rem;">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Search among shared reports
-                            </label>
+  
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label"> Duration </label>
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-md-6">
+                          <input type="date" style="width: max-content;" class="form-control form-control-sm" [formControl]="startDate" placeholder="eg:31/01/2021">
+                      </div>
+                      <div class="col-md-6">
+                          <input type="date" style="width: max-content;" class="form-control form-control-sm" [formControl]="endDate" placeholder="eg:31/01/2021">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label">Business Purpose</label>
+                  <div class="col-md-8">
+                    <textarea
+                      rows="3"
+                      placeholder="Max 500 characters"
+                      id="ember848"
+                      class="form-control ember-text-area ember-view"
+                      [formControl]="businessPurpose"
+                    ></textarea>
+  
+                    <div class="form-check mt-1">
+                      <input
+                        id="descriptionFieldEmptyCheck"
+                        class="form-check-input ember-checkbox ember-view"
+                        type="checkbox"
+                        (click) = "updateWithEmptyValueCheckBox()"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="descriptionFieldEmptyCheck"
+                      >
+                        Update with empty value?
+                      </label>
+                    </div>
+                  </div>
+                </div>
+  
+                <hr />
+  
+                <!---->
+                <!---->
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label">
+                    Associate With Trip
+                  </label>
+                  <div class="col-md-8">
+                    <div id="ember849" class="ember-view">
+                      <div class="ac-box">
+                        <span class="ac-selected form-control" tabindex="0">
+  
+                          <select class="form-select" [formControl]="associateWithTrip">
+                              <option *ngFor="let data of datas">{{data.trip_name}}</option>
+                            </select>
+  
+                          <div>
+                            <i class="zf-ac-toggler">
+                              <span class="caret mr-0"></span>
+                            </i>
                           </div>
+                        </span>
+                      </div>
+  
+                      <!---->
                     </div>
-                    <!-- column-2 -->
-                    <div style="margin-left: 3rem; margin-top: 2rem;">
-                        <div style="display: flex; flex-direction: row;">
-                            <p>Report Name</p>
-                            <div style="display: flex; flex: 4;">
-                                <div class="input-group mb-3" style="width: 22rem; margin-left: 4rem;">
-                                    <select class="form-select" id="inputGroupSelect02">
-                                        <option selected></option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div><br>
-                        <!--  -->
-                        <div style="display: flex; flex-direction: row;">
-                            <p>End Date</p>
-                            <div style="display: flex; flex-direction: row; margin-left: 5.5rem;">
-                                <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem;">
-                                    <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
-                                </div>
-                                <div class="form-group mb-5" style="display: flex; flex: 1; width: 10rem; margin-left: 2rem;">
-                                    <input type="date" class="form-control form-control-lg" placeholder="eg:31/01/2021">
-                                </div>
-                            </div>
-                        </div>
-                        <!--  -->
-                        <div style="display: flex; flex-direction: row; position: relative; top: 1rem;">
-                            <p>Filter By</p>
-                            <div>
-                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 6rem;">
-                                    <select class="form-select" id="inputGroupSelect02">
-                                        <option selected></option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div><br>
-                        <!--  -->
-                        <div style="display: flex; flex-direction: row; margin-top: 2.5rem;">
-                            <p>Customer</p>
-                            <div>
-                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 5.5rem;">
-                                    <select class="form-select" id="inputGroupSelect02">
-                                        <option selected></option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div><br>
-                        <!--  -->
-                        <div style="display: flex; flex-direction: row;">
-                            <p>Associated To T...</p>
-                            <div>
-                                <div class="input-group mb-3" style="width: 22rem;  margin-left: 2.5rem;">
-                                    <select class="form-select" id="inputGroupSelect02">
-                                        <option selected></option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div><br>
-                    </div>
+                  </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
+                <hr />
+  
+                <!---->
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer text-start">
+            <button type="button" class="btn btn-primary" (click)="bulkUpdate()">Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  

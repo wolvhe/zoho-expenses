@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from 'src/app/services/report.service';
+import { ReportServiceService } from 'src/app/services/report-service.service';
 
 import { AngularFireStorage } from '@angular/fire/storage';
 import firebase from 'firebase/app';
@@ -19,7 +20,7 @@ status:any
   check: boolean;
   reports:any=[];
 
-  constructor(private afStorage: AngularFireStorage,private SpinnerService: NgxSpinnerService,private http: HttpClient, private rep: ReportService) {
+  constructor(private afStorage: AngularFireStorage,private SpinnerService: NgxSpinnerService,private http: HttpClient, private rep: ReportServiceService) {
     this.status = true
     this.check=false
    }
@@ -31,7 +32,7 @@ status:any
       const obj = JSON.parse(store);
       // console.log(this.obj);
       this.email = obj.email;
-      this.rep.getReport(obj.email).subscribe((res) => {
+      this.rep.getAllReports(obj.email).subscribe((res) => {
         console.log(res);
         this.reports=res;
       });
@@ -72,7 +73,7 @@ paycheck(){
       console.log(report);
 
 
-      this.rep.addReport(report)
+      this.rep.createReport(report)
         .subscribe(
           (response: any) => {
             alert("suc " + response);

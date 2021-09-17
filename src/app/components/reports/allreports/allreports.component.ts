@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportServiceService } from 'src/app/services/report-service.service';
 import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -9,13 +10,21 @@ import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
   styleUrls: ['./allreports.component.css']
 })
 export class AllreportsComponent implements OnInit {
-
+  email: any;
+  datas:any
   constructor(private reportService: ReportServiceService) { }
 
   allReports:any
 
   ngOnInit(): void {
-    this.reportService.getAllReports("gowtham758550@gmail.com").subscribe(reports => {
+    const store = localStorage.getItem('userInfo');
+    if (store) {
+      const obj = JSON.parse(store);
+      // console.log(this.obj);
+      this.email = obj.email;
+    }
+  
+    this.reportService.getAllReports(this.email).subscribe(reports => {
       this.allReports = reports
       console.log(reports);
     })
@@ -68,6 +77,43 @@ export class AllreportsComponent implements OnInit {
 
   remove() {
     this.selected = []
+  }
+  startDate= new FormControl
+  endDate=new FormControl
+  associateWithTrip=new FormControl
+  businessPurpose=new FormControl
+  updateWithEmptyValue=false
+  bulkUpdate() {
+    var data:any = {
+      newStartDate: this.startDate.value,
+      newEndDate: this.endDate.value,
+      newAssociateWithTrip: this.associateWithTrip.value
+    }
+    if (this.updateWithEmptyValue) {
+      data.newBusinessPurpose = ""
+    } else {
+      data.newBusinessPurpose = this.businessPurpose.value
+    }
+    // console.log(data);
+    for (let document in this.selected) {
+      data.reportName = this.selected[document].reportName,
+      data.email = this.selected[document].email
+      // console.log(data);
+
+      this.reportService.updateReport(data).subscribe(res => {
+        console.log(res);
+
+      })
+    }
+    this.ngOnInit()
+  }
+  updateWithEmptyValueCheckBox() {
+    if (!this.updateWithEmptyValue) {
+      this.businessPurpose.disable()
+    } else {
+      this.businessPurpose.enable()
+    }
+    this.updateWithEmptyValue = !this.updateWithEmptyValue
   }
 
 
