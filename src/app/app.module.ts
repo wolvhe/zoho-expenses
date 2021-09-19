@@ -62,7 +62,8 @@ import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.compone
 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,6 +108,7 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
     AnalyticsComponent,
     TabspageComponent,
     AllexpensesComponent,
+    AnalyticspageComponent,
   ],
   imports: [
     BrowserModule,
@@ -137,7 +139,8 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
     MatSearchableSelectModule,
     Ng2SearchPipeModule,
     MatSearchableSelectModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -48,25 +48,112 @@
         <div class="modal-dialog" style="max-width: 900px;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Connect your card to Zoho Expense!</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Choose Your Preferred Card</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="font-size: 15px;text-align: left;">
-                    <div class="input-group mb-3" style="width: 52rem;margin-left: 1rem;">
-                        <select class="form-select" id="inputGroupSelect02">
-                            <option selected>Find Your Card...</option>
-                            <option value="1"><p data-bs-toggle="modal" data-bs-target="#bank8Modal"> 121 Financial Credit Union - Bank</p></option>
-                            <option value="2">1880 Bank</option>
-                            <option value="3">1st Advantage FCU - Bank</option>
-                            <option value="4">1st Advantage FCU - Credit Cards</option>
-                            <option value="5">1st Bank (Cash Mangement) - Bank</option>
-                            <option value="6">1st Bank (WY) - Bank</option>
-                            <option value="7">1st Bank in Hominy - Bank</option>
-                            <option value="8">1st Bank of Sea Isle City (Business) - Bank</option>
-                            <option value="9">1st Bank of Sea Isle City - Bank</option>
-                            <option value="10">1st Bank Yuma</option>
-                        </select>
+                    <form #bank="ngForm" (ngSubmit)="onClickSubmit(bank.value)">
+
+                    <div class="row">
+
+                            <div class="col-lg-10">
+                                <div class="input-group mb-3" style="margin-left: 1rem;">
+                                    <select class="form-select" id="inputGroupSelect02" name="banks" ngModel >
+                                        <option value="121 Financial Credit Union - Bank">
+                                            121 Financial Credit Union - Bank
+                                        </option>
+                                        <option value="1880 Bank">1880 Bank</option>
+                                        <option value="1st Advantage FCU - Bank">1st Advantage FCU - Bank</option>
+                                        <option value="1st Advantage FCU - Credit Cards">1st Advantage FCU - Credit
+                                            Cards</option>
+                                        <option value="1st Bank (Cash Mangement) - Bank">1st Bank (Cash Mangement) -
+                                            Bank</option>
+                                        <option value="1st Bank (WY) - Bank">1st Bank (WY) - Bank</option>
+                                        <option value="1st Bank in Hominy - Bank">1st Bank in Hominy - Bank</option>
+                                        <option value="1st Bank of Sea Isle City (Business) - Bank">1st Bank of Sea Isle
+                                            City (Business) - Bank</option>
+                                        <option value="1st Bank of Sea Isle City - Bank">1st Bank of Sea Isle City -
+                                            Bank</option>
+                                        <option value="1st Bank Yuma">1st Bank Yuma</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#newBankModal"
+                                    type="submit">choose</button>
+                            </div>
+                       
                     </div>
+                </form>
+
+                    <!-- default modal -->
+
+                    <!-- Modal -->
+                     <div class="modal" id="newBankModal" tabindex="-1" aria-labelledby="newBankModal" 
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="newBankModal">Connect your card to Zoho Expense!
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <a href="/" data-bs-dismiss="modal"><i class="fas fa-angle-left"></i>
+                                        back</a><br>
+                                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                                         <!-- <img style="height: 60px;margin-top: 10px;margin-left: 15px; display: flex;"
+                                            src="data:image/png;base64,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"
+                                            class="img-fluid rounded-start" alt="...">  -->
+                                        <h4 style="display: flex; margin-top: 2rem;">{{bankName}}</h4>
+                                    </div>
+                                    <p style="text-align: center;margin-left: 2.5rem;margin-top: 1rem;font-size: 12px;">
+                                        Login URL :
+                                        &nbsp;<a href=link>{{link}}</a>
+                                    </p>
+                                    <div style="text-align: left;width: 30rem;margin-left: 28rem;margin-top: 2rem;">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label"
+                                                style="color: #b94c4a;">Customer ID
+                                                (Login ID)*</label>
+                                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label"
+                                                style="color: #b94c4a;">IPIN
+                                                (Password)*</label>
+                                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label"
+                                                style="color: #b94c4a;">Verify IPIN
+                                                (Password)*</label>
+                                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                                        </div>
+                                    </div><br>
+                                    <div class="form-check">
+                                        <input style="position: relative;left: 28rem;" class="form-check-input"
+                                            type="checkbox" value="" id="flexCheckDefault">
+                                        <label style="position: relative;left: 30rem;" class="form-check-label"
+                                            for="flexCheckDefault">
+                                            Accept <a href="https://www.zoho.com/expense/automaticfeedterms.html">Terms
+                                                and
+                                                Conditions</a>
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                 <!--  -->
                     <p style="margin-left: 1rem;">Or Select from the popular cards</p>
                     <!--row 1  -->
                     <div style="display: flex; flex-direction: row;margin: 1rem; cursor: pointer;">
@@ -213,17 +300,17 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
                                 (Login ID)*</label>
-                            <input type="email" class="form-control" [formControl]="customerID" id="exampleFormControlInput1">
+                            <input type="text" class="form-control" [formControl]="customerID1" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" [formControl]="password" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" [formControl]="password1" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" id="exampleFormControlInput1">
                         </div>
                     </div><br>
                     <div class="form-check">
@@ -238,7 +325,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="postNewBankCard()">Submit</button>
+                    <button type="button" class="btn btn-primary" (click)="postNewBankCard1()">Submit</button>
                 </div>
             </div>
         </div>
@@ -266,17 +353,17 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
                                 (Login ID)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="text" class="form-control" [formControl]="customerID2" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" [formControl]="password2" id="exampleFormControlInput1">
                         </div>
                     </div><br>
                     <div class="form-check">
@@ -291,7 +378,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="postNewBankCard()">Submit</button>
+                    <button type="button" class="btn btn-primary" (click)="postNewBankCard2()">Submit</button>
                 </div>
             </div>
         </div>
@@ -319,7 +406,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
                                 (Login ID)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="email" class="form-control" [formControl]="customerID3" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
@@ -329,7 +416,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" [formControl]="password3" id="exampleFormControlInput1">
                         </div>
                     </div><br>
                     <div class="form-check">
@@ -344,7 +431,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="postNewBankCard()">Submit</button>
+                    <button type="button" class="btn btn-primary" (click)="postNewBankCard3()">Submit</button>
                 </div>
             </div>
         </div>
@@ -373,17 +460,17 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
                                 (Login ID)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="text" class="form-control" [formControl]="customerID4" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" [formControl]="password4" id="exampleFormControlInput1">
                         </div>
                     </div><br>
                     <div class="form-check">
@@ -398,7 +485,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="postNewBankCard()">Submit</button>
+                    <button type="button" class="btn btn-primary" (click)="postNewBankCard4()">Submit</button>
                 </div>
             </div>
         </div>
@@ -428,17 +515,17 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
                                 (Login ID)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="text" class="form-control" [formControl]="customerID5" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" [formControl]="password5" id="exampleFormControlInput1">
                         </div>
                     </div><br>
                     <div class="form-check">
@@ -453,7 +540,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="postNewBankCard()">Submit</button>
+                    <button type="button" class="btn btn-primary" (click)="postNewBankCard5()">Submit</button>
                 </div>
             </div>
         </div>
@@ -483,17 +570,17 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
                                 (Login ID)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="text" class="form-control" [formControl]="customerID6" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" [formControl]="password6" id="exampleFormControlInput1">
                         </div>
                     </div><br>
                     <div class="form-check">
@@ -508,7 +595,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="postNewBankCard()"> Submit</button>
+                    <button type="button" class="btn btn-primary" (click)="postNewBankCard6()"> Submit</button>
                 </div>
             </div>
         </div>
@@ -525,7 +612,7 @@
                     <div style="text-align: left;width: 30rem;margin-left: 28rem;">
                         <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Select Card
                             Type *</label>
-                        <div style="display: flex; flex-direction: row; margin-bottom: 1rem;margin-left: 1rem;" >
+                        <div style="display: flex; flex-direction: row; margin-bottom: 1rem;margin-left: 1rem;">
                             <div style="display: flex; flex: 1;">
                                 <input class="form-check-input" [formControl]="isDebitCard" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                     value="option1">
@@ -537,9 +624,11 @@
                                 <label class="form-check-label" for="inlineRadio2">Credit Card</label>
                             </div>
                         </div>
-                        <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Card/Account Name
-                           *</label>
-                        <input type="email" class="form-control" [formControl]="name" id="exampleFormControlInput1" style=" margin-bottom: 1rem;">
+                        <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Card/Account
+                            Name
+                            *</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            style=" margin-bottom: 1rem;">
                         <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">
                             Currency *</label>
                         <select class="form-select" [formControl]="currency" aria-label="Default select example" style=" margin-bottom: 1rem;">
@@ -615,17 +704,17 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Customer ID
                                 (Login ID)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="text" class="form-control" [formControl]="customerID7" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" id="exampleFormControlInput1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label" style="color: #b94c4a;">Verify IPIN
                                 (Password)*</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
+                            <input type="password" class="form-control" [formControl]="password7" id="exampleFormControlInput1">
                         </div>
                     </div><br>
                     <div class="form-check">
@@ -640,7 +729,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="postNewBankCard()">Submit</button>
+                    <button type="button" class="btn btn-primary" (click)="postNewBankCard7()">Submit</button>
                 </div>
             </div>
         </div>

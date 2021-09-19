@@ -26,7 +26,7 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 import { CardsComponent } from './components/cards/cards.component'
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
-
+import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { ReportspageComponent } from './home/reportspage/reportspage.component';
 import { ExpensespageComponent } from './home/expensespage/expensespage.component';
 import { TripspageComponent } from './home/tripspage/tripspage.component';
@@ -66,7 +66,7 @@ const routes: Routes = [
   {path: 'expenses', component: ExpensespageComponent},
   {path: 'testing', component: TestingComponent},
   {path: 'cards',component:CardspageComponent},
-  {path: 'analytics',component: AnalyticsComponent},
+  {path: 'analytics',component:  AnalyticspageComponent},
   {path: 'tab/all', component: AllexpensesComponent}
 
   
