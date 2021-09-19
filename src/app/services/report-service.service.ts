@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ReportServiceService {
 
-  baseURL = "http://localhost:3000/api"
+  baseURL = "https://codingmart-expenses.herokuapp.com/api"
 
   constructor(private http: HttpClient) { }
 
