@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { ReportServiceService } from 'src/app/services/report-service.service';
 import { TripsService } from 'src/app/services/trips.service'
 import { ExpServiceService } from 'src/app/services/exp-service.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
@@ -16,7 +17,7 @@ export class ReportsComponent implements OnInit {
   PORT:number = 3000
   baseURL:string = `http://localhost:${this.PORT}/api`
 
-  constructor(private reportService: ReportServiceService,private trip:TripsService,private serv: ExpServiceService) { }
+  constructor(private reportService: ReportServiceService,private trip:TripsService,private serv: ExpServiceService,private router:Router) { }
 
   check(obj: any) {
     // alert("please");
@@ -43,10 +44,11 @@ export class ReportsComponent implements OnInit {
       data=>{
         this.datas=data
         console.log(this.datas)
+        this.email=email
       }
     )}
 
-  email:string = 'gowtham758550@gmail.com'
+  email!: string;
 
   reportName = new FormControl('')
   businessPurpose = new FormControl('')
@@ -65,7 +67,7 @@ export class ReportsComponent implements OnInit {
       "startDate": this.startDate.value,
       "endDate": this.endDate.value,
       "associateWithTrip": this.associateWithTrip.value,
-      "status": "SUCCESS"
+      "status": "approved"
     }
     console.log(this.newReport);
     
@@ -78,7 +80,7 @@ export class ReportsComponent implements OnInit {
     //   console.log(reports);
       
     // })
-
+    this.router.navigateByUrl('/reports/all')
     
   }
 

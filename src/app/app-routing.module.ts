@@ -38,8 +38,8 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
 import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomepageComponent},
+  // {path: '', component: HomeComponent},
+  {path: '', component: HomepageComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'reports', component: ReportspageComponent},
   {path: 'login', component: LoginComponent},
