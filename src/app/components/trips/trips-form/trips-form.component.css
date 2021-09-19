@@ -1,0 +1,16 @@
+.top{
+    background-color: rgb(202, 202, 202);
+    font: 600;
+    font-size: larger;
+}
+.top button{
+    border: 1px solid;
+    padding: 3px;
+    border-radius: 10%;
+}
+.trip_trans{
+    background-color: rgb(231, 224, 224);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    overflow: hidden;
+}

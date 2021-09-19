@@ -1,0 +1,118 @@
+<div class="header">
+  <div class="header_main">
+    <div class="header_left">
+      <img
+        style="margin-top: 1.5rem; margin-bottom: 1rem; margin-left: 3rem"
+        width="150px"
+        src="https://www.zoho.com/expense/zoho-expense.svg"
+      />
+    </div>
+    <div style="margin-top: 1.5rem; margin-bottom: 1rem; margin-right: 1rem">
+      <p>Already have a Zoho account? <a routerLink="/login">Login</a></p>
+    </div>
+  </div>
+</div>
+<div style="display: flex">
+  <div class="leftbody">
+    <div style="display: flex; flex-direction: column; align-items: center">
+      <img
+        style="margin-top: 15%"
+        width="50px"
+        src="https://www.zoho.com/expense/signup/images/quotes.svg"
+      />
+      <p class="left_text">
+        With receipts handled in digital form with Zoho Expense, it removes the
+        slow, messy and error-prone administrative work of managing all the
+        paperwork. The speed and efficiency is felt throughout the organization.
+      </p>
+      <img
+        style="margin-top: 0.8rem"
+        width="250px"
+        src="https://www.zoho.com/expense/signup/images/food-panda-1x.png"
+      />
+    </div>
+  </div>
+  <div class="rightbody">
+    <form #signin = "ngForm" (ngSubmit) = "onClickSubmit(signin.value)">
+      <p class="right_headText">Start your 30-days free trial</p>
+    <div style="display: flex; flex-direction: column">
+      <input
+        type="text"
+        class="form-control"
+        tabindex="1"
+        autofocus=""
+        placeholder="Organization Name"
+        name="orgname"
+        ngModel
+      />
+      <input
+        type="text"
+        class="form-control"
+        tabindex="1"
+        placeholder="Email"
+        name="email"
+        ngModel
+      />
+      <input
+        type="password"
+        class="form-control"
+        tabindex="1"
+        placeholder="Password"
+        name="pwd"   
+        ngModel
+      />
+      <input
+        type="text"
+        class="form-control"
+        tabindex="1"
+        placeholder="India"
+        name="country"
+        ngModel
+      />
+      <input
+        type="text"
+        class="form-control"
+        tabindex="1"
+        placeholder="Andaman and Nicobar Islands"
+        name="state"
+        ngModel
+      />
+      <input
+        type="text"
+        class="form-control"
+        tabindex="1"
+        placeholder="Phone Number"
+        name="phone"
+        ngModel
+      />
+    </div>
+    <div
+      style="
+        text-align: left;
+        margin-left: -18%;
+        margin-top: 1rem;
+        font-size: small;
+      "
+    >
+      <span>Your data will be in INDIA data center.</span><br /><br />
+      <span style="align-items: baseline">
+        <input type="checkbox" /> I agree to the
+        <a href="https://www.zoho.com/en-in/terms.html">Terms of Service</a> and
+        <a href="https://www.zoho.com/privacy.html">Privacy Policy.</a></span
+      >
+    </div>
+    <div class="form-group submit_button">
+      <button
+        type="submit"
+        class="btn signup-btn"
+        name="za-signup-btn"
+        id="za-signup-btn"
+        tabindex="10"
+        style="opacity: 1"
+      >
+        CREATE ACCOUNT
+      </button>
+    </div>
+    </form>
+  </div>
+</div>

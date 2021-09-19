@@ -1,0 +1,86 @@
+<div style="display: flex; justify-content: space-between; padding: 10px;">
+  <div>
+    <h1>Analytics</h1>
+  </div>
+  <input
+  style="margin-right: 5rem; height: 40px;"
+  placeholder="Search Reports"
+  id="typeahead-focus"
+  type="text"
+  class="form-control"
+  [(ngModel)]="model"
+  [ngbTypeahead]="search"
+  (focus)="focus$.next($any($event).target.value)"
+  (click)="click$.next($any($event).target.value)"
+  #instance="ngbTypeahead"
+/>
+</div>
+
+<div class="card cardrow1">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size: medium"><i class="fas fa-file-invoice"></i> &nbsp; EXPENSE</h5>
+    <p class="card-text">
+      Know how much you've spent on business expenses by running analytics based
+      on various parameters
+    </p>
+    <br />
+    <div class="row">
+      <div class="col">
+        <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/expense/details?type=submitter_view">Expense Details</a></p>
+        <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/expense/customer?type=submitter_view">Expenses by Customer</a></p>
+        <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/expense/currency?type=submitter_view">Expenses by Currency</a></p>
+      </div>
+      <div class="col">
+        <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/expense/category?type=submitter_view">Expenses by Category</a></p>
+        <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/expense/project?type=submitter_view">Expenses by Project</a></p>
+      </div>
+      <div class="col">
+        <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/expense/attendee?type=submitter_view">Expenses by Attendee</a></p>
+        <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/expense/merchant?type=submitter_view">Expenses by Merchant</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display: flex">
+  <div class="card cardrow2">
+    <div class="card-body">
+      <h5 class="card-title" style="font-size: medium"><i class="fas fa-folder-minus"></i> &nbsp;REPORTS</h5>
+      <p class="card-text">
+        View statistics of the expense reports you've created and resolve the
+        policy violations in your reports
+      </p>
+      <div class="subtext">
+      <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/expensereportdetails?type=submitter_view">Expense Report Details</a></p>
+      <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/policyviolation?type=submitter_view">Policy Violations</a></p>
+      </div>  
+    </div>
+  </div>
+  <div class="card cardrow2">
+    <div class="card-body">
+      <h5 class="card-title" style="font-size: medium"><i class="fas fa-plane-departure"></i> &nbsp;TRIPS</h5>
+      <p class="card-text">
+        Get a summary of the business trips you've undertaken and the statuses
+        of your trips and trip reports
+      </p>
+      <div class="subtext">
+      <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/trip/details?type=submitter_view">Trips Details</a></p>
+      <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/trip/summary?type=submitter_view">Trips Stage Summary</a></p>
+      <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/trip/tripsummarybyreport?type=submitter_view">Trips Summary By Report Status</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card cardrow3">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size: medium"><i class="far fa-clock"></i> &nbsp; ACTIVITIES</h5>
+    <p class="card-text">
+      View all the activities you've performed in Zoho Expense for a particular
+      period
+    </p>
+    <div class="subtext">
+    <p><i class="far fa-star"></i> &nbsp;<a href="https://expense.zoho.com/app#/reports/activitylogs?type=submitter_view">Activity Logs</a></p>
+  </div>
+  </div>
+</div>

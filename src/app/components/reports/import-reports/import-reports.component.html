@@ -1,0 +1,1206 @@
+<div class="text-center">
+    <h3>Import Reports</h3>
+    <mat-horizontal-stepper [linear]='false'>
+        <!-- step 1 -->
+        <mat-step label="Select File">
+            <form>
+                <div class="mb-4">
+                    <div class="text-center">
+                        <div class="py-10 custom-dropzone">
+                            <ngx-dropzone (change)="onSelect($event)" aria-required="true" [multiple]="false" accept="text/csv,text/tsv" id="fileInput">
+                                <ngx-dropzone-label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 31"
+                                        class="icon-large text-primary" height="30px" width="30px">
+                                        <path
+                                            d="M10.2.8L.2 14.3c-.3.4-.2 1.1.2 1.4.2.1.4.2.6.2h4.9v9.9H16v-9.9h4.9c.6 0 1-.4 1-1 0-.2-.1-.4-.2-.6L11.8.8c-.3-.4-1-.5-1.4-.2-.1 0-.1.1-.2.2zM5.9 30.7h10.2v-1.6H5.9zm0-2.5h10.2v-1.6H5.9z"
+                                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                                    </svg><br />
+                                    <p>
+                                        Drag and drop file to import <br />
+                                        ( or )
+                                    </p>
+                                    <button class="btn btn-primary">Choose file</button><br /><br />
+                                    <p>File Format: CSV or TSV</p>
+                                </ngx-dropzone-label>
+                                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true"
+                                    (removed)="onRemove(f)">
+                                    <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+                                </ngx-dropzone-preview>
+                            </ngx-dropzone>
+                        </div>
+                        <!-- <input type="file" name="" id=""> -->
+                    </div>
+
+                    <div class="text-start">
+                        <p>
+                            View our sample file to ensure you import files in the standard
+                            format.
+                        </p>
+                    </div>
+
+                    <div class="text-start">
+                        <label for="encoding" class="form-label requiredLabel">Character Encoding</label><br>
+                        <mat-searchable-select (changed)="encodingValue = $event.nextValue" aria-required="true">
+                            <mat-searchable-select-label>Select</mat-searchable-select-label>
+                            <mat-searchable-select-search-label>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                                Search
+                            </mat-searchable-select-search-label>
+                            <mat-searchable-select-list [options]="encodingOptions">
+                            <ng-template matSearchableSelectOption
+                                        let-option="option">
+                                {{option}}
+                            </ng-template>
+                            </mat-searchable-select-list>
+                        </mat-searchable-select>
+                    </div>
+                    <br />
+
+                    <div class="text-start py-4">
+                        <button mat-button matStepperNext class="btn btn-primary">Next</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </mat-step>
+
+        <!-- step 2 -->
+        <mat-step label="Map fields">
+            <div class="text-start" *ngFor="let f of files">
+                <!-- <p>
+                    File selected: <span class="fw-bolder">{{ f.name }}</span>
+                </p> -->
+                <!-- <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>
+                    <span class="text-primary">The best match to each field on the selected file has been
+                        auto-selected</span>
+                </p> -->
+                <!-- <p>
+                    Total fields: <span class="fw-bolder">35</span>
+                    <span class="text-warning">(Unmapped fields)</span>
+                </p> -->
+                <!-- <div> -->
+                    <div class="pb-2">
+                        <span>File selected: </span>&nbsp;
+                        <span class="fw-bolder">{{ f.name }}</span>
+                    </div>
+                    <div class="alert alert-info d-flex align-items-center">
+                        <div class="info-icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-medium" height="25px" width="25px">
+                                <path
+                                    d="M279.2 334.3c4.8 0 9.1-1 12.8-3.1l-1.6 35.3c-9.8 8.1-20.9 12.2-33.4 12.2-18.9 0-31.2-4.4-36.8-13.1-3.7-5.8-5.6-12-5.6-18.6 0-6.6.4-12.3 1.2-17.3l18.7-105.5h53.1l-17.5 98.3c-.2 1.2-.3 2.4-.3 3.4.1 5.6 3.2 8.4 9.4 8.4zm-38.3-161c0-13.3 3-23 8.9-29.2 5.9-6.1 15.1-9.2 27.6-9.2 17.5 0 26.2 7.7 26.2 23.1 0 13.1-3 22.7-8.9 28.7s-15.2 9.1-27.9 9.1c-17.3 0-25.9-7.5-25.9-22.5z">
+                                </path>
+                            </svg>
+                        </div>
+                        &nbsp;&nbsp;
+                        <span>The best match to each field on the selected file has been
+                            auto-selected</span>
+                    </div>
+
+                    <div>
+                        <label>
+                            Total fields:
+                            <span class="font-weight-bold">35</span>
+                            <span class="text-submitted">(&nbsp; {{unMappedValues}} Unmapped fields&nbsp;)</span> </label>&nbsp; &nbsp;
+                    </div>
+
+                    <hr class="my-2" />
+                    <div class="row">
+                        <label class="col-md-4 text-semi-muted">Predefined fields</label>
+                        <label class="col-md-8 text-semi-muted">Fields in imported file</label>
+                    </div>
+                    <hr class="mt-1 mb-4" />
+
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow requiredLabel" aria-required="true">Report Name</label>
+                        <div class="col-md-4">
+                            <div id="ember186" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getReportName($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Report Number</label>
+                        <div class="col-md-4">
+                            <div id="ember188" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getReportNumber($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Business Purpose</label>
+                        <div class="col-md-4">
+                            <div id="ember190" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getBusinessPurpose($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Start Date</label>
+                        <div class="col-md-4">
+                            <div id="ember192" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getStartDate($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="ember193" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getStartDateFormat($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="dateFormatOptions">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">End Date</label>
+                        <div class="col-md-4">
+                            <div id="ember195" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getEndDate($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="ember196" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getEndDateFormat($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="dateFormatOptions">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Report Type</label>
+                        <div class="col-md-4">
+                            <div id="ember198" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getReportType($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Approver's Email</label>
+                        <div class="col-md-4">
+                            <div id="ember200" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getApproversEmail($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow requiredLabel" aria-required="true">Expense Date</label>
+                        <div class="col-md-4">
+                            <div id="ember202" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseDate($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="ember203" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseDateFormat($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="dateFormatOptions">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Expense Currency Code</label>
+                        <div class="col-md-4">
+                            <div id="ember205" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseCurrencyCode($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Location</label>
+                        <div class="col-md-4">
+                            <div id="ember207" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getLocation($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Exchange Rate</label>
+                        <div class="col-md-4">
+                            <div id="ember209" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseRate($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Mileage Rate</label>
+                        <div class="col-md-4">
+                            <div id="ember211" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getMileageRate($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Distance</label>
+                        <div class="col-md-4">
+                            <div id="ember213" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getDistance($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Entry Number</label>
+                        <div class="col-md-4">
+                            <div id="ember215" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getEntryNumber($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Mileage Unit</label>
+                        <div class="col-md-4">
+                            <div id="ember217" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getMileageUnit($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Start Odometer Reading</label>
+                        <div class="col-md-4">
+                            <div id="ember219" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getStartOdometerReading($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">End Odometer Reading</label>
+                        <div class="col-md-4">
+                            <div id="ember221" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getEndOdometerReading($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Mileage Type</label>
+                        <div class="col-md-4">
+                            <div id="ember223" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getMileageType($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Merchant Name</label>
+                        <div class="col-md-4">
+                            <div id="ember225" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getMerchantName($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Reference#</label>
+                        <div class="col-md-4">
+                            <div id="ember227" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getReference($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Is Reimbursable</label>
+                        <div class="col-md-4">
+                            <div id="ember229" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getIsReimbursable($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Is Billable</label>
+                        <div class="col-md-4">
+                            <div id="ember231" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getIsBillable($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Expense Customer Name</label>
+                        <div class="col-md-4">
+                            <div id="ember233" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseCustomerName($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Paid Through</label>
+                        <div class="col-md-4">
+                            <div id="ember235" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getPaidThrough($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Payment Mode</label>
+                        <div class="col-md-4">
+                            <div id="ember237" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getPaymentMode($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Is Inclusive Tax</label>
+                        <div class="col-md-4">
+                            <div id="ember239" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getIsInclusiveTax($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Owner's Email</label>
+                        <div class="col-md-4">
+                            <div id="ember241" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getOwnersEmail($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow requiredLabel" aria-required="true">Expense Category</label>
+                        <div class="col-md-4">
+                            <div id="ember243" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseCategory($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow requiredLabel" aria-required="true">Expense Amount</label>
+                        <div class="col-md-4">
+                            <div id="ember245" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseAmount($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Expense Project Name</label>
+                        <div class="col-md-4">
+                            <div id="ember247" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseProjectName($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Expense Description</label>
+                        <div class="col-md-4">
+                            <div id="ember249" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseDescription($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Tax Name</label>
+                        <div class="col-md-4">
+                            <div id="ember251" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getTaxName($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Tax Percentage</label>
+                        <div class="col-md-4">
+                            <div id="ember253" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getTaxPercentage($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Tax Type</label>
+                        <div class="col-md-4">
+                            <div id="ember255" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getTaxType($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 pt-2 text-overflow">Expense Type</label>
+                        <div class="col-md-4">
+                            <div id="ember257" class="ember-view">
+                                <div>
+                                    <mat-searchable-select (changed)="getExpenseType($event.nextValue)">
+                                        <mat-searchable-select-label>Select</mat-searchable-select-label>
+                                        <mat-searchable-select-search-label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                            </svg>
+                                            Search
+                                        </mat-searchable-select-search-label>
+                                        <mat-searchable-select-list [options]="options">
+                                        <ng-template matSearchableSelectOption
+                                                    let-option="option">
+                                            {{option}}
+                                        </ng-template>
+                                        </mat-searchable-select-list>
+                                    </mat-searchable-select>
+                                </div>
+
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="pt-3">
+                                <!---->
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="ember258" class="ember-checkbox ember-view" type="checkbox" />&nbsp;
+                                        Save these selections for use during future imports
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="btn-toolbar">
+                        <button mat-button matStepperPrevious class="btn btn-default mr-2" type="button" data-ember-action=""
+                            data-ember-action-259="259">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-xs" height="25px" width="25px">
+                                <path
+                                    d="M336.3 64c7.3 0 14.1 2.9 19.3 8.1 11 11.1 11.1 29.2.2 40.4L226.4 244.2l-11.5 11.7 11.5 11.7 129.4 131.7c11 11.2 10.9 29.3-.2 40.4-5.2 5.2-12 8.1-19.3 8.1-7.4 0-14.3-2.9-19.5-8.2L156.2 276.1c-10.9-11.1-10.9-29.1 0-40.2L316.9 72.2c5.2-5.3 12.1-8.2 19.4-8.2">
+                                </path>
+                            </svg>
+                            <span>Previous</span>
+                        </button>
+                        <button mat-button matStepperNext id="ember260" class="btn btn-primary ember-view" type="submit">
+                            <!---->
+                            Next
+                        </button>
+                        <button class="btn btn-default" type="button" data-ember-action="" data-ember-action-261="261">
+                            Cancel
+                        </button>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </mat-step>
+
+        <!-- step 3 -->
+        <mat-step label="Finish Import">
+            <div class="text-start">
+                <div class="customCard">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+                        </svg>
+                        All the reports in your file are ready to be imported
+                    </p>
+                    <hr>
+                    <span class="text-start text-sm">Note: Once you import the Reports, you cannot undo it</span>
+                </div>
+                <div *ngIf="unMappedValues > 0" class="warning">
+                    <svg class="warning" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                        <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+                        <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+                    </svg>
+                    <span>Unmapped fields - {{unMappedValues}} </span>
+                </div>
+
+                <hr />
+
+                <div class="btn-toolbar">
+                    <button mat-button matStepperPrevious class="btn btn-default mr-2" type="button" data-ember-action=""
+                        data-ember-action-259="259">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-xs" height="25px" width="25px">
+                            <path
+                                d="M336.3 64c7.3 0 14.1 2.9 19.3 8.1 11 11.1 11.1 29.2.2 40.4L226.4 244.2l-11.5 11.7 11.5 11.7 129.4 131.7c11 11.2 10.9 29.3-.2 40.4-5.2 5.2-12 8.1-19.3 8.1-7.4 0-14.3-2.9-19.5-8.2L156.2 276.1c-10.9-11.1-10.9-29.1 0-40.2L316.9 72.2c5.2-5.3 12.1-8.2 19.4-8.2">
+                            </path>
+                        </svg>
+                        <span>Previous</span>
+                    </button>
+                    <button id="ember260" class="btn btn-primary ember-view" type="submit" (click)="postMultipleReports()">
+                        Finish
+                    </button>
+                </div>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>
+

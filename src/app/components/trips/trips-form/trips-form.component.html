@@ -1,0 +1,332 @@
+<div class="container-fluid top" >
+   <div class=" d-flex justify-content-between pt-3 pb-2 ">
+       <div class="col-lg-11 px-5 mt-1 ">
+        <p><i class="fas fa-suitcase"></i> New Trip</p>
+       </div>
+     
+       <div class="col mr-1">
+        <a href="/trips"><button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button></a>
+       </div> 
+   </div>  
+
+</div>
+
+
+<form action="" class="container mt-3">
+    <form #usertrip="ngForm" (ngSubmit)="onClickSubmit(usertrip.value)">
+        
+        <label>Travel Type</label><br>
+        <label class="radio-inline">
+            <input type="radio" name="Travel_type" value="Domestic" ngModel (click)="regionfalse()">&nbsp; Domestic &nbsp; &nbsp;
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="Travel_type" value="International" ngModel (click)="region()" >&nbsp; International &nbsp;&nbsp;
+        </label>
+        <div class="form-group my-2 pt-3">
+            <label>Trip name*</label><br>
+            <input type="text" class=" form-control form-control-lg" name="Tripname" ngModel required>
+        </div>
+        <div class="form-group my-2">
+            <label>Business Purpose</label><br>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="Business_Purpose" ngModel
+                rows="3"></textarea>
+        </div>
+
+
+        <div *ngIf=international class="form-group my-2">
+            <label>Destination Country</label><br>
+            <div class="row">
+                <div class="col-10">
+                    <input type="text" class=" form-control form-control-lg" name="Destination_Country" ngModel required>
+                </div>
+                <div class="col-2">
+                    <input type="checkbox" name="Visa" id=""><label>&nbsp;is visa needed</label>
+                </div>
+            </div>   
+        </div>
+
+
+        <div class="mt-5 ">
+            <h6>TRIP ITINERARY</h6>
+            <!--Flights-->
+            <div class="row container">
+                <div class="col-lg-2 mt-3 " style="text-align: left;">
+                    <i class="fas fa-plane-departure"
+                        style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
+                    <p class="mt-3">Flight</p>
+                </div>
+                <div class="col-lg-10 trip_trans py-3">
+                    <div>
+                        <label class="radio-inline">
+                            <input type="radio" name="f_type" value="One_Way" ngModel> &nbsp; One-Way &nbsp; &nbsp;
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="f_type" value=" Round_Trip" ngModel>&nbsp; Round-Trip &nbsp;&nbsp;
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="f_type" value="Multi_Way" ngModel>&nbsp; Multi-Way &nbsp;&nbsp;
+                        </label>
+                    </div>
+    
+                    <hr>
+                    <div class="row px-2 ">
+                        <div class="form-group my-2 pt-3 col-lg-2">
+                            <label>Departure From*</label>
+                            <input type="text" class="form-control" name="f_Departure_From" required ngModel>
+                        </div>
+    
+                        <div class="form-group my-2 pt-3 col-lg-3">
+                            <label>Arrive At*</label>
+                            <input type="text" class="form-control" name="f_Arrive_At" required ngModel>
+                        </div>
+    
+                        <div class="form-group my-2 pt-3 col-lg-3">
+                            <label>Departure Date</label>
+                            <input type="date" class="form-control" name="f_Departure_date" required ngModel>
+                        </div>
+    
+                        <div class="form-group my-2 pt-3 col-lg-3">
+                            <label>Arrival Date</label>
+                            <input type="date" class="form-control" name="f_Arrival_date" required ngModel>
+                        </div>
+    
+    
+                        <div class="form-group my-2 pt-3 col">
+                            <label>Description*</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="f_Description"
+                                ngModel></textarea>
+                        </div>
+    
+                        <div class="form-group my-2 pt-3 col">
+                            <label>Departure Time*</label><br>
+                            <input type="time" class="form-control" name="f_Departure_time" required ngModel>
+                        </div>
+    
+                        <div class="form-group my-2 pt-3 col">
+                            <label>Arrive Time*</label><br>
+                            <input type="time" class="form-control" name="f_Arrive_time" required ngModel>
+                        </div>
+    
+    
+                    </div>
+                </div>
+            </div>
+            <!--HOTELS-->
+        <div class="row container my-5">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
+                <i class="fas fa-hotel"
+                    style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
+                <p class="mt-3">Hotel</p>
+            </div>
+            <div class="col-lg-10 trip_trans py-3">
+        
+                <div class="row px-2 ">
+                    <div class="form-group my-2 pt-3 col-lg-2">
+                        <label>Location*</label>
+                        <input type="text" class="form-control" name="h_location" ngModel required>
+                    </div>
+        
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label>Check In*</label>
+                        <input type="date" class="form-control" name="h_check_in" ngModel required>
+                        <input type="time" class="form-control">
+                    </div>
+        
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label>Check Out*</label>
+                        <input type="date" class="form-control" name="h_check_out" ngModel required>
+                        <input type="time" class="form-control">
+                    </div>
+        
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label>Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="h_description" ngModel
+                            rows="3"></textarea>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+        <!--CAR RENTALS-->
+        <div class="row container my-5">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
+                <i class="fas fa-car-side"
+                    style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
+                <p class="mt-3">Car Rentals</p>
+            </div>
+            <div class="col-lg-10 trip_trans py-3">
+        
+                <div class="row px-1 ">
+        
+        
+                    <div class="form-group my-2 pt-3 ml-1 col">
+                        <label>Pick Up</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="date" class="form-control" name="c_pick_up_date" ngModel  >
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="time" class="form-control" name="c_pick_up_time" ngModel >
+                            </div>
+        
+                            <div>
+                                <input type="text" class="form-control" placeholder="Enter pickup city" name="c_pick_up_city" ngModel >
+                            </div>
+                        </div>
+        
+        
+                    </div>
+                    <div class="form-group my-2 pt-3 ml-1 col">
+                        <label>Drop Off</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="date" class="form-control" name="c_drop_off_date" ngModel>
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="time" class="form-control" name="c_drop_off_time" ngModel>
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Enter drop city" name="c_drop_off_city" ngModel>
+                            </div>
+                        </div>
+        
+        
+                    </div>
+        
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group mb-3 my-2 pt-3 ml-1">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Car Type</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01" name="c_type" ngModel>
+        
+                                    <option value="small" >small</option>
+                                    <option value="medium">medium</option>
+                                    <option value="large">large</option>
+                                </select>
+                            </div>
+                        </div>
+        
+        
+                        <div class="col">
+                            <div class="form-group my-2 pt-3 ml-1">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <label>Description</label>
+                                    </div>
+                                    <div class="col">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" name="c_description" ngModel rows="3"></textarea>
+                                    </div>
+                                </div>
+        
+        
+                            </div>
+                        </div>
+        
+        
+        
+        
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </div>
+
+        <!--Bus-->
+        <div class="row container my-5">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
+                <i class="fas fa-bus" style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
+                <p class="mt-3">Bus</p>
+            </div>
+            <div class="col-lg-10 trip_trans py-3">
+                
+                <div class="row px-2 ">
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Departure From*</label>
+                        <input  type="text" class="form-control" name="b_Departure_from" required ngModel>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Arrive At*</label>
+                        <input  type="text" class="form-control" name="b_Arrive_At" required ngModel>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Departure Date</label>
+                        <input  type="date" class="form-control" name="b_Departure_date" required ngModel>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"  name="b_description" ngModel rows="3"></textarea>
+                    </div>
+
+                    
+
+              
+    
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!--Train-->
+        <div class="row container my-5">
+            <div class="col-lg-2 mt-3 " style="text-align: left;">
+                <i class="fas fa-train" style="background-color: grey;border: 2px solid; color: white; border-radius: 50%; padding: 10px;font-size: 25px; "></i>
+                <p class="mt-3">Train</p>
+            </div>
+            <div class="col-lg-10 trip_trans py-3">
+                
+                <div class="row px-2 ">
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Departure From*</label>
+                        <input  type="text" class="form-control" name="t_Departure_from" required ngModel>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Arrive At*</label>
+                        <input  type="text" class="form-control" name="t_Arrive_At" required ngModel>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Departure Date</label>
+                        <input  type="date" class="form-control" name="t_Departure_date" required ngModel>
+                    </div>
+
+                    <div class="form-group my-2 pt-3 col-lg-3">
+                        <label >Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="t_description" ngModel rows="3"></textarea>
+                    </div>
+
+                    
+
+              
+    
+                </div>
+
+            </div>
+
+        </div>
+
+    
+        </div>
+        
+        <!--Footer-->
+        <footer class="px-3 my-5">
+            <button type="submit" class="btn btn-success" > Save and Continue</button>&nbsp;
+
+            <input type="button"  class="btn btn-danger" value="Cancel" onClick=location.reload();>
+        
+        </footer>
+    </form>
+</form>

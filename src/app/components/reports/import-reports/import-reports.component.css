@@ -1,0 +1,33 @@
+.custom-dropzone img {
+	height: 600px;
+	background: #333;
+	color: #fff;
+	border: 5px dashed rgb(235, 79, 79);
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+svg {
+    filter: invert(12%) sepia(86%) saturate(6431%) hue-rotate(235deg) brightness(97%) contrast(92%);
+}
+
+.form-select {
+    width: 200px;
+}
+
+.requiredLabel {
+	color:rgb(255, 0, 0)
+}
+
+.requiredLabel::after {
+	content: " *";
+}
+
+.customCard {
+	width: 40%;
+	background-color: #F8F8FD;
+}
+
+.warning {
+	filter: invert(68%) sepia(97%) saturate(3877%) hue-rotate(354deg) brightness(98%) contrast(93%);
+}

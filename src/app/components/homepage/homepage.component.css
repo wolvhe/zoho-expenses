@@ -1,0 +1,47 @@
+.sidenav {
+  background-color: #f3f3fa;
+  width: 15%;
+  padding: 10px;
+  min-height: 92vh;
+  max-height: 100%;
+}
+.homeMenu {
+  font-size: medium !important;
+  padding-top: 10px;
+}
+.menuoptions {
+  margin-bottom: 10px;
+}
+.menuoptions > a {
+  text-decoration: none;
+  color: darkslategray;
+}
+.menuoptions:hover, .menuoptions > a:hover {
+  color: #0e85f3 !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+.showme {
+  display: none;
+}
+.menuoptions:hover .showme {
+  display: block;
+}
+.group {
+  background-color: #f3f3fa;
+  margin-bottom: 25px;
+  font-size: small;
+  padding-left: 10px;
+}
+.switchBtn {
+  font-size: x-small;
+  color: #0e85f3;
+  border-color: #0e85f3;
+}
+.switchBtn:hover {
+  color: white;
+  background-color: #0e85f3;
+}
+.rightbody {
+  width: 85%;
+}
