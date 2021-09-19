@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   public obj: any = {};
   public org: string = "";
 
+  name:any;
 
   constructor(private router: Router, private serv: ExpServiceService) { }
 
@@ -30,7 +31,7 @@ export class DashboardComponent implements OnInit {
       console.log(this.obj);
       // this.serv.getUser(this.obj.email);
       this.check(this.obj);
-
+      this.name=this.obj.email.split('@')
     }
   }
 

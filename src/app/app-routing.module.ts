@@ -37,6 +37,7 @@ import { ImportReportsComponent } from './components/reports/import-reports/impo
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
 import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
+import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
 const routes: Routes = [
   // {path: '', component: HomepageComponent},
   {path: '', redirectTo:'login', pathMatch: 'full' },
@@ -61,7 +62,7 @@ const routes: Routes = [
   {path: 'advances/all', component: AlladvanceComponent},
   {path: 'reports/all', component: AllreportsComponent},
   {path: 'approval', component: ApprovalpageComponent},
-  {path: 'reports/import', component: ImportReportsComponent},
+  {path: 'reports/import', component: BulkaddreportsComponent},
   {path: 'trips/all',component:AlltripsComponent},
   {path: 'test', component: TestingComponent},
   {path: 'expenses', component: ExpensespageComponent},

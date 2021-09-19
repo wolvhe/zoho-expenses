@@ -64,6 +64,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
+import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,6 +110,7 @@ import { AnalyticspageComponent } from './home/analyticspage/analyticspage.compo
     TabspageComponent,
     AllexpensesComponent,
     AnalyticspageComponent,
+    BulkaddreportsComponent,
   ],
   imports: [
     BrowserModule,

@@ -59,7 +59,7 @@
     border-color: blue;
     box-shadow: none;
 }
-.signup-btn {
+.login-btn {
     font-size: 18px;
     width: 50%;
     padding: 12px 0;
@@ -67,8 +67,11 @@
     border-color: none;
     color: white;
 }
+.signup-btn {
+    color: #0075ce;
+}
 .signup-btn:hover {
-    background-color: #0075ce;
+    font-weight: bold;
 }
 .submit_button {
     margin-top: 1rem;
