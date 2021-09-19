@@ -38,7 +38,8 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
 import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
 const routes: Routes = [
-  {path: '', component: HomepageComponent},
+  // {path: '', component: HomepageComponent},
+  {path: '', redirectTo:'login', pathMatch: 'full' },
   {path: 'home', component: HomepageComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'reports', component: ReportspageComponent},
