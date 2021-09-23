@@ -65,7 +65,7 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
-import { ViewComponent } from './components/reports/view/view.component';
+import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
 import {MatTabsModule} from '@angular/material/tabs'
 
 @NgModule({
@@ -114,7 +114,8 @@ import {MatTabsModule} from '@angular/material/tabs'
     AllexpensesComponent,
     AnalyticspageComponent,
     BulkaddreportsComponent,
-    ViewComponent,
+    ExpenseTabledetailsComponent
+    
   ],
   imports: [
     BrowserModule,
