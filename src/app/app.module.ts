@@ -66,6 +66,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
 import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
+import { UnexpComponent } from './components/expenses/unexp/unexp.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,8 @@ import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabl
     AllexpensesComponent,
     AnalyticspageComponent,
     BulkaddreportsComponent,
-    ExpenseTabledetailsComponent
+    ExpenseTabledetailsComponent,
+    UnexpComponent
     
   ],
   imports: [
