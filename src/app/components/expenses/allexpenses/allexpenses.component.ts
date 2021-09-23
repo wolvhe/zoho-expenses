@@ -19,7 +19,7 @@ export class AllexpensesComponent implements OnInit {
     if (store) {
       const usermail = JSON.parse(store);
       console.log(usermail);
-      this.http.get("http://localhost:3000/api/getallexpenses/" + usermail.email)
+      this.http.get("https://codingmart-expenses.herokuapp.com/api/getallexpenses/" + usermail.email)
         .subscribe((res) => {
           console.log(res);
           this.allexpenses = res;

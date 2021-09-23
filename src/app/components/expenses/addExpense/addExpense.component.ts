@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from 'src/app/services/report.service';
@@ -20,6 +21,7 @@ status:any
   check: boolean;
   reports:any=[];
   datas: any;
+  router: any;
 
   constructor(private afStorage: AngularFireStorage,private SpinnerService: NgxSpinnerService,private http: HttpClient,private trip:TripsService, private rep: ReportServiceService) {
     this.status = true
@@ -146,11 +148,10 @@ paycheck(){
     if (this.email != "") {
       data.email = this.email;
       data.receipts=this.images;
-      this.http.post('http://localhost:3000/api/newexpense', data, { responseType: 'text' }).subscribe(
+      this.http.post('https://codingmart-expenses.herokuapp.com/api/newexpense', data, { responseType: 'text' }).subscribe(
         (response: any) => {
           alert("suc " + response);
-          // this.router.navigate(['/login'])
-
+          this.router.navigateByUrl('/tabs/all')
         },
         (error: any) => {
           console.log(error);

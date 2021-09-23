@@ -65,6 +65,16 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
+import { ExpdetailsComponent } from './analytics/analytics_expense/expdetails/expdetails.component';
+import { ExpcategoryComponent } from './analytics/analytics_expense/expcategory/expcategory.component';
+import { ExpattendeeComponent } from './analytics/analytics_expense/expattendee/expattendee.component';
+import { ExpcustomerComponent } from './analytics/analytics_expense/expcustomer/expcustomer.component';
+import { ExpprojectComponent } from './analytics/analytics_expense/expproject/expproject.component';
+import { ExpmerchantComponent } from './analytics/analytics_expense/expmerchant/expmerchant.component';
+import { ExpcurrencyComponent } from './analytics/analytics_expense/expcurrency/expcurrency.component';
+import { SidenavComponent } from './sidecomponents/sidenav/sidenav.component';
+import { HomenavComponent } from './sidecomponents/homenav/homenav.component';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,8 +121,18 @@ import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulka
     AllexpensesComponent,
     AnalyticspageComponent,
     BulkaddreportsComponent,
+    ExpdetailsComponent,
+    ExpcategoryComponent,
+    ExpattendeeComponent,
+    ExpcustomerComponent,
+    ExpprojectComponent,
+    ExpmerchantComponent,
+    ExpcurrencyComponent,
+    SidenavComponent,
+    HomenavComponent,
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

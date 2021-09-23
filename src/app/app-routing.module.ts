@@ -1,3 +1,4 @@
+import { ExpattendeeComponent } from './analytics/analytics_expense/expattendee/expattendee.component';
 import { AdvancepageComponent } from './home/advancepage/advancepage.component';
 import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
 import { TestingComponent } from './testing/testing.component';
@@ -38,6 +39,12 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
 import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
+import { ExpcategoryComponent } from './analytics/analytics_expense/expcategory/expcategory.component';
+import { ExpcurrencyComponent } from './analytics/analytics_expense/expcurrency/expcurrency.component';
+import { ExpcustomerComponent } from './analytics/analytics_expense/expcustomer/expcustomer.component';
+import { ExpdetailsComponent } from './analytics/analytics_expense/expdetails/expdetails.component';
+import { ExpmerchantComponent } from './analytics/analytics_expense/expmerchant/expmerchant.component';
+import { ExpprojectComponent } from './analytics/analytics_expense/expproject/expproject.component';
 const routes: Routes = [
   // {path: '', component: HomepageComponent},
   {path: '', redirectTo:'login', pathMatch: 'full' },
@@ -69,7 +76,14 @@ const routes: Routes = [
   {path: 'testing', component: TestingComponent},
   {path: 'cards',component:CardspageComponent},
   {path: 'analytics',component:  AnalyticspageComponent},
-  {path: 'tab/all', component: AllexpensesComponent}
+  {path: 'tab/all', component: AllexpensesComponent},
+  {path: 'reports/expense/attendee', component: ExpattendeeComponent},
+  {path: 'reports/expense/category', component: ExpcategoryComponent},
+  {path: 'reports/expense/currency', component: ExpcurrencyComponent},
+  {path: 'reports/expense/customer', component: ExpcustomerComponent},
+  {path: 'reports/expense/details', component: ExpdetailsComponent},
+  {path: 'reports/expense/merchant', component: ExpmerchantComponent},
+  {path: 'reports/expense/project', component: ExpprojectComponent},
 
   
 ];
