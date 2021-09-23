@@ -76,6 +76,7 @@ import { SidenavComponent } from './sidecomponents/sidenav/sidenav.component';
 import { HomenavComponent } from './sidecomponents/homenav/homenav.component';
 import { ChartsModule } from 'ng2-charts';
 import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
+import { MainpageComponent } from './mainpage/mainpage.component';
 
 @NgModule({
   declarations: [
@@ -132,7 +133,8 @@ import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabl
     ExpcurrencyComponent,
     SidenavComponent,
     HomenavComponent,
-    ExpenseTabledetailsComponent
+    ExpenseTabledetailsComponent,
+    MainpageComponent
     
   ],
   imports: [
