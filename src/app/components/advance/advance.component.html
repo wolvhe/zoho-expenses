@@ -125,9 +125,10 @@
                         <label > Apply To Trip</label>
                         
                         <select class="form-select form-control form-control-lg " name="apply_to_trip" ngModel>
-                            <option value="1">Trip1</option>
+                            <option *ngFor="let data of datas" value="{{data.trip_name}}">{{data.trip_name}}</option>
+                            <!-- <option value="1">Trip1</option>
                             <option value="2">Trip2</option>
-                            <option value="3">Trip3</option>
+                            <option value="3">Trip3</option> -->
                         </select>
                         
                     </div>

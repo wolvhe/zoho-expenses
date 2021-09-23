@@ -31,6 +31,8 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
 import { TestingComponent } from './testing/testing.component';
+import { MatSearchableSelectModule } from 'mat-searchable-select';
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ApprovalPageComponent } from './components/approval-page/approval-page.component';
@@ -41,9 +43,6 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage'
 
 import { SelectDropDownModule } from 'ngx-select-dropdown';
-
-import { MatSearchableSelectModule } from 'mat-searchable-select';
-import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -62,7 +61,10 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
 
 import { NgxSpinnerModule } from "ngx-spinner";
-
+import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
+import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,6 +108,9 @@ import { NgxSpinnerModule } from "ngx-spinner";
     MysettingspageComponent,
     AnalyticsComponent,
     TabspageComponent,
+    AllexpensesComponent,
+    AnalyticspageComponent,
+    BulkaddreportsComponent,
   ],
   imports: [
     BrowserModule,
@@ -133,11 +138,11 @@ import { NgxSpinnerModule } from "ngx-spinner";
     CommonModule,
     SelectDropDownModule,
     MatInputModule,
-    Ng2SearchPipeModule,
-    NgxDatatableModule,
-
     MatSearchableSelectModule,
-    NgxSpinnerModule
+    Ng2SearchPipeModule,
+    MatSearchableSelectModule,
+    NgxSpinnerModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

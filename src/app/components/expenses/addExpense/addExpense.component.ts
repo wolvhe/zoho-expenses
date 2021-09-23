@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ReportService } from 'src/app/services/report.service';
-
+import { ReportServiceService } from 'src/app/services/report-service.service';
+import { TripsService } from 'src/app/services/trips.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import firebase from 'firebase/app';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -17,8 +18,10 @@ export class AddExpenseComponent implements OnInit {
   public email: string = "";
 status:any
   check: boolean;
+  reports:any=[];
+  datas: any;
 
-  constructor(private afStorage: AngularFireStorage,private SpinnerService: NgxSpinnerService,private http: HttpClient, private rep: ReportService) {
+  constructor(private afStorage: AngularFireStorage,private SpinnerService: NgxSpinnerService,private http: HttpClient,private trip:TripsService, private rep: ReportServiceService) {
     this.status = true
     this.check=false
    }
@@ -30,10 +33,12 @@ status:any
       const obj = JSON.parse(store);
       // console.log(this.obj);
       this.email = obj.email;
-      this.rep.getReport(obj.email).subscribe((res) => {
+      this.rep.getAllReports(obj.email).subscribe((res) => {
         console.log(res);
+        this.reports=res;
       });
     }
+    this.viewtrip(this.email) 
   }
 
   files: File[] = [];
@@ -70,7 +75,7 @@ paycheck(){
       console.log(report);
 
 
-      this.rep.addReport(report)
+      this.rep.createReport(report)
         .subscribe(
           (response: any) => {
             alert("suc " + response);
@@ -153,6 +158,15 @@ paycheck(){
       );
     }
   }
+  viewtrip(email: any):void{
+    console.log(email)
+    this.trip.getalltrip(email)
+    .subscribe(
+      (data: any)=>{
+        this.datas=data
+        console.log(this.datas)
+      }
+    )}
 
 }
 

@@ -2,12 +2,12 @@
     <h3>Import Reports</h3>
     <mat-horizontal-stepper [linear]='false'>
         <!-- step 1 -->
-        <mat-step label="Select File" [stepControl]="selectFile">
-            <form [formGroup]="selectFile">
+        <mat-step label="Select File">
+            <form>
                 <div class="mb-4">
                     <div class="text-center">
                         <div class="py-10 custom-dropzone">
-                            <ngx-dropzone (change)="onSelect($event)" [multiple]="false" accept="text/csv,text/tsv" id="fileInput">
+                            <ngx-dropzone (change)="onSelect($event)" aria-required="true" [multiple]="false" accept="text/csv,text/tsv" id="fileInput">
                                 <ngx-dropzone-label>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 31"
                                         class="icon-large text-primary" height="30px" width="30px">
@@ -40,7 +40,7 @@
 
                     <div class="text-start">
                         <label for="encoding" class="form-label requiredLabel">Character Encoding</label><br>
-                        <mat-searchable-select (changed)="encodingValue = $event.nextValue">
+                        <mat-searchable-select (changed)="encodingValue = $event.nextValue" aria-required="true">
                             <mat-searchable-select-label>Select</mat-searchable-select-label>
                             <mat-searchable-select-search-label>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">

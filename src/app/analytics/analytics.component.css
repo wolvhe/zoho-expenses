@@ -1,0 +1,52 @@
+.card {
+    border: 1px solid lightgray;
+  }
+  .cardrow1 {
+    width: 60%;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .cardrow2,
+  .cardrow3 {
+    width: 29.5%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+  .cardrow3 {
+    width: 29.5%;
+  }
+  .card-text {
+    color: #8487ab;
+  }
+  .fa-star {
+    color: #8487ab;
+  }
+  .fa-star:hover {
+    color: #ffd43b !important;
+  }
+  a {
+    font-weight: 300;
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    font-weight: 500;
+    color: darkslateblue !important;
+    cursor: pointer;
+  }
+  /* .col > p:hover, .subtext > p:hover {
+      font-weight: 500;
+      color: darkslateblue !important;
+      cursor: pointer;
+  } */
+  .form-control {
+    width: 230px;
+  }
+  .model {
+      width: 400px;
+  }
+  .dropdown-item {
+      color: blue;
+  }

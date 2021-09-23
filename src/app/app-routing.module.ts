@@ -26,7 +26,7 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 import { CardsComponent } from './components/cards/cards.component'
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
-
+import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { ReportspageComponent } from './home/reportspage/reportspage.component';
 import { ExpensespageComponent } from './home/expensespage/expensespage.component';
 import { TripspageComponent } from './home/tripspage/tripspage.component';
@@ -36,8 +36,11 @@ import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.co
 import { ImportReportsComponent } from './components/reports/import-reports/import-reports.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
+import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
+import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  // {path: '', component: HomepageComponent},
+  {path: '', redirectTo:'login', pathMatch: 'full' },
   {path: 'home', component: HomepageComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'reports', component: ReportspageComponent},
@@ -59,14 +62,14 @@ const routes: Routes = [
   {path: 'advances/all', component: AlladvanceComponent},
   {path: 'reports/all', component: AllreportsComponent},
   {path: 'approval', component: ApprovalpageComponent},
-  {path: 'reports/import', component: ImportReportsComponent},
+  {path: 'reports/import', component: BulkaddreportsComponent},
   {path: 'trips/all',component:AlltripsComponent},
   {path: 'test', component: TestingComponent},
   {path: 'expenses', component: ExpensespageComponent},
   {path: 'testing', component: TestingComponent},
   {path: 'cards',component:CardspageComponent},
-  {path: 'analytics',component: AnalyticsComponent},
-  
+  {path: 'analytics',component:  AnalyticspageComponent},
+  {path: 'tab/all', component: AllexpensesComponent}
 
   
 ];
