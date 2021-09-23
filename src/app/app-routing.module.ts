@@ -34,6 +34,7 @@ import { CardspageComponent } from './home/cardspage/cardspage.component';
 import { ApprovalpageComponent } from './home/approvalpage/approvalpage.component';
 import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { ViewComponent } from './components/reports/view/view.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomepageComponent},
@@ -62,6 +63,7 @@ const routes: Routes = [
   {path: 'testing', component: TestingComponent},
   {path: 'cards',component:CardspageComponent},
   {path: 'analytics',component: AnalyticsComponent},
+  {path:"reports/view",component: ViewComponent}
   
 
   

@@ -52,6 +52,11 @@ import { CardspageComponent } from './home/cardspage/cardspage.component';
 import { ApprovalpageComponent } from './home/approvalpage/approvalpage.component';
 import { MysettingspageComponent } from './home/mysettingspage/mysettingspage.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { ViewComponent } from './components/reports/view/view.component';
+import {MatTabsModule} from '@angular/material/tabs'
+import { NgxCurrencyModule } from "ngx-currency";
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -94,6 +99,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     ApprovalpageComponent,
     MysettingspageComponent,
     AnalyticsComponent,
+    ViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,6 +107,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     FormsModule,
     HttpClientModule,
     NgxDropzoneModule,
+    
     
     
     BrowserAnimationsModule,
@@ -113,8 +120,12 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     MatInputModule,
     Ng2SearchPipeModule,
     NgxDatatableModule,
+    
 
-    MatSearchableSelectModule
+    MatSearchableSelectModule,
+    MatTabsModule,
+    NgxCurrencyModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
