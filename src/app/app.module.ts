@@ -75,6 +75,8 @@ import { ExpcurrencyComponent } from './analytics/analytics_expense/expcurrency/
 import { SidenavComponent } from './sidecomponents/sidenav/sidenav.component';
 import { HomenavComponent } from './sidecomponents/homenav/homenav.component';
 import { ChartsModule } from 'ng2-charts';
+import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -130,6 +132,8 @@ import { ChartsModule } from 'ng2-charts';
     ExpcurrencyComponent,
     SidenavComponent,
     HomenavComponent,
+    ExpenseTabledetailsComponent
+    
   ],
   imports: [
     ChartsModule,

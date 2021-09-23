@@ -45,6 +45,7 @@ import { ExpcustomerComponent } from './analytics/analytics_expense/expcustomer/
 import { ExpdetailsComponent } from './analytics/analytics_expense/expdetails/expdetails.component';
 import { ExpmerchantComponent } from './analytics/analytics_expense/expmerchant/expmerchant.component';
 import { ExpprojectComponent } from './analytics/analytics_expense/expproject/expproject.component';
+import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
 const routes: Routes = [
   // {path: '', component: HomepageComponent},
   {path: '', redirectTo:'login', pathMatch: 'full' },
@@ -84,7 +85,7 @@ const routes: Routes = [
   {path: 'reports/expense/details', component: ExpdetailsComponent},
   {path: 'reports/expense/merchant', component: ExpmerchantComponent},
   {path: 'reports/expense/project', component: ExpprojectComponent},
-
+  {path: 'tab/all/detail', component: ExpenseTabledetailsComponent}
   
 ];
 
