@@ -71,7 +71,7 @@ const routes: Routes = [
   {path: 'cards',component:CardspageComponent},
   {path: 'analytics',component:  AnalyticspageComponent},
   {path: 'tab/all', component: AllexpensesComponent},
-  {path: 'tab/all/detail', component: ExpenseTabledetailsComponent}
+  {path: 'tab/all/detail/:id', component: ExpenseTabledetailsComponent}
   
 ];
 
