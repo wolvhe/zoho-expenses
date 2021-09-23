@@ -1,0 +1,11 @@
+.background-light-blue {
+    background-color: #F8F8FD;
+    height: 900px;
+}
+
+.status {
+    background-color: rgb(223, 218, 218);
+    color: rgb(174, 160, 160);
+    border-radius: 2px;
+    padding: 2px;
+}

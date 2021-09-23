@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ReportServiceService } from 'src/app/services/report-service.service';
 
 @Component({
   selector: 'app-allexpenses',
@@ -19,7 +20,7 @@ export class AllexpensesComponent implements OnInit {
     if (store) {
       const usermail = JSON.parse(store);
       console.log(usermail);
-      this.http.get("http://localhost:3000/api/getallexpenses/" + usermail.email)
+      this.http.get("https://codingmart-expenses.herokuapp.com/api/getallexpenses/" + usermail.email)
         .subscribe((res) => {
           console.log(res);
           this.allexpenses = res;
@@ -32,8 +33,6 @@ export class AllexpensesComponent implements OnInit {
         this.data=arr;
           // console.log(this.allexpenses);
         });
-        
-
     }
   }
 

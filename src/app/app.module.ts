@@ -65,6 +65,9 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
+import { ViewComponent } from './components/reports/view/view.component';
+import {MatTabsModule} from '@angular/material/tabs'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,6 +114,7 @@ import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulka
     AllexpensesComponent,
     AnalyticspageComponent,
     BulkaddreportsComponent,
+    ViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -142,7 +146,8 @@ import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulka
     Ng2SearchPipeModule,
     MatSearchableSelectModule,
     NgxSpinnerModule,
-    NgbModule
+    NgbModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

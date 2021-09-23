@@ -1,0 +1,141 @@
+<div class="p-2">
+
+    <!-- row 1 -->
+    <div class="row">
+
+        <!-- row 1 column 1 -->
+        <div class="col">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h3>ER-0001 <span class="status">APPROVED</span></h3>
+                </div>
+                <div>
+                    <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#updateReport">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                            <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- row 2 -->
+    <div class="row">
+
+        <!--  row 2 column 1 -->
+        <div class="col-10">
+            <div class="row">
+                <div class="col-8">
+                    <h2>Report name</h2>
+                </div>
+                <div class="col-2">
+                    <p>Total</p>
+                </div>
+                <div class="col-2">
+                    <p>Amount to be Reimbursed</p>
+                </div>
+            </div>
+            <div>
+                <mat-tab-group>
+                    <!-- tab 1 -->
+                    <mat-tab label='EXPENSES'>
+                        <div *ngIf="isNoExpense" class="text-center">
+                            <img src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-expense-in-report-3ff4d58c1964b47eb7e19be8f296ad42.png" alt="" height="150px" width="250px">
+                            <h1>Add expenses to this report</h1>
+                            <button class="btn btn-primary">Add Unreported Expnenses ( <span>{{expenseCount}}</span> )</button>
+                            <button class="btn btn-light">+ New Expnense</button>
+                        </div>
+
+                        <div *ngIf="!isNoExpense"></div>
+                    </mat-tab>
+
+                    <!-- tab 2 -->
+                    <mat-tab label='ADVANCES & REFUNDS'>
+
+                        <div *ngIf="isNoAdvance" class="text-center">
+                            <img src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-advance-in-report-020b15db2839bb9abe9155c4877cf29b.png" alt="" height="150px" width="250px">
+                            <h2>Apply or record advance for this report</h2>
+                            <button class="btn btn-primary">Apply Advance ( <span>{{advanceCount}}</span> )</button>
+                            <button class="btn btn-light">Record Advancd</button>
+                        </div>
+
+                        <div *ngIf='!isNoAdvance'>
+
+                        </div>
+                    </mat-tab>
+
+                    <!-- tab 3 -->
+                    <mat-tab label='HISTORY'></mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+
+        <!-- row 2 column 2 -->
+        <div class="col-2 background-light-blue">
+            <p>Policy</p>
+            <h4>Zoho</h4>
+
+            <p>Business Purpose</p>
+            <h4>-</h4>
+
+            <p>Trip</p>
+            <h4>Trip-00001</h4>
+
+            <p>Documents</p>
+            <h4>-</h4>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="modal fade" id="updateReport" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateReportLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="updateReportLabel">Edit Report</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="updateReportForm">
+                  <div class="mb-3">
+                      <label for="reportName" class="form-label">Report Name</label>
+                      <input formControlName="reportName" type="text" id="reportName" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                      <label for="description" class="form-label">Description</label>
+                      <textarea formControlName="description" class="form-control" name="" id="description" rows="3"></textarea>
+                  </div>
+                  <div class="mb-3">
+                      <label for="">Duration</label>
+                      <input formControlName="startDate" class="form-control" type="date" name="" id="">
+                      <input formControlName="endDate" class="form-control" type="date" name="" id="">
+                  </div>
+                  <div class="mb-3">
+                      <label for="associateWithTrip">Trip</label>
+                      <select formControlName="associateWithTrip" class="form-control" name="" id="associateWithTrip">
+                          <option value="1">1</option>
+                      </select>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" (click)="updateReport()" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>
