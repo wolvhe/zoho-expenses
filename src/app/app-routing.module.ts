@@ -38,6 +38,8 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { TabspageComponent } from './home/approvalpage/tabspage/tabspage.component';
 import { AllexpensesComponent } from './components/expenses/allexpenses/allexpenses.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
+import { IndividualadvanceComponent } from './components/advance/individualadvance/individualadvance.component';
+
 const routes: Routes = [
   // {path: '', component: HomepageComponent},
   {path: '', redirectTo:'login', pathMatch: 'full' },
@@ -70,7 +72,8 @@ const routes: Routes = [
   {path: 'cards',component:CardspageComponent},
   {path: 'analytics',component:  AnalyticspageComponent},
   {path: 'tab/all', component: AllexpensesComponent},
-  {path:'indivtrip/:id',component:IndivdualComponent}
+  {path:'indivtrip/:id',component:IndivdualComponent},
+  {path:'indivadvance/:id',component:IndividualadvanceComponent}
 
   
 ];

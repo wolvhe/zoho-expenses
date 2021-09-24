@@ -21,9 +21,7 @@ export class TripsService {
   gettrip(data:any){
     return this.http.get<Tripmodel>(baseUrl+'/api/getindtrip/'+data);
   }
-  gettripindivdual(){
-    // return a
-  }
+  
   deletetrip(email:string, tripName:string): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/trips/delete/${email}/${tripName}`)
   }
@@ -32,5 +30,8 @@ export class TripsService {
   }
   getalladvance(data:any){
     return this.http.get<Advancemodel>(baseUrl+'/api/getadvance/'+data);
+  }
+  getadvance(data:any){
+    return this.http.get<Advancemodel>(baseUrl+'/api/getindadvance/'+data);
   }
 }

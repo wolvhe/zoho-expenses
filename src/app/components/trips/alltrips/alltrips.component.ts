@@ -89,10 +89,9 @@ isEmpty:boolean = false
  save(){
   this.router.navigateByUrl('/trips/all')
  }
+ 
  viewindtrips(id:any){
-  
-  
-  
+ 
   console.log(id)
   this.router.navigate([`/indivtrip/${id}`])
   

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TripsService } from 'src/app/services/trips.service';
 import { ExpServiceService } from 'src/app/services/exp-service.service';
+import { Router } from '@angular/router';
 import { Advancemodel } from 'src/app/models/advancemodel';
 
 
@@ -18,7 +19,7 @@ export class AlladvanceComponent implements OnInit {
   amount!: string;
   
   
-  constructor(private trip: TripsService, private serv: ExpServiceService) { }
+  constructor(private trip: TripsService, private serv: ExpServiceService,private router:Router) { }
 
   check(obj: any) {
     this.serv.getUser(obj).subscribe((res) => {
@@ -72,6 +73,12 @@ export class AlladvanceComponent implements OnInit {
           
         }
       )
+  }
+
+  viewindadvances(id:any){
+ 
+    console.log(id)
+    this.router.navigate([`/indivadvance/${id}`])
   }
  
   

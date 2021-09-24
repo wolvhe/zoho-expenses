@@ -66,6 +66,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
 import { IndivdualComponent } from './components/trips/indivdual/indivdual.component';
+import { IndividualadvanceComponent } from './components/advance/individualadvance/individualadvance.component';
+
 
 @NgModule({
   declarations: [
@@ -114,6 +116,8 @@ import { IndivdualComponent } from './components/trips/indivdual/indivdual.compo
     AnalyticspageComponent,
     BulkaddreportsComponent,
     IndivdualComponent,
+    IndividualadvanceComponent,
+ 
     // IndivtripsComponent,
   ],
   imports: [
