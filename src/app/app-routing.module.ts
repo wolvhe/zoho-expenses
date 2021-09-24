@@ -22,7 +22,7 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
-
+import { IndivdualComponent } from './components/trips/indivdual/indivdual.component'; 
 import { CardsComponent } from './components/cards/cards.component'
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
@@ -69,7 +69,8 @@ const routes: Routes = [
   {path: 'testing', component: TestingComponent},
   {path: 'cards',component:CardspageComponent},
   {path: 'analytics',component:  AnalyticspageComponent},
-  {path: 'tab/all', component: AllexpensesComponent}
+  {path: 'tab/all', component: AllexpensesComponent},
+  {path:'indivtrip/:id',component:IndivdualComponent}
 
   
 ];

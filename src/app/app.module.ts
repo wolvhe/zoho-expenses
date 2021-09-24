@@ -65,6 +65,8 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
+import { IndivdualComponent } from './components/trips/indivdual/indivdual.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,6 +113,8 @@ import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulka
     AllexpensesComponent,
     AnalyticspageComponent,
     BulkaddreportsComponent,
+    IndivdualComponent,
+    // IndivtripsComponent,
   ],
   imports: [
     BrowserModule,

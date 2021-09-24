@@ -157,6 +157,7 @@ paycheck(){
         }
       );
     }
+    
   }
   viewtrip(email: any):void{
     console.log(email)

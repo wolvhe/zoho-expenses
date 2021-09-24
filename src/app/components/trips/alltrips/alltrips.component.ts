@@ -3,7 +3,7 @@ import { TripsService } from 'src/app/services/trips.service';
 import { ExpServiceService } from 'src/app/services/exp-service.service';
 import { Tripmodel } from 'src/app/models/tripmodel';
 import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-alltrips',
@@ -14,6 +14,7 @@ export class AlltripsComponent implements OnInit {
   public obj: any = {};
   public org: string = "";
   datas: any;
+  data1:any;
   checkbox:boolean
   
   constructor(private trip:TripsService,private serv: ExpServiceService,private router:Router) { 
@@ -35,6 +36,7 @@ export class AlltripsComponent implements OnInit {
       this.check(this.obj);
       const email=this.obj.email
       this.viewtrip(email)
+      
   }
 }
 isEmpty:boolean = false
@@ -87,10 +89,18 @@ isEmpty:boolean = false
  save(){
   this.router.navigateByUrl('/trips/all')
  }
+ viewindtrips(id:any){
+  
+  
+  
+  console.log(id)
+  this.router.navigate([`/indivtrip/${id}`])
   
   // getClassColor({status}) {
   //   console.log(status)
   //   return "color:green";
   // }
 }
+ 
 
+}

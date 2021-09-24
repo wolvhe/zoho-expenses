@@ -21,7 +21,7 @@ export class TripsFormComponent implements OnInit {
     const trip_no=0
     const trip_name=data.Tripname
     const business_purpose=data.Business_Purpose
-    const designation_country=data.Designation_Country
+    const designation=data.Designation_Country
     const visa=data.Visa
     // flight
     const f_type=data.f_type
@@ -120,7 +120,7 @@ export class TripsFormComponent implements OnInit {
       travel_type,
       trip_name,
       business_purpose,
-      designation_country,
+      designation,
       visa,
       flight2,
       hotel2,
