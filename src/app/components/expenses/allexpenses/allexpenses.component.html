@@ -13,6 +13,17 @@
             <ngx-datatable-column name="REPORT NAME" prop="add_to_report"> </ngx-datatable-column>
 
             <ngx-datatable-column name="STATUS" prop="status"></ngx-datatable-column>
+
+            <ngx-datatable-column name="view">
+                <ng-template let-value="value" let-row="row" ngx-datatable-cell-template>
+                    <span>
+                      <button style="background-color:blue;height:20px;" (click)='viewexpenses(row._id)'>view</button>
+                    </span>
+                  </ng-template>
+            <!-- <button type="button" class="btn btn-primary" (click)="viewexpenses(data._id)">view</button> -->
+
+            </ngx-datatable-column>
+
         </ngx-datatable>
     </div>
 

@@ -78,8 +78,9 @@ const routes: Routes = [
   // {path: 'reports/view', component: ViewComponent}
   {path: 'report/:_id', component: ViewComponent},
   {path:'indivtrip/:id',component:IndivdualComponent},
-  {path:'indivadvance/:id',component:IndividualadvanceComponent}
+  {path:'indivadvance/:id',component:IndividualadvanceComponent},
 
+  {path: 'tab/all/detail/:id', component: ExpenseTabledetailsComponent}
   
 ];
 
