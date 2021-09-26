@@ -1,3 +1,95 @@
+.s-1 {
+    width: 15px;
+    height: 15px;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled), summary {
+    cursor: pointer;
+}
+
+.btn-1 {
+    border: 1px solid transparent;
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: #e9ebf6;
+    padding: .4375rem .625rem;
+    font-weight: bold;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.banner {
+    border-radius: 4px;
+    padding: 20px 30px;
+    border: 1px solid #dedff3;
+    border-bottom-width: 3px;
+}
+
+.s-2 {
+    width: 40px;
+    height: 40px;
+    padding: 4px 12px;
+    background: #ececf9;
+    border-radius: 50%!important;
+}
+
+a { 
+    color: #408dfb;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.cont-1 {
+    background-image: url(https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/card-bg-355ead61b3b5012a5b4c5d5f4e1969e6.png);
+    background-color: #fbfbfe;
+    background-size: 800px;
+    border-radius: 4px 0 0 4px;
+    min-height: 340px;
+    width: 37%;
+    max-width: 420px;
+    display: flex!important;
+    flex-direction: row!important;
+    padding-left: 150px;
+}
+
+.cont-2 {
+    padding-left: 200px;
+    padding-bottom: 3rem!important;
+    padding-top: 3rem!important;
+    flex-direction: column!important;
+    display: flex!important;
+}
+
+.box-1 {
+    border-radius: 15px;
+    display: inline-flex;
+    border: 0!important;
+    background: #f8f8fd;
+    max-width: 150px;
+}
+
+.cir{
+    width: 25px;
+    height: 25px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,.1);
+    border-radius: 50%!important;
+}
+
+.img {
+    width: 25px;
+    height: 21px;
+    border-radius: 50%!important;
+
+}
+
+
+/* side nav and header */
+
+
 .sidenav {
     background-color: #f3f3fa;
     width: 15%;

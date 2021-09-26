@@ -68,6 +68,9 @@ import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulka
 import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ViewComponent } from './components/reports/view/view.component'
+import { IndivdualComponent } from './components/trips/indivdual/indivdual.component';
+import { IndividualadvanceComponent } from './components/advance/individualadvance/individualadvance.component';
+
 
 @NgModule({
   declarations: [
@@ -116,8 +119,12 @@ import { ViewComponent } from './components/reports/view/view.component'
     AnalyticspageComponent,
     BulkaddreportsComponent,
     ExpenseTabledetailsComponent,
-    ViewComponent
+    ViewComponent,
     
+    IndivdualComponent,
+    IndividualadvanceComponent,
+ 
+    // IndivtripsComponent,
   ],
   imports: [
     BrowserModule,

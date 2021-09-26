@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Advancemodel } from '../models/advancemodel';
 import { Tripmodel } from '../models/tripmodel';
 const baseUrl = 'http://localhost:3000';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +18,10 @@ export class TripsService {
   getalltrip(data:any){
     return this.http.get<Tripmodel>(baseUrl+'/api/gettrip/'+data);
   } 
+  gettrip(data:any){
+    return this.http.get<Tripmodel>(baseUrl+'/api/getindtrip/'+data);
+  }
+  
   deletetrip(email:string, tripName:string): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/trips/delete/${email}/${tripName}`)
   }
@@ -25,5 +30,8 @@ export class TripsService {
   }
   getalladvance(data:any){
     return this.http.get<Advancemodel>(baseUrl+'/api/getadvance/'+data);
+  }
+  getadvance(data:any){
+    return this.http.get<Advancemodel>(baseUrl+'/api/getindadvance/'+data);
   }
 }

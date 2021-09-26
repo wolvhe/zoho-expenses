@@ -22,7 +22,7 @@ import { ImportcsvComponent } from './components/importcsv/importcsv.component';
 import { AllreportsComponent } from './components/reports/allreports/allreports.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
-
+import { IndivdualComponent } from './components/trips/indivdual/indivdual.component'; 
 import { CardsComponent } from './components/cards/cards.component'
 import { AdvanceComponent } from './components/advance/advance.component';
 import { AlladvanceComponent } from './components/advance/alladvance/alladvance.component';
@@ -40,6 +40,8 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
 import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
 import { ViewComponent } from './components/reports/view/view.component';
+import { IndividualadvanceComponent } from './components/advance/individualadvance/individualadvance.component';
+
 const routes: Routes = [
   // {path: '', component: HomepageComponent},
   {path: '', redirectTo:'login', pathMatch: 'full' },
@@ -74,7 +76,10 @@ const routes: Routes = [
   {path: 'tab/all', component: AllexpensesComponent},
   {path: 'tab/all/detail', component: ExpenseTabledetailsComponent},
   // {path: 'reports/view', component: ViewComponent}
-  {path: 'report/:_id', component: ViewComponent}
+  {path: 'report/:_id', component: ViewComponent},
+  {path:'indivtrip/:id',component:IndivdualComponent},
+  {path:'indivadvance/:id',component:IndividualadvanceComponent}
+
   
 ];
 
