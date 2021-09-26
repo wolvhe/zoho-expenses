@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
-const baseUrl = 'https://codingmart-expenses.herokuapp.com';
+const baseUrl = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root'

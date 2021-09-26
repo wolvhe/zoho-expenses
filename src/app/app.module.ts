@@ -66,7 +66,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
 import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
-import {MatTabsModule} from '@angular/material/tabs'
+import {MatTabsModule} from '@angular/material/tabs';
+import { ViewComponent } from './components/reports/view/view.component'
 
 @NgModule({
   declarations: [
@@ -114,7 +115,8 @@ import {MatTabsModule} from '@angular/material/tabs'
     AllexpensesComponent,
     AnalyticspageComponent,
     BulkaddreportsComponent,
-    ExpenseTabledetailsComponent
+    ExpenseTabledetailsComponent,
+    ViewComponent
     
   ],
   imports: [
@@ -148,7 +150,7 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatSearchableSelectModule,
     NgxSpinnerModule,
     NgbModule,
-    MatTabsModule
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

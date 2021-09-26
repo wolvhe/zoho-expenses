@@ -1,141 +1,1103 @@
+<!-- <mat-drawer-container class="example-container" fullscreen> -->
 <div class="p-2">
-
-    <!-- row 1 -->
-    <div class="row">
-
-        <!-- row 1 column 1 -->
-        <div class="col">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <h3>ER-0001 <span class="status">APPROVED</span></h3>
-                </div>
-                <div>
-                    <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#updateReport">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
-                            <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
-                        </svg>
-                    </button>
-                    <button class="btn btn-primary">Submit</button>
-                    <button class="btn btn-light">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                        </svg>
-                    </button>
-                    <button class="btn btn-light">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+  <!-- row 1 -->
+  <div class="row">
+    <!-- row 1 column 1 -->
+    <div class="col">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h3>ER-0001 <span class="status">APPROVED</span></h3>
         </div>
+        <div>
+          <button
+            class="btn btn-light"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-pen"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"
+              />
+            </svg>
+          </button>
+          <button class="btn btn-primary">Submit</button>
+          <button class="btn btn-light">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-three-dots"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+              />
+            </svg>
+          </button>
+          <button class="btn btn-light">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-x"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- row 2 -->
+  <div class="row">
+    <!--  row 2 column 1 -->
+    <div class="col-10">
+      <div class="row">
+        <div class="col-8">
+          <h2>
+            {{ report["reportName"] }}
+            <br />
+            <span class="small">
+              Duration: {{ timestampToDate(report["startDate"]) }} - {{ timestampToDate(report["endDate"]) }}
+            </span>
+          </h2>
+        </div>
+        <div class="col-2">
+          <h2>
+            <span class="small"> Total </span>
+            <br />
+            Rs.{{ report["total"] }}
+          </h2>
+        </div>
+        <div class="col-2">
+          <h2>
+            <span class="small no-wrap"> Amount to be Reimbursed </span>
+            <br />
+            Rs.{{ report["toBeReimbursed"] }}
+          </h2>
+        </div>
+      </div>
+      <div>
+        <mat-tab-group>
+          <!-- tab 1 -->
+          <mat-tab label="EXPENSES">
+            <div *ngIf="isNoExpense" class="text-center">
+              <img
+                src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-expense-in-report-3ff4d58c1964b47eb7e19be8f296ad42.png"
+                alt=""
+                height="150px"
+                width="250px"
+              />
+              <h1>Add expenses to this report</h1>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modal-right-expense" data-toggle-class="modal-open-aside">
+                Add Unreported Expnenses ( <span>{{ expenseCount }}</span> )
+              </button>
+              <button
+                class="btn btn-light"
+                data-bs-toggle="modal"
+                data-bs-target="#expenseModal"
+              >
+                + New Expense
+              </button>
+            </div>
+
+            <div *ngIf="!isNoExpense"></div>
+          </mat-tab>
+
+          <!-- tab 2 -->
+          <mat-tab label="ADVANCES & REFUNDS">
+            <div *ngIf="isNoAdvance" class="text-center">
+              <img
+                src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-advance-in-report-020b15db2839bb9abe9155c4877cf29b.png"
+                alt=""
+                height="150px"
+                width="250px"
+              />
+              <h2>Apply or record advance for this report</h2>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modal-right-advance" data-toggle-class="modal-open-aside">
+                Apply Advance ( <span>{{ advanceCount }}</span> )
+              </button>
+              <button
+                class="btn btn-light"
+                data-bs-toggle="modal"
+                data-bs-target="#recordModal"
+              >
+                Record Advanced
+              </button>
+            </div>
+
+            <div *ngIf="!isNoAdvance"></div>
+          </mat-tab>
+
+          <!-- tab 3 -->
+          <mat-tab label="HISTORY">
+            <div *ngFor="let document of report['historyList'].slice().reverse()">
+              <ul class="list-group list-group flush">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-1">
+                      <span class="userCircle">{{email[0]}}</span>
+                    </div>
+                    <div class="col-11">
+                      <p class="font-weight-bold">
+                        {{name}}
+                        <span class="small">
+                          {{timestampToDateWithTime(document['createdAt'])}}
+                        </span>
+                      </p>
+                      <p>{{document['message']}}</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
     </div>
 
-    <!-- row 2 -->
-    <div class="row">
+    <!-- row 2 column 2 -->
+    <div class="col-2 background-light-blue">
+      <p>Policy</p>
+      <h4>Zoho</h4>
 
-        <!--  row 2 column 1 -->
-        <div class="col-10">
-            <div class="row">
-                <div class="col-8">
-                    <h2>Report name</h2>
-                </div>
-                <div class="col-2">
-                    <p>Total</p>
-                </div>
-                <div class="col-2">
-                    <p>Amount to be Reimbursed</p>
-                </div>
-            </div>
-            <div>
-                <mat-tab-group>
-                    <!-- tab 1 -->
-                    <mat-tab label='EXPENSES'>
-                        <div *ngIf="isNoExpense" class="text-center">
-                            <img src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-expense-in-report-3ff4d58c1964b47eb7e19be8f296ad42.png" alt="" height="150px" width="250px">
-                            <h1>Add expenses to this report</h1>
-                            <button class="btn btn-primary">Add Unreported Expnenses ( <span>{{expenseCount}}</span> )</button>
-                            <button class="btn btn-light">+ New Expnense</button>
-                        </div>
+      <p>Business Purpose</p>
+      <h4>-</h4>
 
-                        <div *ngIf="!isNoExpense"></div>
-                    </mat-tab>
+      <p>Trip</p>
+      <h4>Trip-00001</h4>
 
-                    <!-- tab 2 -->
-                    <mat-tab label='ADVANCES & REFUNDS'>
-
-                        <div *ngIf="isNoAdvance" class="text-center">
-                            <img src="https://dhd53jy3n33fn.cloudfront.net/zexpense/assets/images/empty-advance-in-report-020b15db2839bb9abe9155c4877cf29b.png" alt="" height="150px" width="250px">
-                            <h2>Apply or record advance for this report</h2>
-                            <button class="btn btn-primary">Apply Advance ( <span>{{advanceCount}}</span> )</button>
-                            <button class="btn btn-light">Record Advancd</button>
-                        </div>
-
-                        <div *ngIf='!isNoAdvance'>
-
-                        </div>
-                    </mat-tab>
-
-                    <!-- tab 3 -->
-                    <mat-tab label='HISTORY'></mat-tab>
-                </mat-tab-group>
-            </div>
-        </div>
-
-        <!-- row 2 column 2 -->
-        <div class="col-2 background-light-blue">
-            <p>Policy</p>
-            <h4>Zoho</h4>
-
-            <p>Business Purpose</p>
-            <h4>-</h4>
-
-            <p>Trip</p>
-            <h4>Trip-00001</h4>
-
-            <p>Documents</p>
-            <h4>-</h4>
-        </div>
+      <p>Documents</p>
+      <h4>-</h4>
     </div>
+  </div>
 </div>
 
-<div>
-    <div class="modal fade" id="updateReport" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateReportLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title" id="updateReportLabel">Edit Report</h3>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Edit Report</h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          id="updateReportModalCloseButton"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label>Report Name*</label>
+          <input
+            type="text"
+            [formControl]="newReportName"
+            class="form-control"
+          />
+          <label>Business Purpose</label>
+          <textarea
+            name=""
+            id=""
+            cols="10"
+            rows="3"
+            placeholder="Max 500 characters"
+            max="500"
+            class="form-control"
+            [formControl]="newBusinessPurpose"
+          ></textarea>
+          <label>Pick Up</label>
+          <div class="row">
+            <div class="col">
+              <input
+                type="date"
+                [formControl]="newStartDate"
+                class="form-control"
+                name=""
+              />
             </div>
-            <div class="modal-body">
-              <form [formGroup]="updateReportForm">
-                  <div class="mb-3">
-                      <label for="reportName" class="form-label">Report Name</label>
-                      <input formControlName="reportName" type="text" id="reportName" class="form-control">
-                  </div>
-                  <div class="mb-3">
-                      <label for="description" class="form-label">Description</label>
-                      <textarea formControlName="description" class="form-control" name="" id="description" rows="3"></textarea>
-                  </div>
-                  <div class="mb-3">
-                      <label for="">Duration</label>
-                      <input formControlName="startDate" class="form-control" type="date" name="" id="">
-                      <input formControlName="endDate" class="form-control" type="date" name="" id="">
-                  </div>
-                  <div class="mb-3">
-                      <label for="associateWithTrip">Trip</label>
-                      <select formControlName="associateWithTrip" class="form-control" name="" id="associateWithTrip">
-                          <option value="1">1</option>
-                      </select>
-                  </div>
-              </form>
+            <div class="col">
+              <input
+                type="date"
+                [formControl]="newEndDate"
+                class="form-control"
+                name=""
+              />
             </div>
-            <div class="modal-footer">
-              <button type="button" (click)="updateReport()" class="btn btn-primary">Save</button>
-              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+          </div>
+          <label>Trip</label>
+          <div class="input-group mb-3">
+            <select
+              [formControl]="newAssociateWithTrip"
+              class="form-select"
+              id="inputGroupSelect01"
+            >
+              <option *ngFor="let data of datas">{{ data.trip_name }}</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="updateReport()">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- record Advance Modal -->
+<div
+  class="modal fade"
+  id="recordModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Record Advance</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form #advance="ngForm" (ngSubmit)="onClickSubmit(advance.value)">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                @
+                <select
+                  class="browser-default custom-select"
+                  style="border: none; background: none"
+                  name="amount_type"
+                  ngModel
+                >
+                  <option value="INR" selected>INR</option>
+                  <option value="USD">USD</option>
+                </select>
+              </div>
+            </div>
+            <input
+              type="text"
+              class="form-control form-control-lg py-0"
+              placeholder="0.0"
+              name="amount"
+              ngModel
+            />
+          </div>
+
+          <div class="form-group mb-3">
+            <label> Date</label>
+
+            <input
+              type="date"
+              class="form-control form-control-lg"
+              name="date"
+              ngModel
+            />
+          </div>
+
+          <div class="form-group mb-3">
+            <label> Payed Through</label>
+
+            <select
+              class="form-select form-control-lg"
+              name="paid_through"
+              ngModel
+            >
+              <option value="pety cash">Pety Cash</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+          <div class="form-group mb-3">
+            <label> Reference#</label>
+
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              name="references"
+              ngModel
+            />
+          </div>
+
+          <div class="form-group mb-3">
+            <label> Note</label>
+
+            <textarea
+              name="notes"
+              class="form-control form-control-lg"
+              id=""
+              cols="30"
+              rows="2"
+              ngModel
+            ></textarea>
+          </div>
+
+          <div class="form-group mb-3">
+            <label> Apply To Trip</label>
+
+            <select
+              class="form-select form-control form-control-lg"
+              name="apply_to_trip"
+              ngModel
+            >
+              <option *ngFor="let data of datas" value="{{ data.trip_name }}">
+                {{ data.trip_name }}
+              </option>
+              <!-- <option value="1">Trip1</option>
+                            <option value="2">Trip2</option>
+                            <option value="3">Trip3</option> -->
+            </select>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Record Advance
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- expense modal -->
+
+<div
+  class="modal fade"
+  id="expenseModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="expenses">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link addExpenseTab active"
+                data-toggle="tab"
+                href="#addexpense"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+                >Add Expense</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link bulkAddExpenseTab"
+                data-toggle="tab"
+                href="#bulkaddexpense"
+                role="tab"
+                aria-controls="profile"
+                aria-selected="false"
+                >Bulk Add Expense</a
+              >
+            </li>
+            <li class="nav-item"></li>
+            <div></div>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="addexpense"
+              role="tabpanel"
+            >
+              <div>
+                <ngx-spinner
+                  bdColor="rgba(51, 51, 51, 0.8)"
+                  size="default"
+                  type="ball-spin-clockwise"
+                >
+                  <p style="color: white">Please Wait uploading...</p>
+                </ngx-spinner>
+
+                <div class="row card-body">
+                  <div class="col-lg-8" style="left: 50; top: 50">
+                    <div class="img">
+                      <div class="App">
+                        <div>
+                          <div
+                            class="custom-dropzone"
+                            style="
+                              margin-right: 70%;
+                              height: 650px;
+                              width: 650px;
+                            "
+                            ngx-dropzone
+                            [accept]="'image/*'"
+                          >
+                            <ngx-dropzone-label>
+                              <div>
+                                <h2 style="font-size: small">
+                                  Attach receipts from computer or cloud
+                                </h2>
+                              </div>
+                            </ngx-dropzone-label>
+                            <!-- <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+                                              [removable]="true">
+                                            </ngx-dropzone-image-preview> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4" style="text-align: left">
+                    <form #expense="ngForm">
+                      <div class="col-mt-3">
+                        <div>
+                          <label for="formGroupExampleInput" class="text-danger"
+                            >Expense Date*</label
+                          >
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="eg: 31/01/2021"
+                            ngModel
+                            name="exp_date"
+                          />
+                        </div>
+                        <div>
+                          <br />
+
+                          <div class="formgroup">
+                            <label for="formGroupExampleInput">Merchant</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="formGroupExampleInput"
+                              placeholder="Select or type to add"
+                              ngModel
+                              name="merchant"
+                            />
+                          </div>
+                          <br />
+                        </div>
+                      </div>
+
+                      <!-- <div class = "formgroup">
+                                        <label for="formGroupExampleInput " class="text-danger">Amount*</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="0.00">
+                                        <br>
+                                    </div> -->
+
+                      <div *ngIf="!check">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <label
+                              for="formGroupExampleInput"
+                              class="text-danger"
+                              >Amount*
+                            </label>
+                          </div>
+
+                          <div class="col">
+                            <button
+                              class="btn btn-link"
+                              style="font-size: small"
+                            >
+                              Itemize
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-group mb-3 col-lg-3">
+                            <div class="input-group-prepend">
+                              <button
+                                class="btn btn"
+                                type="button"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <!-- <div class="dropdown-menu">
+                                           <a class="dropdown-item" >AUD-Australian Dollar</a>
+                                          <a class="dropdown-item" >CAD-Canadian Dollar </a>
+                                          <a class="dropdown-item" >CNY-Yuan Renminbi</a>
+                                          <a class="dropdown-item" >EUR-Euro</a>
+                                          <a class="dropdown-item" >GPB-Pound Sterling</a>
+                                          <a class="dropdown-item" >INR-Indian Rupee</a>
+                                          <a class="dropdown-item" >JPY-Japanese Yen</a>
+                                          <a class="dropdown-item" >SAR-Saudi Riyal</a>
+                                          <a class="dropdown-item" >USD-United States Dollar</a>
+                                          <a class="dropdown-item" >ZAR-South African Rand</a>  -->
+                                <select
+                                  style="width: 3.25rem"
+                                  ngModel
+                                  name="amounttype"
+                                >
+                                  <option href="#">INR</option>
+                                  <option href="#">
+                                    AUD-Australian Dollar
+                                  </option>
+                                  <option href="#">CAD-Canadian Dollar</option>
+                                  <option href="#">CNY-Yuan Renminbi</option>
+                                  <option href="#">EUR-Euro</option>
+                                  <option href="#">GPB-Pound Sterling</option>
+                                  <option href="#">INR-Indian Rupee</option>
+                                  <option href="#">JPY-Japanese Yen</option>
+                                  <option href="#">SAR-Saudi Riyal</option>
+                                  <option href="#">
+                                    USD-United States Dollar
+                                  </option>
+                                  <option href="#">
+                                    ZAR-South African Rand
+                                  </option>
+                                </select>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <input
+                              type="text"
+                              class="form-control"
+                              aria-label="Text input with dropdown button"
+                              placeholder="0.00"
+                              ngModel
+                              name="amount"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div *ngIf="check">
+                        <div style="text-align: right">
+                          <button class="btn btn-link" style="font-size: small">
+                            Back to single expense
+                          </button>
+                        </div>
+                        <div>
+                          <label> Currency </label>
+                          <br />
+                          <select
+                            class="form-control custom-select mb-4"
+                            style="width: 460px"
+                          >
+                            <option href="#">INR</option>
+                            <option href="#">AUD-Australian Dollar</option>
+                            <option href="#">CAD-Canadian Dollar</option>
+                            <option href="#">CNY-Yuan Renminbi</option>
+                            <option href="#">EUR-Euro</option>
+                            <option href="#">GPB-Pound Sterling</option>
+                            <option href="#">INR-Indian Rupee</option>
+                            <option href="#">JPY-Japanese Yen</option>
+                            <option href="#">SAR-Saudi Riyal</option>
+                            <option href="#">USD-United States Dollar</option>
+                            <option href="#">ZAR-South African Rand</option>
+                          </select>
+                        </div>
+                        <!-- <div *ngFor="let item of formArray; let i = index">
+                                      <table class="table table-bordered">
+                                    <tr class="tr-header " style="font-size: medium;">
+                                    <th style="color:firebrick; font-size: medium;">Category*</th>
+                                    <th>Amount</th>
+                                    <th>Description</th>
+                                    <tr>
+                                    <td><select name="" class="form-control">
+                                      <option value="" selected>Select </option>
+                                      <option value="#">Add Travel Expenses</option>
+                                      <option value="#">Automobile Expense</option>
+                                      <option value="#">Fuel/Mileage Expense</option>
+                                      <option value="#">IT and Internet Expense</option>
+                                      <option value="#">Job Costing</option>
+                                      <option value="#">Meals and Entertainment</option>
+                                      <option value="#">Office and Supplies</option>
+                                      <option value="#">Other Expenses</option>
+                                      <option value="#">Parking</option>
+                                      <option value="#">Subcontractor</option>
+                                      <option value="#">Telephone Expense</option>
+                                    </select></td>
+                                    <td>
+                                        <input type="text" name="" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="" class="form-control">
+                                    </td>
+                                    
+                                    <td>
+                                      <button
+                                      type="button"
+                                      class="btn deleteButton btn-outline-danger btn-sm"
+                                      style="margin-right: 1rem"
+                                      >
+                                      <i class="fas fa-trash-alt"></i> 
+                                      </button>
+                                      </td>
+                                    </tr>
+                                    </table>
+                                    
+                                    
+                                    </div> -->
+
+                        <div>
+                          <button class="btn btn-link" style="font-size: small">
+                            Add another line
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="text-danger">Category</label>
+                        <div class="row">
+                          <div class="col-9">
+                            <select
+                              class="form-control"
+                              style="width: 275px"
+                              ngModel
+                              name="category"
+                            >
+                              <option>Select</option>
+                              <option value="Air Travel Expenses">
+                                Air Travel Expenses
+                              </option>
+                              <option value="Automobile Expense">
+                                Automobile Expense
+                              </option>
+                              <option value="Fuel/Mileage Expense">
+                                Fuel/Mileage Expense
+                              </option>
+                              <option value="IT and Internet Expense">
+                                IT and Internet Expense
+                              </option>
+                              <option value="Job Costing">Job Costing</option>
+                              <option value="Meals and Entertainment">
+                                Meals and Entertainment
+                              </option>
+                              <option value="Office and Supplies">
+                                Office and Supplies
+                              </option>
+                              <option value="Other Expenses">
+                                Other Expenses
+                              </option>
+                              <option value="Parking">Parking</option>
+                              <option value="Subcontractor">
+                                Subcontractor
+                              </option>
+                              <option value="Telephone Expense">
+                                Telephone Expense
+                              </option>
+                            </select>
+                          </div>
+                          <div class="col">
+                            <button
+                              class="btn btn-light"
+                              type="button"
+                              href="#categoryModal"
+                              data-toggle="modal"
+                              style="width: 60px"
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- modal 2 -->
+                      <div
+                        class="modal fade"
+                        id="categoryModal"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="categoryModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="categoryModalLabel">
+                                New Category
+                              </h5>
+                              <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form>
+                                <div class="col-sm-8" style="float: right">
+                                  <div class="mb-3">
+                                    <label
+                                      for="Account-code"
+                                      class="col-form-label text-danger"
+                                      >Category Name *</label
+                                    >
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="Account-code"
+                                      ngModel
+                                      name=""
+                                    />
+                                  </div>
+                                  <div></div>
+                                </div>
+
+                                <div class="col">
+                                  <div class="form-group row">
+                                    <div class="col-sm-10">
+                                      <img
+                                        src="data:image/png;base64,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"
+                                        class="rounded float-left"
+                                        style="height: 90px; width: 90px"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <br />
+                                <div class="col">
+                                  <div class="form-group row">
+                                    <div class="col-sm-10">
+                                      <div class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="checkbox"
+                                          id="gridCheck1"
+                                          ngModel
+                                          name=""
+                                        />
+                                        <label
+                                          class="form-check-label"
+                                          for="gridCheck1"
+                                        >
+                                          Make this a sub-category
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="mb-3">
+                                  <label
+                                    for="Account-code"
+                                    class="col-form-label"
+                                    >Account Code</label
+                                  >
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="Account-code"
+                                    ngModel
+                                    name=""
+                                  />
+                                </div>
+
+                                <label>
+                                  A unique reference code for this category that
+                                  is limited to 50 characters and can comprise
+                                  of letters, digits, hyphen and
+                                  underscore</label
+                                >
+
+                                <div class="mb-3">
+                                  <label
+                                    for="message-text"
+                                    class="col-form-label"
+                                    >Description</label
+                                  >
+                                  <textarea
+                                    class="form-control"
+                                    id="message-text"
+                                    placeholder="Max 500 Characters"
+                                    ngModel
+                                    name=""
+                                  ></textarea>
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                              <button type="button" class="btn btn-primary">
+                                Save changes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="form-group row">
+                          <div class="col-sm-10">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="gridCheck1"
+                                (input)="paystatus()"
+                              />
+                              <label class="form-check-label" for="gridCheck1">
+                                Claim Reimbusement
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div *ngIf="status" class="form-group">
+                        <label>Paid Through</label>
+                        <select
+                          class="form-control"
+                          ngModel
+                          name="paid_through"
+                        >
+                          <!-- <h6 class= "dropdown-header" >Cash</h6> -->
+                          <option href="#">Petty Cash</option>
+                          <option href="#">Undeposited Funds</option>
+                          <option href="#">TDS Payable</option>
+                        </select>
+                      </div>
+
+                      <div class="col-sm-20">
+                        <div class="form-group">
+                          <label for="formGroupExampleInput">Description</label>
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            ngModel
+                            name="description"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-20">
+                        <div class="form-group">
+                          <label for="formGroupExampleInput">Reference#</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="formGroupExampleInput"
+                            placeholder=""
+                            ngModel
+                            name="reference"
+                          />
+                        </div>
+                      </div>
+
+    
+                      <button
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal"
+                        type="submit"
+                      >
+                        Save and Close
+                      </button>
+                      &nbsp;
+                      <!-- <button type="button" class="btn btn-outline-primary">Save and New</button>&nbsp; -->
+                      <button
+                        type="button"
+                        data-bs-dismiss="modal"
+                        class="btn btn-light"
+                      >
+                        Cancel</button
+                      >&nbsp;
+                    </form>
+                  </div>
+
+                  <footer style="text-align: center">
+                    <div class="mw-50 d-none font-small d-lg-inline-block">
+                      Why add expenses manually when you can get those receipts
+                      autoscanned.
+
+                      <a
+                        tabindex="-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://zoho.com/expense/help/v2/expenses/autoscan-receipts/"
+                        >Learn More!</a
+                      >
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="bulkaddexpense" role="tabpanel">
+              <app-bulk-add-expense></app-bulk-add-expense>
             </div>
           </div>
         </div>
       </div>
-      
+      <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+    </div>
+  </div>
+</div>
+
+<!-- modal from right for expense -->
+<div id="modal-right-expense" class="modal fade" data-backdrop="true">
+  <div class="modal-dialog modal-right w-xl">
+    <div class="modal-content h-100 no-radius">
+      <div class="modal-header">
+        <div class="modal-title text-md">Add Expenses to Report</div>
+        <button class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="p-4">
+          <!-- <div class="row">
+            <div class="col">
+              <button class="btn btn-light text-capitalize">
+               Select all
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-primary text-capitalize">
+                Apply <span>{{expenseSelectedCount}}</span> Expense
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-light text-capitalize">
+                Clear Selection
+              </button>
+            </div>
+          </div><br>   -->
+          <div class="card text-start" *ngFor="let expense of allExpenses; let index=index">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="25px" width="25px"><path d="M392.3 0H119.7C53.6 0 0 53.6 0 119.7v272.5C0 458.4 53.6 512 119.7 512h272.5c66.1 0 119.7-53.6 119.7-119.7V119.7C512 53.6 458.4 0 392.3 0zm-51.6 146c20.1 0 36.4 16.3 36.4 36.4 0 20.1-16.3 36.4-36.4 36.4-20.1 0-36.4-16.3-36.4-36.4 0-20.1 16.3-36.4 36.4-36.4zM118.5 366l105.3-140.8 73.8 98.6 28.4-30.6 67.6 72.7c-91.8.1-183.4.1-275.1.1z"></path></svg> -->
+            <div class="card-body">
+              <!-- <input type="checkbox" (click)="expenseSelected(index)" name="" id="">  -->
+              <div class="">
+                <p>{{expense['exp_date']}}</p>
+                <p>{{expense['category']}}</p>
+                <p>Rs.{{expense['amount']}}.0</p>
+                <button (click)="addExpense(index)" class="btn btn-secondary">
+                  Add
+                </button>
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">
+          Close
+        </button>
+        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">
+          Save Details
+        </button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal from right for advances -->
+
+<div id="modal-right-advance" class="modal fade" data-backdrop="true">
+  <div class="modal-dialog modal-right w-xl">
+    <div class="modal-content h-100 no-radius">
+      <div class="modal-header">
+        <div class="modal-title text-md">Apply Advance</div>
+        <button class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="p-4 text-center">
+          <div class="px-4">
+
+            <!-- header buttons -->
+            <!-- <div class="row">
+              <div class="col">
+                <button class="btn btn-light text-capitalize">
+                 Select all
+                </button>
+              </div>
+              <div class="col">
+                <button class="btn btn-primary text-capitalize">
+                  Apply <span>{{advanceSelectedCount}}</span> Advance
+                </button>
+              </div>
+              <div class="col">
+                <button class="btn btn-light text-capitalize">
+                  Clear Selection
+                </button>
+              </div>
+            </div><br> -->
+
+            <!-- advances data -->
+            <div class="card text-start" *ngFor="let advance of allAdvance">
+              <div class="card-body">
+                <!-- <input type="checkbox"> -->
+                <div class="row">
+                  <div class="col">
+                    <p>{{advance['date']}}</p>
+                    <p>Reference#:-{{advance['references']}}</p>
+                  </div>
+                  <div class="col">
+                    <h3>Rs.{{advance['amount']}}.0</h3>
+                  </div>
+                </div>
+                <hr>
+                <p>Notes:-{{advance['notes']}}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">
+          Close
+        </button>
+        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">
+          Save Details
+        </button> -->
+      </div>
+    </div>
+  </div>
 </div>

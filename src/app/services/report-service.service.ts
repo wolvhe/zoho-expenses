@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ReportServiceService {
 
-  baseURL = "https://codingmart-expenses.herokuapp.com/api"
+  baseURL = "http://localhost:3000/api"
 
   constructor(private http: HttpClient) { }
 
@@ -35,5 +35,17 @@ export class ReportServiceService {
   }
   updateReport(data:any): Observable<any> {
     return this.http.put<any>(`${this.baseURL}/reports/edit`, data)
+  }
+
+  getReportsByID (email: string, _id: string): Observable<any> {
+    return this.http.get<any>(`${this.baseURL}/reports/${email}/${_id}`)
+  }
+
+  addExpense(data:object): Observable<any> {
+    return this.http.post<any>(`${this.baseURL}/reports/add/expense`, data)
+  }
+
+  addAdvance(data:object): Observable<any> {
+    return this.http.post<any>(`${this.baseURL}/reports/add/advance`, data)
   }
 }
