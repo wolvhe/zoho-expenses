@@ -25,6 +25,8 @@ export class AlltripsComponent implements OnInit {
       this.org = res;
     });
   }
+  ColumnMode = ColumnMode;
+  
   ngOnInit(): void {
     
     const store = localStorage.getItem('userInfo');
@@ -76,6 +78,7 @@ isEmpty:boolean = false
       }
     )
   }
+<<<<<<< HEAD
   navbar(){
     this.checkbox=!this.checkbox
   }
@@ -87,6 +90,16 @@ isEmpty:boolean = false
  save(){
   this.router.navigateByUrl('/trips/all')
  }
+=======
+
+  // getRowClass() {
+  //   console.log('rowClass')
+  //   return {
+  //     'row-color': true
+  //   }
+  // }
+
+>>>>>>> e43351b27c31f8366900961211fd96e6e6e8980a
   
   // getClassColor({status}) {
   //   console.log(status)
