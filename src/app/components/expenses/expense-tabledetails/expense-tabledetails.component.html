@@ -1,0 +1,147 @@
+<div class="row">
+    <div class="col-4">
+      <nav>
+        <div class="topnav navbar navbar-expand-lg">
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Expenses
+      
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">All</a>
+                            <a class="dropdown-item" href="#">Expired</a>
+                            <a class="dropdown-item" href="#">Uncategorized</a>
+                            <div class="dropdown-divider"><hr></div>
+                            <a class="dropdown-item" href="#">+ New Custom view</a>
+                        </div>
+                    
+      
+                </ul>
+            </div>
+            <div class="button-right">
+                <button type="button" class="btn btn-primary" routerLink="/expenses">+</button>
+                <button type="button" class="btn btn-light">...</button>
+                
+            </div>
+        </div>
+      </nav>
+    </div>
+    <div class="col-8">
+      <nav class="navbar navbar-default navbar-expand-md navbar-light">
+        <div class="topnav navbar navbar-expand-lg">
+            <p>Automobile Expenses</p>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    
+                        
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">All</a>
+                            <a class="dropdown-item" href="#">Expired</a>
+                            <a class="dropdown-item" href="#">Uncategorized</a>
+                            <div class="dropdown-divider"><hr></div>
+                            <a class="dropdown-item" href="#">+ New Custom view</a>
+                        </div>
+                    
+      
+                </ul>
+            </div>
+            <div class="button-right">
+                <button type="button" class="btn btn-light" routerLink="/expenses">+</button>
+                <button type="button" class="btn btn-light">...</button>
+                <button type="button" class="btn btn-light">X</button>
+            </div>
+        </div>
+      </nav>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8">
+          <h3>What's Next ?</h3>
+          <p>Add this expense to a report and submit it to claim reimbursement.</p>
+        </div>
+        <div class="col-4">
+        <div class="button-right">
+            <button type="button" class="btn btn-primary" routerLink="/expenses">Add to Reports</button>
+        </div>
+        
+        </div>
+        </div>
+      </div>
+    </div> 
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4" style="left: 50; top: 50;">
+
+                <div class="img">
+                  <div class="App">
+                    <div>
+                      <div class="custom-dropzone" style="margin-right:70%; height: 350px; width: 230px;" ngx-dropzone
+                        [accept]="'image/*'" (change)="onSelect($event)">
+                        <ngx-dropzone-label>
+                          <div>
+                            <h2 style="font-size: small;">Attach receipts from computer or cloud</h2>
+                          </div>
+                        </ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+                          [removable]="true" (removed)="onRemove(f)">
+                        </ngx-dropzone-image-preview>
+                      </div>
+                    </div>
+                  </div>
+          
+                </div>
+                
+          
+              </div>
+          
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class = "row">
+                        <span>17/09/2021</span>
+                      
+                    
+                  <h3>Automobile Expense</h3>
+                  <p>Merchant :-</p>
+                </div>
+                
+
+              </div>
+            </div> 
+
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                            <span>Reimbursable</span>
+                         
+                        
+                      <h1>Rs.1,234.00</h1>
+                      <p>Description</p>
+                      <p>Policy ABC</p>  
+                    </div>
+                    
+                    
+    
+                  </div>
+                </div> 
+            </div>
+
+        
+        </div>
+        </div>
+      </div>
+    </div>  
+    
+
+
+
+
+  </div>
+
+
