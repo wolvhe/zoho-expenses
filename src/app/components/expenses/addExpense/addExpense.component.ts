@@ -146,7 +146,7 @@ paycheck(){
     if (this.email != "") {
       data.email = this.email;
       data.receipts=this.images;
-      this.http.post('https://codingmart-expenses.herokuapp.com/api/newexpense', data, { responseType: 'text' }).subscribe(
+      this.http.post('http://localhost:3000/api/newexpense', data, { responseType: 'text' }).subscribe(
         (response: any) => {
           alert("suc " + response);
           // this.router.navigate(['/login'])

@@ -138,7 +138,7 @@ export class BulkAddExpenseComponent implements OnInit {
         email:this.email,
         bulkexpenses:this.formArray
       }
-      this.http.post('https://codingmart-expenses.herokuapp.com/api/bulkexpenses', data, { responseType: 'text' }).subscribe(
+      this.http.post('http://localhost:3000/api/bulkexpenses', data, { responseType: 'text' }).subscribe(
         (response: any) => {
           alert("suc " + response);
           // this.router.navigate(['/login'])
