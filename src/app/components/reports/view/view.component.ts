@@ -125,11 +125,11 @@ viewtrip(email: any):void{
     const updatedReport = {
       email: this.email,
       // reportName: this.report.reportName,
-      newReportName: this.newReportName.value,
-      newBusinessPurpose: this.newBusinessPurpose.value,
-      newStartDate: this.newStartDate.value,
-      newEndDate: this.newEndDate.value,
-      newAssociateWithTrip: this.newAssociateWithTrip.value
+      newReportName: this.newReportName.value || this.report['reportName'],
+      newBusinessPurpose: this.newBusinessPurpose.value || this.report['businessPurpose'],
+      newStartDate: this.newStartDate.value || this.report['startDate'],
+      newEndDate: this.newEndDate.value || this.report['endDate'],
+      newAssociateWithTrip: this.report['associateWithTrip'] || this.newAssociateWithTrip.value 
     }
     this.reportService.updateReport(updatedReport).subscribe (res => {
       console.log(res)
@@ -169,7 +169,8 @@ viewtrip(email: any):void{
       console.log(res)
     })
     this.ngOnInit()
-    window.location.reload()
+    // window.location.reload()
+    
   }
 
   addAdvance(index:number) {
@@ -182,7 +183,8 @@ viewtrip(email: any):void{
       console.log(res)
     })
     this.ngOnInit()
-    window.location.reload()
+    // window.location.reload()
+    this.router.navigateByUrl(`report/${this.report['_id']}`)
   }
  
 

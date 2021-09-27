@@ -86,7 +86,7 @@
           <h2>
             <span class="small no-wrap"> Amount to be Reimbursed </span>
             <br />
-            Rs.{{ report["toBeReimbursed"] }}
+            Rs.{{report['total'] - report['toBeReimbursed']}}.0
           </h2>
         </div>
       </div>
@@ -174,22 +174,22 @@
               <div class="text-right">
                 <p>Total Expense Amount
                   <span>
-
+                    Rs.{{report['total']}}.0
                   </span>
                 </p>
                 <p>Non-reimbursable Amount
                   <span>
-
+                    (-) Rs.{{report['total']}}.0
                   </span>
                 </p>
                 <p>Applied Advance Amount
                   <span>
-
+                    (-) Rs.{{report['toBeReimbursed']}}.0
                   </span>
                 </p>
                 <p class="font-weight-bold">Amount to be Reimbursed
                   <span>
-
+                    Rs.{{report['total'] - report['toBeReimbursed']}}.0
                   </span>
                 </p>
               </div>
@@ -363,7 +363,7 @@
               class="form-select"
               id="inputGroupSelect01"
             >
-              <option *ngFor="let data of datas">{{ data.trip_name }}</option>
+              <option *ngFor="let data of datas" value={{data.trip_name}}>{{ data.trip_name }}</option>
             </select>
           </div>
         </form>
