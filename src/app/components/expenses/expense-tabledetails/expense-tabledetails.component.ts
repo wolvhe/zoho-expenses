@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-expense-tabledetails',
@@ -6,11 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expense-tabledetails.component.css']
 })
 export class ExpenseTabledetailsComponent implements OnInit {
-
-  constructor() { }
-
+  id: any;
+  constructor(private route: ActivatedRoute,private http: HttpClient) { }
+expense:any={};
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
+    const store = localStorage.getItem('userInfo');
+    if (store) {
+      const usermail = JSON.parse(store);
+      console.log(usermail);
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'email': usermail.email
+          // Authorization: 'my-auth-token'https://codingmart-expenses.herokuapp.com
+        })
+      };
+      this.http.get("http://localhost:3000/api/getexpense/" + this.id,httpOptions)
+        .subscribe((res) => {
+          console.log(res);
+         this.expense=res;
+        });
 
+
+    }
   }
 
   files: File[] = [];

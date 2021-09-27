@@ -67,20 +67,21 @@ export class ReportsComponent implements OnInit {
       "startDate": this.startDate.value,
       "endDate": this.endDate.value,
       "associateWithTrip": this.associateWithTrip.value,
-      "status": "approved"
+      "status": "APPROVED",
+      "historyList": [
+        {
+          message: 'Report Created'
+        },
+      ]
     }
     console.log(this.newReport);
     
     this.reportService.createReport(this.newReport).subscribe(res => {
       console.log(res);
-      
+      const idOfNewReport = res['_id']
+      // this.router.navigate([`/report/${idOfNewReport}`])
+      window.location.href = `/report/${idOfNewReport}`
     })
-    // this.reportService.getAllReports().subscribe(reports => {
-    //   this.allReports = reports
-    //   console.log(reports);
-      
-    // })
-    this.router.navigateByUrl('/reports/all')
     
   }
 

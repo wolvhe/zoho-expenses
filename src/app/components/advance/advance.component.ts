@@ -16,12 +16,13 @@ export class AdvanceComponent implements OnInit {
   constructor(private advance:TripsService,private router: Router,private serv:ExpServiceService) { }
   onClickSubmit(data:any){
     data.email=this.email
+    console.log(this.email)
     // data.push(this.email)
     console.log(data);
     this.advance.createadvance(data)
     .subscribe(
       (response: any) => {
-        alert(response);
+        console.log(response);
         
       },
       (error: any) => {

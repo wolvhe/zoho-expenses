@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-const baseUrl = 'https://codingmart-expenses.herokuapp.com';
+const baseUrl = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root'

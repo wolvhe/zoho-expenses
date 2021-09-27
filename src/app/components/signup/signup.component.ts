@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
     this.signup.createUser(data)
     .subscribe(
       (response: any) => {
-        alert("suc "+response);
+        console.log("suc "+response);
         this.router.navigate(['/login'])
         
       },

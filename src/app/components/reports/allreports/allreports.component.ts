@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ReportServiceService } from 'src/app/services/report-service.service';
 import { ColumnMode, SelectionType } from '@swimlane/ngx-datatable';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { FormControl } from '@angular/forms';
 export class AllreportsComponent implements OnInit {
   email: any;
   datas:any
-  constructor(private reportService: ReportServiceService) { }
+  constructor(private reportService: ReportServiceService, private router: Router) { }
 
   allReports:any
 
@@ -114,6 +115,11 @@ export class AllreportsComponent implements OnInit {
       this.businessPurpose.enable()
     }
     this.updateWithEmptyValue = !this.updateWithEmptyValue
+  }
+
+  viewReport (_id:string) {
+    console.log(_id)
+    this.router.navigate([`/report/${_id}`])
   }
 
 

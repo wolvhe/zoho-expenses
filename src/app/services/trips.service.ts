@@ -22,8 +22,8 @@ export class TripsService {
     return this.http.get<Tripmodel>(baseUrl+'/api/getindtrip/'+data);
   }
   
-  deletetrip(email:string, tripName:string): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/trips/delete/${email}/${tripName}`)
+  deletetrip(data:any){
+    return this.http.delete<Tripmodel>(baseUrl+'/api/trips/delete/'+data)
   }
   createadvance(data:any){
     return this.http.post(baseUrl+'/api/advance',data,{responseType:'text'});

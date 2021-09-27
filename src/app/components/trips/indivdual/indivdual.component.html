@@ -137,7 +137,7 @@
       
 <div>
     <div class="nav">
-        <span style="max-width: 200px; font-size: 1rem;font-weight: 900; margin-left: 30px;">TRIP-001  </span>
+        <span style="max-width: 200px; font-size: 1rem;font-weight: 900; margin-left: 30px;">{{datas[0].trip_name}} </span>
         <span class="draft">APPROVED</span>
         <button class="btn-1" style="margin-left: 57%;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-1"><path d="M348.8 188.5H137c-8.3 0-15 6.7-15 15s6.7 15 15 15h211.8c8.3 0 15-6.7 15-15s-6.7-15-15-15zm-79.4 89.3H137c-8.3 0-15 6.7-15 15s6.7 15 15 15h132.4c8.3 0 15-6.7 15-15s-6.7-15-15-15z"></path><path d="M501 256.5c0-65.6-25.5-127.2-71.9-173.6C382.7 36.5 321.1 11 255.5 11S128.3 36.5 81.9 82.9C35.5 129.3 10 190.9 10 256.5s25.5 127.2 71.9 173.6c46.4 46.4 108 71.9 173.6 71.9 41.1 0 81.6-10.3 117.5-29.9l85 11.8c4.4.6 8.8-.7 12-3.7 3.3-2.9 5.1-7.1 5-11.5l-2.3-97.8c.9-1.6 1.7-3.3 2.5-4.9 17.1-34.1 25.8-71 25.8-109.5zm-52.6 96.2c-1.3 2.5-2.6 5-3.9 7.4-1.3 2.3-1.9 5-1.9 7.6l1.9 80.6c0 1.8-1.6 3.3-3.4 3l-69-9.6c-3.3-.5-6.6.2-9.5 1.8-32.4 18.6-69.5 28.4-107.1 28.4-57.6 0-111.7-22.4-152.4-63.1C62.4 368.2 40 314.1 40 256.5s22.4-111.7 63.1-152.4S197.9 41 255.5 41s111.7 22.4 152.4 63.1S471 198.9 471 256.5c0 33.8-7.6 66.2-22.6 96.2z"></path></svg>
@@ -156,7 +156,7 @@
                 <a class="dropdown-item "   href="#">Archive</a>
                 <a class="dropdown-item "   href="#">Print</a>
                 <a class="dropdown-item "   href="#">PDF</a>
-                <a class="dropdown-item " style="color: red;"  href="#">Delete</a>
+                <a class="dropdown-item " style="color: red;"  href="#" (click)="delete(datas[0]._id)">Delete</a>
                 
             </div> 
         </button>

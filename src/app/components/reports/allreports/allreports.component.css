@@ -17,3 +17,213 @@ th {
 .duration {
     color: grey;
 }
+
+
+
+.sidenav {
+    background-color: #f3f3fa;
+    width: 15%;
+    padding: 10px;
+    height: 140vh;
+  }
+  .homeMenu {
+    font-size: medium !important;
+    padding-top: 10px;
+  }
+  .menuoptions {
+    margin-bottom: 10px;
+  }
+  .menuoptions > a {
+    text-decoration: none;
+    color: darkslategray;
+  }
+  .menuoptions:hover,
+  .menuoptions > a:hover {
+    color: #0e85f3 !important;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .showme {
+    display: none;
+  }
+  .menuoptions:hover .showme {
+    display: block;
+  }
+  .group {
+    background-color: #f3f3fa;
+    margin-bottom: 25px;
+    font-size: small;
+    padding-left: 10px;
+  }
+  .switchBtn {
+    font-size: x-small;
+    color: #0e85f3;
+    border-color: #0e85f3;
+  }
+  .switchBtn:hover {
+    color: white;
+    background-color: #0e85f3;
+  }
+  .rightbody {
+    width: 85%;
+  }
+  .dash_body {
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* background-color: lightgray; */
+    margin-top: 1rem;
+  }
+  .card {
+    border: 1px solid lightgray;
+  }
+  .reports,
+  .recentTrips,
+  .fileUpload,
+  .support {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .fileUpload {
+    align-items: center;
+  }
+  .fileUpload > .card {
+    border: 1px solid black;
+    border-style: dashed;
+  }
+  .btn {
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  .newExpenseBtn {
+    background-color: #e1eff7;
+    color: #0e85f3;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  .newExpenseBtn:hover {
+    background-color: #0e85f3;
+    color: #e1eff7;
+  }
+  .right_body {
+    float: left;
+    width: 100%;
+    overflow-y: auto;
+    height: 80vh;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: gray;
+  }
+  body {
+    background-color: #454b65;
+  }
+  
+  .bg {
+    background-color: #333956;
+  }
+  
+  #logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+  }
+  .navbar {
+    height: 3.5rem;
+  }
+  .navbar-brand {
+    padding: 16px 22px;
+    font-size: 25px;
+  }
+  
+  .navbar-nav {
+    width: 100%;
+    position: relative;
+    margin-left: 4rem;
+    font-size: 12px;
+    padding-top: 0.5rem;
+  }
+  
+  .nav-item {
+    padding: 6px 14px;
+    text-align: center;
+  }
+  
+  .nav-link {
+    padding-bottom: 10px;
+  }
+  
+  .v-line {
+    background-color: gray;
+    width: 1px;
+    height: 20px;
+  }
+  
+  .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+  
+  @media (max-width: 576px) {
+    .nav-item {
+      width: 100%;
+      text-align: left;
+    }
+  
+    .v-line {
+      display: none;
+    }
+  }
+  .search-box {
+    position: relative;
+    margin-left: 3rem;
+    /* margin-right: 4rem; */
+    width: 22rem;
+  }
+  .search-box input {
+    padding-right: 35px;
+    min-height: 38px;
+    border: none;
+    background: #454b65;
+    border-radius: 3px !important;
+  }
+  .search-box input:focus {
+    background: #454b65;
+    box-shadow: none;
+  }
+  .search-box .input-group-addon {
+    min-width: 35px;
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    z-index: 9;
+    padding: 10px 7px;
+    height: 100%;
+  }
+  .search-box i {
+    color: #a0a5b1;
+    font-size: 19px;
+  }
+  .fa-plus {
+    position: absolute;
+    left: 18.3rem;
+    bottom: 1.2rem;
+  }
+  

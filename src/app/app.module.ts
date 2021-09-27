@@ -65,6 +65,9 @@ import { AllexpensesComponent } from './components/expenses/allexpenses/allexpen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AnalyticspageComponent } from './home/analyticspage/analyticspage.component';
 import { BulkaddreportsComponent } from './home/reportspage/bulkaddreports/bulkaddreports.component';
+import { ExpenseTabledetailsComponent } from './components/expenses/expense-tabledetails/expense-tabledetails.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { ViewComponent } from './components/reports/view/view.component'
 import { IndivdualComponent } from './components/trips/indivdual/indivdual.component';
 import { IndividualadvanceComponent } from './components/advance/individualadvance/individualadvance.component';
 
@@ -115,6 +118,9 @@ import { IndividualadvanceComponent } from './components/advance/individualadvan
     AllexpensesComponent,
     AnalyticspageComponent,
     BulkaddreportsComponent,
+    ExpenseTabledetailsComponent,
+    ViewComponent,
+    
     IndivdualComponent,
     IndividualadvanceComponent,
  
@@ -150,7 +156,8 @@ import { IndividualadvanceComponent } from './components/advance/individualadvan
     Ng2SearchPipeModule,
     MatSearchableSelectModule,
     NgxSpinnerModule,
-    NgbModule
+    NgbModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

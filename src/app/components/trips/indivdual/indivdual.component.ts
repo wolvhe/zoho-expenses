@@ -38,6 +38,12 @@ export class IndivdualComponent implements OnInit {
   )
   }
 
+  delete(id:any){
+    this.trip.deletetrip(id)
+    alert("Deleted")
+    this.router.navigateByUrl('/trips/all')
+  }
+
   
 }
 
