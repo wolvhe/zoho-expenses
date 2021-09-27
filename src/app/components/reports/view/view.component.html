@@ -42,7 +42,7 @@
               />
             </svg>
           </button>
-          <button class="btn btn-light">
+          <button class="btn btn-light" (click)="navigateToReports()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -110,11 +110,90 @@
                 data-bs-toggle="modal"
                 data-bs-target="#expenseModal"
               >
-                + New Expense
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+              </svg>
+              New Expense
               </button>
             </div>
 
-            <div *ngIf="!isNoExpense"></div>
+            <div *ngIf="!isNoExpense">
+              <div class="text-right">
+                <div class="btn-group" role="group">
+                  <button id="expenseButtonGroup" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Add Unreported Expenses ({{expenseCount}})
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1" data-bs-target="#expenseModal">
+                    <li><button class="dropdown-item"  data-toggle="modal" data-target="#modal-right-expense" data-toggle-class="modal-open-aside">Add Unreported Expenses ({{expenseCount}})</button></li>
+                    <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#expenseModal">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                      </svg>
+                      New Expense
+                    </button></li>
+                  </ul>
+                </div>
+              </div>
+              <br>  
+              <div *ngFor="let expense of expenseInReport">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
+                          <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+                        </svg>
+                      </div>
+                      <div class="col-7">
+                        <p>{{expense['exp_date']}}</p>
+                        <p class="text-primary">{{expense['category']}}</p>
+                        <p class="border bg-gray">Paid Through: 
+                          <span class="font-weight-bold">
+                            {{expense['paid_through']}}
+                          </span>
+                        </p>
+                      </div>
+                      <div class="col-2">
+                        <h3 class="font-weight-bold">
+                          Rs.{{expense['amount']}}.0
+                        </h3>
+                      </div>
+                      <div class="col-1">
+                        <button class="btn btn-link">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+              </div>
+
+              <div class="text-right">
+                <p>Total Expense Amount
+                  <span>
+
+                  </span>
+                </p>
+                <p>Non-reimbursable Amount
+                  <span>
+
+                  </span>
+                </p>
+                <p>Applied Advance Amount
+                  <span>
+
+                  </span>
+                </p>
+                <p class="font-weight-bold">Amount to be Reimbursed
+                  <span>
+
+                  </span>
+                </p>
+              </div>
+            </div>
           </mat-tab>
 
           <!-- tab 2 -->
@@ -135,11 +214,44 @@
                 data-bs-toggle="modal"
                 data-bs-target="#recordModal"
               >
-                Record Advanced
+                Record Advance
               </button>
             </div>
 
-            <div *ngIf="!isNoAdvance"></div>
+            <div *ngIf="!isNoAdvance">
+              <div class="text-right">
+                <button class="btn btn-outline-primary text-capitalize" data-bs-toggle="modal" data-bs-target="#recordModal">
+                  Record Advance
+                </button>
+              </div>
+              <br>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">DATE</th>
+                    <th scope="col">RECORDED BY</th>
+                    <th scope="col">REFERENCE #</th>
+                    <th scope="col">AMOUNT</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let advance of advanceInReport">
+                    <td>{{advance[0]['date']}}</td>
+                    <td>
+                      <a class="btn btn-rounded text-lowercase">
+                        <span class="userCircle">
+                          {{name[0]}}
+                        </span>
+                        {{name}}
+                      </a>
+                    </td>
+                    <td>{{advance[0]['references']}}</td>
+                    <td>{{advance[0]['amount']}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </mat-tab>
 
           <!-- tab 3 -->
@@ -1016,7 +1128,7 @@
                 <p>{{expense['exp_date']}}</p>
                 <p>{{expense['category']}}</p>
                 <p>Rs.{{expense['amount']}}.0</p>
-                <button (click)="addExpense(index)" class="btn btn-secondary">
+                <button (click)="addExpense(index)" class="btn btn-secondary text-capitalize">
                   Add
                 </button>
               </div>
@@ -1070,7 +1182,7 @@
             </div><br> -->
 
             <!-- advances data -->
-            <div class="card text-start" *ngFor="let advance of allAdvance">
+            <div class="card text-start" *ngFor="let advance of allAdvance; let index=index">
               <div class="card-body">
                 <!-- <input type="checkbox"> -->
                 <div class="row">
@@ -1084,6 +1196,8 @@
                 </div>
                 <hr>
                 <p>Notes:-{{advance['notes']}}</p>
+                <button class="btn btn-secondary text-capitalize" (click)="addAdvance(index)">Add</button>
+                <br>
               </div>
             </div>
 
